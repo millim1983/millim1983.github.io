@@ -1,3 +1,28 @@
-theme: jekyll-theme-minimal
 title: millim's Diary 
 description: It's my Life And It's Now or NEVER!
+
+timezone: Asia/Seoul
+theme: minima   # 시작은 minima 쓰고, 레이아웃은 우리가 override
+
+# GitHub Pages 지원 플러그인
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate   # 목록 페이징
+
+paginate: 10          # 한 페이지당 글 10개
+paginate_path: "/page:num/"
+
+# 내비/사이드 메뉴 데이터 파일 사용
+collections:
+  posts:
+    output: true
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: default }
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+
+# 사이드 메뉴에 쓸 카테고리(없어도 작동)
+# 글에 categories: [rag, agent, agentic, genai]처럼 달면 자동 필터 가능
