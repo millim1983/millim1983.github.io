@@ -1,2 +1,1 @@
-# millim1983.github.io
-It's my life and It's now or never!
+# 나가자 싸우자 이기자 아즈아 아즈아 
