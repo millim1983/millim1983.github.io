@@ -7,8 +7,9 @@ email: ""
 url: "https://millim1983.github.io"
 baseurl: ""
 
-# 글 URL 형식
-permalink: /:year/:month/:day/:title/
+# 글 URL 형식 — 카테고리 슬러그 + 파일명 슬러그
+# 예: /thoughts/a-year-with-claude-code/
+permalink: /:categories/:title/
 
 # 마크다운
 markdown: kramdown
