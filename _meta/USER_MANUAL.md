@@ -2,6 +2,8 @@
 
 이 블로그는 Claude가 초안을 쓰고, 사용자가 검토하고, GitHub Actions가 정해진 시각에 자동 발행하도록 설계되어 있다. 이 문서는 **사용자 입장에서 무엇을 언제 하는가**만 정리한다.
 
+**인프라 요약**: Jekyll + Chirpy 테마 + GitHub Pages(Source: GitHub Actions). 새 글 push → Chirpy `Build and Deploy` 워크플로 자동 빌드 → 사이트 반영. 자동 발행 cron은 `_drafts/<풀>/`의 `status: ready` 글을 정해진 시각에 `_posts/`로 옮긴다.
+
 ---
 
 ## 1. 평소 흐름 (한 글의 생애)
