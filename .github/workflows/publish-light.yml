@@ -1,0 +1,43 @@
+name: publish-light
+
+on:
+  schedule:
+    # KST 09:00 = UTC 00:00, KST 17:00 = UTC 08:00 — 매일 2회
+    - cron: "0 0,8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Find & publish one ready draft from _drafts/light
+        id: pub
+        run: |
+          set -e
+          python scripts/publish_one.py light
+        continue-on-error: true
+
+      - name: Commit & push if changed
+        if: steps.pub.outcome == 'success'
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add _posts _drafts
+            git commit -m "auto-publish: light"
+            git push
+          else
+            echo "no changes to commit"
+          fi

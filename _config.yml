@@ -1,0 +1,48 @@
+title: "AI 페어 개발 노트"
+description: "코딩 에이전트와 함께 실무 도구를 만든 기록"
+author: ""
+email: ""
+
+# GitHub Pages — User Pages 저장소이므로 baseurl은 비움
+url: "https://millim1983.github.io"
+baseurl: ""
+
+# 글 URL 형식
+permalink: /:year/:month/:day/:title/
+
+# 마크다운
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    line_numbers: false
+
+# 테마 (GitHub Pages 내장 테마 — 별도 설치 불필요)
+theme: minima
+minima:
+  skin: classic
+  social_links:
+    github: "millim1983"
+
+# 시간대
+timezone: Asia/Seoul
+
+# 게시물 기본값
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: ""
+      toc: true
+
+# 빌드 제외
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - README.md

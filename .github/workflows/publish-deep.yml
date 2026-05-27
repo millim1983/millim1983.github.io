@@ -1,0 +1,43 @@
+name: publish-deep
+
+on:
+  schedule:
+    # 매주 월요일 KST 09:00 = UTC 일요일 24:00 = 월요일 00:00 UTC
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Find & publish one ready draft from _drafts/deep
+        id: pub
+        run: |
+          set -e
+          python scripts/publish_one.py deep
+        continue-on-error: true
+
+      - name: Commit & push if changed
+        if: steps.pub.outcome == 'success'
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add _posts _drafts
+            git commit -m "auto-publish: deep"
+            git push
+          else
+            echo "no changes to commit"
+          fi
