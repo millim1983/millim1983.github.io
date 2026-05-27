@@ -1,49 +1,175 @@
-title: "AI 페어 개발 노트"
-description: "코딩 에이전트와 함께 실무 도구를 만든 기록"
-author: ""
-email: ""
+# The Site Configuration
 
-# GitHub Pages — User Pages 저장소이므로 baseurl은 비움
+# Import the theme
+theme: jekyll-theme-chirpy
+
+# Language › default Chirpy locales: en, zh-CN, ko, ja, fr, ...
+lang: ko
+
+# Timezone
+timezone: Asia/Seoul
+
+# jekyll-seo-tag settings
+# ↓ --------------------------
+
+title: AI 페어 개발 노트
+
+tagline: 코딩 에이전트와 함께 실무 도구를 만든 기록
+
+description: >-
+  Claude Code 같은 코딩 에이전트가 보편화된 시대,
+  실무자가 자기 업무용 도구를 직접 만들어 운영한 기록.
+  AI와 함께 일하는 사람에게 새로 요구되는 역량을 사례로 추적한다.
+
+# Fill in the protocol & hostname for your site.
 url: "https://millim1983.github.io"
-baseurl: ""
+
+github:
+  username: millim1983
+
+# Author / Social
+# PERSONA.md §2: 실명·소속·이메일 노출 금지 (익명 운영).
+social:
+  name: AI 페어 개발 노트
+  email:
+  fediverse_handle:
+  links:
+    - https://github.com/millim1983
+
+# Site Verification Settings (비활성)
+webmaster_verifications:
+  google:
+  bing:
+  alexa:
+  yandex:
+  baidu:
+  facebook:
+
+# ↑ --------------------------
+# The end of `jekyll-seo-tag` settings
+
+# Web Analytics Settings (현재 미사용)
+analytics:
+  google:
+    id:
+  goatcounter:
+    id:
+  umami:
+    id:
+    domain:
+  matomo:
+    id:
+    domain:
+  cloudflare:
+    id:
+  fathom:
+    id:
+
+# Page views statistics (현재 미사용)
+pageviews:
+  provider:
+
+# Color scheme — light / dark / 빈 값(사용자 선택)
+theme_mode:
+
+# CDN endpoint for images (현재 미사용 — 로컬 assets 사용)
+cdn:
+
+# the avatar on sidebar (이미지 추가하면 경로 적기)
+avatar:
+
+# boolean type, the global switch for ToC in posts.
+toc: true
+
+# 댓글 시스템 (giscus·utterances 등) — 도입 시 채우기
+comments:
+  provider:
+
+# Self-hosted static assets
+assets:
+  self_host:
+    enabled:
+    env:
+
+# PWA
+pwa:
+  enabled: true
+  cache:
+    enabled: true
+    deny_paths:
+      # - "/example"
+
+paginate: 10
 
 # 글 URL 형식 — 카테고리 슬러그 + 파일명 슬러그
 # 예: /thoughts/a-year-with-claude-code/
 permalink: /:categories/:title/
 
-# 마크다운
-markdown: kramdown
-highlighter: rouge
+# ------------ The following options are not recommended to be modified ------------
+
 kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    css_class: 'highlight'
-    line_numbers: false
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
-# 테마 (GitHub Pages 내장 테마 — 별도 설치 불필요)
-theme: minima
-minima:
-  skin: classic
-  social_links:
-    github: "millim1983"
+collections:
+  tabs:
+    output: true
+    sort_by: order
 
-# 시간대
-timezone: Asia/Seoul
-
-# 게시물 기본값
 defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
-      layout: "post"
-      author: ""
+      layout: post
+      comments: true
       toc: true
+      permalink: /:categories/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
 
-# 빌드 제외
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - vendor/
-  - .bundle/
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
   - README.md
+  - LICENSE
+  - "*.config.js"
+  - package*.json
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
