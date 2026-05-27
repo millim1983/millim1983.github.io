@@ -5,7 +5,8 @@ subtitle: "그거 진짜 네가 만든 거 맞아?"
 categories: [thoughts]
 tags: [claude-code, vibe-coding, perspective]
 toc: false
-status: ready
+status: published
+date: 2026-05-27 10:56:42 +09:00
 ---
 
 chatGPT 부터 Claude Code까지 AI 도구 노마드 생활이 어언 2년이 넘어간다. 
