@@ -5,7 +5,8 @@ subtitle: "AI와 개발하기 시리즈 1편"
 categories: [building-with-ai]
 tags: [claude-code, crawling, openapi, ajax, html-scraping, python]
 toc: true
-status: ready
+status: published
+date: 2026-05-27 16:37:44 +09:00
 ---
 
 ## 0. 정부 사업 공고 서비스는 많지만 ... 
