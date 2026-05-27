@@ -23,5 +23,5 @@
 
 | 풀 | 파일 | 카테고리 | 제목 | status |
 |---|---|---|---|---|
-| light | `a-year-with-claude-code.md` | thoughts | 1년 동안 Claude Code를 쓴 사람으로서 | **ready** |
-| deep | `01-three-layers-of-data-source.md` | building-with-ai | 데이터 출처의 세 층위 — HTML·AJAX·공식 OpenAPI의 진짜 차이 | draft |
+| light | `a-year-with-claude-code.md` | thoughts | 1년 동안 Claude Code를 쓴 사람으로서 | **published** (2026-05-27) |
+| deep | `01-three-layers-of-data-source.md` | building-with-ai | 데이터 출처의 세 층위 — HTML·AJAX·공식 OpenAPI의 진짜 차이 | **ready** |
