@@ -5,9 +5,11 @@
 
 ---
 
-## 한 줄 요약 (2026-06-03 갱신)
+## 한 줄 요약 (2026-06-19 갱신)
 
-블로그 인프라(Chirpy + GitHub Actions) 안정. light pool ready 4편(basics-ajax·basics-rest-api·basics-http-status-codes·trend-multi-agent), paper pool ready 4편(논문 D1~D4 — D4가 2026-06-03 새로 추가된 "AI Can Learn Scientific Taste" 리뷰), deep pool draft 5편(시리즈 2·6·7·8 + AX-03, 모두 사용자 검토 대기). 2026-06-01: PERSONA.md §9 "AI 글쓰기 흔적 제거" 흡수, basics-rest-api 작성. 2026-06-03: 논문 리뷰 D4 작성.
+2026-06-19 작업: ① 검토 게이트 제거(`publish_one.py`가 ready/draft 모두 발행) ② deep cron 주1편→**매일 10:00 KST** ③ 비전·온디바이스 사전지식 deep 4편 작성·**즉시 수동 발행**(trend-agent-building-blocks, ax-01 제조비전, ax-04 온디바이스 재난탐지, ax-05 온디바이스 개발방법론) ④ 모두 push 완료(commit 30d8984). 남은 큐: deep에 5월 작성 5편(시리즈 2·6·7·8 + AX-03, 이제 자동발행 대상), light ready 4편, paper ready 4편 — 전부 cron이 매일 자동 발행(세션 불필요).
+
+> **다음 세션 이어갈 것**: ⓐ "정보/코딩 교육 첫 글 단계" 결정 대기(IDEAS A3). ⓑ 시리즈 미작성분 3·4·5·9편(SERIES_OUTLINE). ⓒ 논문 리뷰 D5(매일 1건 페이스). ⓓ 사용자가 비전/온디바이스 실제 작업 자료를 올리면 references/ax-04-ondevice-disaster-vision/ 또는 새 슬러그로 트랙 A 후속 글. **새 초안 쓰기는 세션이 있어야 함(자동 생성 비활성). 발행 자체는 cron이 매일 자동.**
 
 ---
 
@@ -66,10 +68,10 @@ blog/
 | `_drafts/deep/ax-03-physical-ai-petabyte.md` | deep | ax | **draft** | 2026-05-28 작성. 사용자 검토 후 `status: ready` 전환 |
 | `_drafts/deep/08-double-click-ux.md` | deep | building-with-ai | **draft** | 2026-05-29 작성. 시리즈 8편(우선순위표 2위). 사용자 검토 후 `status: ready` 전환 |
 | `_drafts/deep/07-ssot-decision.md` | deep | building-with-ai | **draft** | 2026-05-29 작성. 시리즈 7편(우선순위표 3위, 8편이 자연스럽게 예고). 사용자 검토 후 `status: ready` 전환 |
-| `_drafts/deep/trend-agent-building-blocks.md` | deep | building-with-ai | **ready** | 2026-06-19 작성. 에이전트 4부품(훅·스킬·MCP·워크플로). 검토 게이트 폐지로 자동 발행 대상 |
-| `_drafts/deep/ax-01-manufacturing-vision-agent.md` | deep | ax | **ready** | 2026-06-19 작성. 비전 기반 제조공정 에이전트 4단계 모델 |
-| `_drafts/deep/ax-04-ondevice-disaster-vision.md` | deep | ax | **ready** | 2026-06-19 작성. 온디바이스 비전 재난탐지 자료조사+엣지AI 트렌드 |
-| `_drafts/deep/ax-05-ondevice-vision-dev-methodology.md` | deep | ax | **ready** | 2026-06-19 작성. 온디바이스 비전 개발 방법론(양자화·증류·NPU) |
+| `_posts/2026-06-19-trend-agent-building-blocks.md` | deep | building-with-ai | **published** | 2026-06-19 수동 발행. 에이전트 4부품(훅·스킬·MCP·워크플로) |
+| `_posts/2026-06-19-ax-01-manufacturing-vision-agent.md` | deep | ax | **published** | 2026-06-19 수동 발행. 비전 기반 제조공정 에이전트 4단계 모델 |
+| `_posts/2026-06-19-ax-04-ondevice-disaster-vision.md` | deep | ax | **published** | 2026-06-19 수동 발행. 온디바이스 비전 재난탐지 자료조사+엣지AI 트렌드 |
+| `_posts/2026-06-19-ax-05-ondevice-vision-dev-methodology.md` | deep | ax | **published** | 2026-06-19 수동 발행. 온디바이스 비전 개발 방법론(양자화·증류·NPU) |
 
 ## 카테고리 (10개, 확정)
 
