@@ -1,9 +1,9 @@
-name: publish-light
+name: publish-paper
 
 on:
   schedule:
-    # KST 09:00 / 13:00 / 17:00 = UTC 00:00 / 04:00 / 08:00 — 매일 3회
-    - cron: "0 0,4,8 * * *"
+    # KST 12:00 = UTC 03:00 — 매일 1회 (논문 리뷰)
+    - cron: "0 3 * * *"
   workflow_dispatch:
 
 permissions:
@@ -21,11 +21,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Find & publish one ready draft from _drafts/light
+      - name: Find & publish one ready draft from _drafts/paper
         id: pub
         run: |
           set -e
-          python scripts/publish_one.py light
+          python scripts/publish_one.py paper
         continue-on-error: true
 
       - name: Commit & push if changed
@@ -36,7 +36,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
             git add _posts _drafts
-            git commit -m "auto-publish: light"
+            git commit -m "auto-publish: paper"
             git push
           else
             echo "no changes to commit"

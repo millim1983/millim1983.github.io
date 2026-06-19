@@ -2,8 +2,8 @@ name: publish-deep
 
 on:
   schedule:
-    # 매주 월요일 KST 09:00 = UTC 일요일 24:00 = 월요일 00:00 UTC
-    - cron: "0 0 * * 1"
+    # 매일 KST 10:00 = UTC 01:00 (2026-06-19 주1편 → 매일로 변경)
+    - cron: "0 1 * * *"
   workflow_dispatch:
 
 permissions:

@@ -1,0 +1,69 @@
+name: publish-auto
+
+# 자동 생성 → _drafts/auto/에 ready로 적재 → publish-light/paper cron이 _posts로 이동
+# 사용자 검토 없이 사이트에 올라가므로 사용 전 반드시 인지할 것.
+#
+# 2026-05-30 사용자 결정: 옵션 B(PC 켜면 Claude가 직접 ready 초안 공급)로 운영.
+# ANTHROPIC_API_KEY 비용·관리 부담 회피. 자동 cron은 끄고 수동 실행만 남김.
+# 나중에 자동 생성 켜고 싶으면 schedule 블록 주석을 풀고 GitHub Secrets에 API 키 등록.
+
+on:
+  # schedule:
+  #   # KST 06:00 = UTC 21:00 — 매일 새벽 1회 (publish-light 09:00보다 3시간 먼저)
+  #   - cron: "0 21 * * *"
+  workflow_dispatch:
+    inputs:
+      track:
+        description: "강제 트랙 (A/B/C/D, 비우면 우선순위 자동)"
+        required: false
+      slug:
+        description: "강제 슬러그 (비우면 큐에서 자동 추출)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install anthropic SDK
+        run: pip install anthropic
+
+      - name: Auto-generate one draft → _drafts/auto/
+        id: gen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set -e
+          ARGS=""
+          if [ -n "${{ inputs.track }}" ]; then
+            ARGS="$ARGS --track ${{ inputs.track }}"
+          fi
+          if [ -n "${{ inputs.slug }}" ]; then
+            ARGS="$ARGS --slug ${{ inputs.slug }}"
+          fi
+          python scripts/auto_generate.py $ARGS
+        continue-on-error: true
+
+      - name: Commit & push if changed
+        if: steps.gen.outcome == 'success'
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add _drafts
+            git commit -m "auto-generate: new draft"
+            git push
+          else
+            echo "no changes to commit"
+          fi
