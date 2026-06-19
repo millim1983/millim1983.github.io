@@ -77,6 +77,21 @@ blog/
 | `_posts/2026-06-19-ax-06-npu-edge-inference.md` | deep | ax | **published** | 2026-06-19 수동 발행. NPU 전용(B5에서 분리). mermaid 도식 |
 | `_drafts/deep/05-incremental-watermark.md` | deep | building-with-ai | **ready** | 2026-06-19 작성. 시리즈 5편 증분수집 워터마크. mermaid 도식. cron 자동발행 대기 |
 
+## 깊이 보강 백로그 (2026-06-20, 사용자 지시 "전부 깊이 조정")
+
+사용자 피드백: 글이 얕고 개념적이라 정보가 없다. **기준선 = `ax-06-npu` 재작성본**(제품군+스펙 비교표, 실측 수치, 비유는 실제 설명 뒤 보조로만). 규칙은 PERSONA §10·§11. 메모리 `blog-depth-and-concreteness`.
+
+| 글 | 상태 | 비고 |
+|---|---|---|
+| `ax-06-npu-edge-inference` | **완료** | 제품 4계층표+국산NPU(DeepX·Furiosa·Mobilint·Rebellions)+CPU/GPU/NPU 구조 비교 |
+| `ax-01-manufacturing-vision-agent` | **완료** | MVTec AD·PatchCore/PaDiM/EfficientAD·Anomalib·카메라(Basler/Cognex)·엣지칩. 출처 산불→제조로 교정 |
+| `ax-04-ondevice-disaster-vision` | **대기** | 구체화 필요: 화재/홍수 데이터셋(FLAME·FloodNet), 모델(YOLO계열), 실제 시스템 수치 |
+| `ax-05-ondevice-vision-dev-methodology` | **대기** | 구체화 필요: 모델군(MobileNet·YOLO-NAS·EfficientDet), 툴(TensorRT·ONNX·NNCF·GPTQ/AWQ), 벤치 수치 |
+| `trend-agent-building-blocks` | **대기** | 구체화 필요: 실제 MCP 서버·프레임워크(LangGraph·CrewAI·AutoGen) 명시, 수치 |
+| 드래프트(논문4·기초4·시리즈·ax-03) | **대기** | 사용자 "기존 드래프트까지 전부". 논문리뷰는 이미 figure/수치 있음, 기초·시리즈 보강 검토 |
+
+> 진행 순서 제안: ax-04 → ax-05 → trend → 드래프트. 각 글마다 웹검색으로 제품·데이터셋·수치 확보 후 재작성. 한 번에 다 못 하므로 세션 이어가며 위 표 갱신.
+
 ## 카테고리 (10개, 확정)
 
 `_meta/CATEGORIES.md` 참고. 슬러그·풀·예시 글감까지 정의돼 있음.
