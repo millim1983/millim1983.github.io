@@ -5,9 +5,9 @@
 
 ---
 
-## 한 줄 요약 (2026-05-27 종료 시점)
+## 한 줄 요약 (2026-06-03 갱신)
 
-블로그 인프라(Chirpy + GitHub Actions) 안정, 첫 글 1편 발행, 시리즈 1편 ready 상태 (2026-06-01 월요일 09:00 KST 자동 발행 예약), 참고자료 폴더 인프라 신설.
+블로그 인프라(Chirpy + GitHub Actions) 안정. light pool ready 4편(basics-ajax·basics-rest-api·basics-http-status-codes·trend-multi-agent), paper pool ready 4편(논문 D1~D4 — D4가 2026-06-03 새로 추가된 "AI Can Learn Scientific Taste" 리뷰), deep pool draft 5편(시리즈 2·6·7·8 + AX-03, 모두 사용자 검토 대기). 2026-06-01: PERSONA.md §9 "AI 글쓰기 흔적 제거" 흡수, basics-rest-api 작성. 2026-06-03: 논문 리뷰 D4 작성.
 
 ---
 
@@ -17,7 +17,12 @@
 - **저장소**: https://github.com/millim1983/millim1983.github.io
 - **테마**: jekyll-theme-chirpy 7.x (한국어 lang, Asia/Seoul timezone)
 - **빌드 방식**: GitHub Actions (`pages-deploy.yml`). Pages Source = "GitHub Actions" 설정 완료.
-- **자동 발행 cron**: `publish-light.yml`(매일 09:00·17:00 KST), `publish-deep.yml`(매주 월요일 09:00 KST). 둘 다 정상 동작 확인됨.
+- **자동 발행 cron** (2026-05-30 옵션 B 확정):
+  - ~~`publish-auto.yml`~~: **비활성** (cron 주석. API 키 부담 회피. 옵션 B로 운영)
+  - `publish-light.yml`: 매일 09:00·13:00·17:00 KST — `_drafts/light/` ready 1편 발행
+  - `publish-paper.yml`: 매일 12:00 KST — `_drafts/paper/` ready 1편 발행
+  - `publish-deep.yml`: **매일 10:00 KST** — `_drafts/deep/` 1편 발행 (2026-06-19 주1편→매일 변경. 발행 cron은 파일 이동만 하고 API를 안 부르므로 토큰 비용 0. 주기를 올려도 요금 부담 없음. 비용은 세션에서 초안 쓸 때만 발생)
+- **운영 모델 (옵션 B)**: 사용자가 Claude Code 세션을 켤 때마다 Claude가 발행 상태를 점검하고, ready 초안이 부족하면 IDEAS.md 큐에서 추출해 채워둔다. cron이 그 ready 초안을 자동으로 발행. 며칠 PC 안 켜면 발행이 끊기는 위험은 인지·수용.
 
 ## 폴더 구조 (현재)
 
@@ -56,7 +61,15 @@ blog/
 | 파일 | 풀 | 카테고리 | 상태 | 발행 시점 |
 |---|---|---|---|---|
 | `_posts/2026-05-27-a-year-with-claude-code.md` | light | thoughts | **published** | 2026-05-27 |
-| `_drafts/deep/01-three-layers-of-data-source.md` | deep | building-with-ai | **ready** | 2026-06-01 09:00 KST 자동 또는 수동 즉시 |
+| `_posts/2026-05-27-01-three-layers-of-data-source.md` | deep | building-with-ai | **published** | 2026-05-27 (시리즈 1편이 이미 _posts로 이동 확인됨) |
+| `_drafts/deep/02-requests-session-cookie.md` | deep | building-with-ai | **draft** | 2026-05-28 작성. 사용자 검토 후 `status: ready`로 바꾸면 다음 월 09:00에 자동 발행 |
+| `_drafts/deep/ax-03-physical-ai-petabyte.md` | deep | ax | **draft** | 2026-05-28 작성. 사용자 검토 후 `status: ready` 전환 |
+| `_drafts/deep/08-double-click-ux.md` | deep | building-with-ai | **draft** | 2026-05-29 작성. 시리즈 8편(우선순위표 2위). 사용자 검토 후 `status: ready` 전환 |
+| `_drafts/deep/07-ssot-decision.md` | deep | building-with-ai | **draft** | 2026-05-29 작성. 시리즈 7편(우선순위표 3위, 8편이 자연스럽게 예고). 사용자 검토 후 `status: ready` 전환 |
+| `_drafts/deep/trend-agent-building-blocks.md` | deep | building-with-ai | **ready** | 2026-06-19 작성. 에이전트 4부품(훅·스킬·MCP·워크플로). 검토 게이트 폐지로 자동 발행 대상 |
+| `_drafts/deep/ax-01-manufacturing-vision-agent.md` | deep | ax | **ready** | 2026-06-19 작성. 비전 기반 제조공정 에이전트 4단계 모델 |
+| `_drafts/deep/ax-04-ondevice-disaster-vision.md` | deep | ax | **ready** | 2026-06-19 작성. 온디바이스 비전 재난탐지 자료조사+엣지AI 트렌드 |
+| `_drafts/deep/ax-05-ondevice-vision-dev-methodology.md` | deep | ax | **ready** | 2026-06-19 작성. 온디바이스 비전 개발 방법론(양자화·증류·NPU) |
 
 ## 카테고리 (10개, 확정)
 
@@ -87,6 +100,7 @@ _meta/references/
 ├── ax-01-manufacturing-multi-agent/           ★ 사용자 자료 업로드 대기
 │   └── notes.md
 ├── ax-02-physical-training-agent/             # 제안서 완성 후 진행
+├── ax-03-physical-ai-petabyte/                ★ 신설 (2026-05-28) — 페타바이트·피지컬 AI
 ├── series-08-double-click-ux/                 # 시리즈 8편 (자료 없어도 작성 가능)
 ├── ops-log/                                   # 운영 일지 자료 필요시
 └── coding-education/                          # 정보/코딩 교육 단계별 자료
@@ -96,35 +110,33 @@ _meta/references/
 
 ---
 
-## 다음 할 일 (재개 시)
+## 글감 큐 운영 (2026-05-29 신설)
 
-### 사용자가 직접 해야 할 일
+글감 관리는 별도 파일 **`_meta/IDEAS.md`** 에서 한다. 두 트랙:
 
-1. **AX 첫 글 자료 업로드** — `_meta/references/ax-01-manufacturing-multi-agent/` 폴더에 제조 분야 멀티 에이전트 관련 자료(PDF·기사·발췌·메모 등) 자유 형식으로 넣기. 끝나면 *"AX 첫 글 자료 올렸어"* 라고만 알려주면 Claude가 본문 작성.
+| 트랙 | 자료 출처 | 트리거 |
+|---|---|---|
+| A. 사용자 경험·작업 기반 | `references/<슬러그>/` 사용자 자료 | *"○○ 자료 올렸어"* 류 |
+| B. 일반 주제·트렌드 | Claude WebSearch | *"○○에 대해 써줘"* 또는 큐에서 자동 추출 |
 
-2. **정보/코딩 교육 첫 글 시작 단계 선택** — 다음 중 어디서 시작할지 결정:
-   - 입문: 블록 코딩 (Scratch/엔트리)
-   - 초급: 어린이 바이브 코딩 (자기 의도 → AI에게 말로 부탁 → 게임·사이트 만들기)
-   - 중급: AI 비전 인식 (웹캠·객체 탐지)
-   - 하드웨어: 아두이노 입문
+**규칙**:
+- 사용자가 새 글감을 던지면 → 즉시 `IDEAS.md`에 한 줄 추가. 트랙 A면 `references/<슬러그>/notes.md`도 같이 생성.
+- *"계속 써줘"* / *"다음 거 써줘"* 트리거: 시리즈 진행 중이면 시리즈 우선순위표 먼저. 시리즈 외면 `IDEAS.md`에서 우선순위 높음 → 트랙 A 자료 모인 것 → 트랙 B 순서.
+- 글감이 글로 전환되면 `IDEAS.md` 행 상태만 갱신. 행 삭제 금지(어디서 왔는지 기록 보존).
 
-3. **시리즈 1편 즉시 발행할지 결정 (선택)** — 자동 발행은 6/1(월) 09:00 KST. 지금 즉시 발행하려면 GitHub Actions 탭 → `publish-deep` 워크플로 → `Run workflow` 클릭.
+## 검토 대기 초안 (사용자 결정 필요)
 
-4. **(보류) 익명화 진행 결정** — GitHub username 변경 + 저장소 이름 변경. 새 username 후보(`pair-notes`, `vibe-coder-kr`, `claude-runner` 등) 중 결정하거나 새로 제시.
+검토 OK인 것만 `status: draft → ready`로 바꾸면 다음 월 09:00 KST 자동 발행.
 
-### Claude가 다음 세션에 진행할 작업
+- `_drafts/deep/02-requests-session-cookie.md` (시리즈 2편)
+- `_drafts/deep/07-ssot-decision.md` (시리즈 7편)
+- `_drafts/deep/08-double-click-ux.md` (시리즈 8편)
+- `_drafts/deep/ax-03-physical-ai-petabyte.md` (AX-03)
 
-사용자가 *"이어서 작업하자"* 또는 *"AX 첫 글 자료 올렸어"* 류로 시작하면 다음 순서로:
+## 보류 중인 결정
 
-1. **시리즈 8편 본문 작성** — `_drafts/deep/08-double-click-ux.md`. `SERIES_OUTLINE.md`의 8편 매핑(`run.bat`, `run_all.py`, ledger.xlsx, 메타 자동화 — settings.local.json 권한)을 따른다. 자료(`biz-announcement-monitor`)는 이미 다 있음.
-
-2. **운영 일지 첫 편 작성** — `_drafts/light/<슬러그>.md`, 카테고리 `ops-log`. 짧고 가벼운 첫 운영 기록. 300~1000자.
-
-3. **AX 첫 글 본문 작성** — 사용자 자료 받은 후. `_drafts/deep/ax-01-manufacturing-multi-agent.md`.
-
-4. **정보/코딩 교육 첫 글 작성** — 사용자가 단계 결정한 후. `_drafts/deep/coding-education-01-<주제>.md`.
-
-5. **익명화 작업** — 사용자가 새 username 결정한 후 진행 (`_config.yml`·remote URL·저장소 이름 갱신).
+- **정보/코딩 교육 첫 글 단계** — 블록 코딩(Scratch/엔트리) / 어린이 바이브 코딩 / AI 비전 / 아두이노 중 어디서 시작할지 사용자 결정 대기.
+- **익명화** — GitHub username·저장소 이름 변경. 후보(`pair-notes`, `vibe-coder-kr`, `claude-runner` 등) 중 사용자 결정 후 진행.
 
 ### 진행 중 task (TaskList 상태 참고)
 
@@ -160,3 +172,9 @@ _meta/references/
 ## 막힌 부분
 
 없음. 사용자 자료 업로드와 정보/코딩 교육 단계 결정이 다음 액션의 트리거.
+
+> **2026-06-19 검토 게이트 제거**: 사용자 지시로 `scripts/publish_one.py`의 선정 규칙을 `status: ready`에서 `ready` 또는 `draft`로 확장. 이제 초안도 사용자 검토 없이 cron이 자동 발행한다(README 등 status 없는 문서·published 글은 제외). deep pool도 기존 draft 5편이 곧바로 발행 대상이 됨 → 다음 월 09:00 KST에 `ax-03`부터 발행. "검토 대기 초안" 개념은 사실상 폐지. 품질 문제가 검토 없이 노출될 수 있음을 인지·수용.
+
+## 작성 규칙 변경 이력
+
+- **2026-06-01**: `_meta/PERSONA.md` §9 "AI 글쓰기 흔적 제거" 추가. Wikipedia humanizer 가이드 중 한국어 유효 항목(의미 부풀리기·~며 연쇄·광고성 어휘·부정 평행구조·세 개 묶기 강박·동의어 순환·신호어·챗봇 잔재·em dash 남발 등 16개 항목)을 흡수. 새 글은 §9까지 적용해서 작성, 기존 ready 초안은 톤 일관성 차원에서 그대로 유지.

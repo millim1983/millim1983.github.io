@@ -1,12 +1,15 @@
 """검토 완료된 초안 1편을 _posts/로 이동.
 
-- 대상 폴더: _drafts/light 또는 _drafts/deep (인자로 지정)
-- 선정 규칙: front matter에 `status: ready`가 있는 파일 중 mtime 가장 오래된 1개
+- 대상 폴더: _drafts/light, _drafts/deep, _drafts/paper, _drafts/auto (인자로 지정)
+- 선정 규칙: front matter status가 `ready` 또는 `draft`인 파일 중 mtime 가장 오래된 1개
+  (2026-06-19부터 검토 게이트 제거 — 초안도 검토 없이 발행. status 없는 README·published 글은 제외)
 - 이동 시 파일명에 오늘 날짜 prefix (YYYY-MM-DD-슬러그.md), front matter에 date 필드 삽입, status: published로 변경
 
 사용:
     python scripts/publish_one.py light
     python scripts/publish_one.py deep
+    python scripts/publish_one.py paper
+    python scripts/publish_one.py auto
     python scripts/publish_one.py --slug 슬러그명   # 특정 글 강제 발행
 
 종료 코드:
@@ -51,14 +54,19 @@ def parse_front_matter(text: str) -> tuple[dict, str, str]:
 
 
 def find_ready(pool_dir: Path) -> Path | None:
-    """status: ready 인 글 중 mtime 가장 오래된 1편."""
+    """발행 후보 중 mtime 가장 오래된 1편.
+
+    검토 게이트 없음(2026-06-19): status가 ready 또는 draft 이면 발행 대상.
+    status가 없는 파일(README 등 front matter 없는 문서)과 이미 published 인
+    글은 자동 제외된다.
+    """
     candidates: list[tuple[float, Path]] = []
     if not pool_dir.exists():
         return None
     for p in pool_dir.glob("*.md"):
         text = p.read_text(encoding="utf-8")
         meta, _, _ = parse_front_matter(text)
-        if meta.get("status", "").strip().lower() == "ready":
+        if meta.get("status", "").strip().lower() in ("ready", "draft"):
             candidates.append((p.stat().st_mtime, p))
     if not candidates:
         return None
@@ -67,7 +75,7 @@ def find_ready(pool_dir: Path) -> Path | None:
 
 
 def find_by_slug(slug: str) -> Path | None:
-    for pool in ("light", "deep"):
+    for pool in ("light", "deep", "paper", "auto"):
         p = DRAFTS / pool / f"{slug}.md"
         if p.exists():
             return p
@@ -111,7 +119,7 @@ def publish(src: Path) -> Path:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("pool", nargs="?", choices=["light", "deep"], help="발행할 풀")
+    ap.add_argument("pool", nargs="?", choices=["light", "deep", "paper", "auto"], help="발행할 풀")
     ap.add_argument("--slug", help="특정 슬러그를 강제 발행 (status 무관)")
     args = ap.parse_args()
 
@@ -123,7 +131,7 @@ def main() -> int:
     elif args.pool:
         src = find_ready(DRAFTS / args.pool)
         if not src:
-            print(f"[publish] _drafts/{args.pool}/ 에 status:ready 글이 없음 — 발행 스킵", flush=True)
+            print(f"[publish] _drafts/{args.pool}/ 에 발행할 글(ready/draft)이 없음 — 발행 스킵", flush=True)
             return 2
     else:
         ap.print_help()

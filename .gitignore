@@ -1,3 +1,7 @@
+# Python
+__pycache__/
+*.pyc
+
 # Jekyll
 _site/
 .sass-cache/
