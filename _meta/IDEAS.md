@@ -71,6 +71,31 @@
 
 > 2026-06-19 추가 지시: ① `trend-agent-building-blocks`에 **오케스트레이터** 섹션 추가(§5 신설, 네 부품→지휘층까지). ② NPU를 B5에서 B6으로 분리. ③ 발행된 4편에 mermaid 도식 보강. ④ PERSONA §10 이미지 표준 신설.
 
+## 2026-06-20 사용자 글감 6종 (그루핑 확정)
+
+> 사용자 제안 6개를 두 클러스터 + 단독으로 묶음. 모두 ax 또는 building-with-ai, 깊이 기준 = ax-06(제품·수치·코드). #3 그루핑은 Claude가 정함(아래).
+
+**클러스터 1 — 온디바이스 (프로젝트 핵심, ax-05·ax-06과 한 줄기)**
+
+| # | 슬러그 | 카테고리 | 한 줄 | 상태 |
+|---|---|---|---|---|
+| OD1 | `ax-07-ota-edge` | ax | OTA — 엣지/온디바이스 모델·펌웨어 무선 갱신 (델타·A/B파티션·롤백, Mender/balena/AWS IoT Greengrass) | pending |
+| OD2 | `ax-08-ondevice-porting` | ax | 온디바이스 포팅 — 모델을 장치로 옮기기 (ONNX 변환, 연산자 지원/폴백, 그래프 최적화) | pending |
+| OD3 | `ax-09-ondevice-frameworks-code` | ax | 온디바이스 프레임워크·경량화 (실제 코드) — TFLite·ONNX Runtime·ExecuTorch·NCNN·llama.cpp + 양자화 코드 예시 | pending |
+| OD4~ | `ax-10-hw-*` | ax | **하드웨어 시리즈**: HW1 서버(H200·B200/GB200·AMD MI300), HW2 워크스테이션(RTX PRO Blackwell 등), HW3 엣지(Jetson Thor/Orin·Hailo), HW4 온디바이스(NPU=ax-06 연계) | pending |
+
+**클러스터 2 — 지식·추론 (#2 뉴로심볼릭 + #3 온톨로지/지식그래프/그래프DB 묶음)**
+
+| # | 슬러그 | 카테고리 | 한 줄 | 상태 |
+|---|---|---|---|---|
+| KR1 | `kr-01-ontology-knowledge-graph` | ax | 온톨로지·지식그래프·그래프DB 기초 (개념 + RDF/OWL/SPARQL vs property graph, Neo4j) | pending |
+| KR2 | `kr-02-graphrag` | ax | 그래프DB 실전 + GraphRAG (지식그래프로 LLM 환각 줄이기) | pending |
+| KR3 | `kr-03-neurosymbolic-ai` | ax | 뉴로심볼릭 AI (신경망+기호추론, AlphaGeometry 등) — KR 묶음의 우산/다리 | pending |
+
+> **#3 그루핑 결정**: 온톨로지·지식그래프·그래프DB를 KR1(기초)로 한데 묶고, KR2(GraphRAG 실전)로 LLM과 연결, KR3(뉴로심볼릭)을 그 위 우산 개념으로. 신경망+기호추론과 지식그래프가 같은 "기호적 표현" 줄기라 한 클러스터로 둠.
+
+> 진행: 깊이 보강 백로그(NOTES) 먼저 끝낸 뒤, 위 신규 글감을 OD1→OD4, KR1→KR3 순으로. 각 글 웹검색으로 제품·수치·코드 확보 후 작성.
+
 ## 트랙 C — 기초 개념 학습 (천천히, 짬내서)
 
 변하지 않는 웹·네트워크·도구 기초 개념. 한꺼번에 쏟지 말고 시리즈·트렌드 사이에 한 편씩 끼워 넣는다. 카테고리는 짧으면 `questions`(질문 노트), 길면 별도 학습 글로 분류. 카테고리 신설(예: `web-basics`) 여부는 글감이 5편 이상 쌓이면 사용자와 재논의.
