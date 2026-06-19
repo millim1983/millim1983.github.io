@@ -87,7 +87,7 @@ blog/
 | `ax-01-manufacturing-vision-agent` | **완료** | MVTec AD·PatchCore/PaDiM/EfficientAD·Anomalib·카메라(Basler/Cognex)·엣지칩. 출처 산불→제조로 교정 |
 | `ax-04-ondevice-disaster-vision` | **완료** | 2026-06-20. 실전배치(ALERTCalifornia 1,240대·Pano AI 725건·OroraTech·Dryad), 데이터셋표(FASDD·D-Fire·FLAME3·FIgLib·FloodNet·Sen1Floods11), YOLOv8n·증류·엣지칩 |
 | `ax-05-ondevice-vision-dev-methodology` | **완료** | 2026-06-20. 경량 모델군표(MobileNetV3·EfficientDet-Lite·YOLO-NAS·MobileViT·LeYOLO), 양자화 PTQ 코드, 런타임표(TFLite·ONNX RT·ExecuTorch·OpenVINO·TensorRT), 지연수치. 제목 NPU→증류로 변경 |
-| `trend-agent-building-blocks` | **대기** | 구체화 필요: 실제 MCP 서버·프레임워크(LangGraph·CrewAI·AutoGen) 명시, 수치 |
+| `trend-agent-building-blocks` | **완료** | 2026-06-20. MCP 수치(서버~9,650·월9,700만 다운로드·41% 프로덕션), 프레임워크 비교표(LangGraph·CrewAI 44.6k stars·MS Agent Framework·OpenAI Agents SDK·Google ADK·Claude SDK·Strands), 훅 17이벤트, dbt Skills |
 | 드래프트(논문4·기초4·시리즈·ax-03) | **대기** | 사용자 "기존 드래프트까지 전부". 논문리뷰는 이미 figure/수치 있음, 기초·시리즈 보강 검토 |
 
 > 진행 순서 제안: ax-04 → ax-05 → trend → 드래프트. 각 글마다 웹검색으로 제품·데이터셋·수치 확보 후 재작성. 한 번에 다 못 하므로 세션 이어가며 위 표 갱신.
