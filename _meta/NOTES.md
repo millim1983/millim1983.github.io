@@ -86,7 +86,7 @@ blog/
 | `ax-06-npu-edge-inference` | **완료** | 제품 4계층표+국산NPU(DeepX·Furiosa·Mobilint·Rebellions)+CPU/GPU/NPU 구조 비교 |
 | `ax-01-manufacturing-vision-agent` | **완료** | MVTec AD·PatchCore/PaDiM/EfficientAD·Anomalib·카메라(Basler/Cognex)·엣지칩. 출처 산불→제조로 교정 |
 | `ax-04-ondevice-disaster-vision` | **완료** | 2026-06-20. 실전배치(ALERTCalifornia 1,240대·Pano AI 725건·OroraTech·Dryad), 데이터셋표(FASDD·D-Fire·FLAME3·FIgLib·FloodNet·Sen1Floods11), YOLOv8n·증류·엣지칩 |
-| `ax-05-ondevice-vision-dev-methodology` | **대기** | 구체화 필요: 모델군(MobileNet·YOLO-NAS·EfficientDet), 툴(TensorRT·ONNX·NNCF·GPTQ/AWQ), 벤치 수치 |
+| `ax-05-ondevice-vision-dev-methodology` | **완료** | 2026-06-20. 경량 모델군표(MobileNetV3·EfficientDet-Lite·YOLO-NAS·MobileViT·LeYOLO), 양자화 PTQ 코드, 런타임표(TFLite·ONNX RT·ExecuTorch·OpenVINO·TensorRT), 지연수치. 제목 NPU→증류로 변경 |
 | `trend-agent-building-blocks` | **대기** | 구체화 필요: 실제 MCP 서버·프레임워크(LangGraph·CrewAI·AutoGen) 명시, 수치 |
 | 드래프트(논문4·기초4·시리즈·ax-03) | **대기** | 사용자 "기존 드래프트까지 전부". 논문리뷰는 이미 figure/수치 있음, 기초·시리즈 보강 검토 |
 
