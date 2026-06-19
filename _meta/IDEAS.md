@@ -82,7 +82,8 @@
 | OD1 | `ax-07-ota-edge` | ax | OTA — 엣지/온디바이스 모델·펌웨어 무선 갱신 (델타·A/B파티션·롤백, Mender/balena/AWS IoT Greengrass) | pending |
 | OD2 | `ax-08-ondevice-porting` | ax | 온디바이스 포팅 — 모델을 장치로 옮기기 (ONNX 변환, 연산자 지원/폴백, 그래프 최적화) | pending |
 | OD3 | `ax-09-ondevice-frameworks-code` | ax | 온디바이스 프레임워크·경량화 (실제 코드) — TFLite·ONNX Runtime·ExecuTorch·NCNN·llama.cpp + 양자화 코드 예시 | pending |
-| OD4~ | `ax-10-hw-*` | ax | **하드웨어 시리즈**: HW1 서버(H200·B200/GB200·AMD MI300), HW2 워크스테이션(RTX PRO Blackwell 등), HW3 엣지(Jetson Thor/Orin·Hailo), HW4 온디바이스(NPU=ax-06 연계) | pending |
+| OD0 | `ax-hw0-formfactor-glossary` | ax | **하드웨어 기초편(시리즈 0)**: 폼팩터(칩·SoC·SoM·모듈·SBC·캐리어보드)와 NPU/GPU 적용 유형, 스펙 용어 사전(TOPS·TFLOPS·TDP·메모리대역폭·공정노드nm·INT8/FP16·LPDDR·PCIe lane 등) + 실제 제품 전격 비교 예시 | pending |
+| OD4~ | `ax-10-hw-*` | ax | **하드웨어 시리즈**: HW1 서버(H200·B200/GB200·AMD MI300), HW2 워크스테이션(RTX PRO Blackwell 등), HW3 엣지(Jetson Thor/Orin·Hailo), HW4 온디바이스(NPU=ax-06 연계). ※ OD0(폼팩터·용어)가 이 시리즈의 진입편 | pending |
 
 **클러스터 2 — 지식·추론 (#2 뉴로심볼릭 + #3 온톨로지/지식그래프/그래프DB 묶음)**
 
