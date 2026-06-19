@@ -9,6 +9,8 @@
 
 2026-06-19 작업: ① 검토 게이트 제거(`publish_one.py`가 ready/draft 모두 발행) ② deep cron 주1편→**매일 10:00 KST** ③ 비전·온디바이스 사전지식 deep 4편 작성·**즉시 수동 발행**(trend-agent-building-blocks, ax-01 제조비전, ax-04 온디바이스 재난탐지, ax-05 온디바이스 개발방법론) ④ 모두 push 완료(commit 30d8984). 남은 큐: deep에 5월 작성 5편(시리즈 2·6·7·8 + AX-03, 이제 자동발행 대상), light ready 4편, paper ready 4편 — 전부 cron이 매일 자동 발행(세션 불필요).
 
+> **2026-06-19 2차 작업**: ① 이미지 표준 신설(PERSONA §10) — Mermaid 우선, 로컬 svg/png 보조, 논문 figure는 받아서 로컬, 외부 핫링크 금지. ② 발행된 4편에 mermaid 도식 보강. ③ `trend-agent-building-blocks`에 오케스트레이터 §5 추가(여섯 층 구성). ④ NPU를 ax-05에서 ax-06으로 분리·발행. ⑤ 시리즈 5편 작성(ready). **앞으로 모든 글에 도식 적극 사용(§10).**
+
 > **다음 세션 이어갈 것**: ⓐ "정보/코딩 교육 첫 글 단계" 결정 대기(IDEAS A3). ⓑ 시리즈 미작성분 3·4·5·9편(SERIES_OUTLINE). ⓒ 논문 리뷰 D5(매일 1건 페이스). ⓓ 사용자가 비전/온디바이스 실제 작업 자료를 올리면 references/ax-04-ondevice-disaster-vision/ 또는 새 슬러그로 트랙 A 후속 글. **새 초안 쓰기는 세션이 있어야 함(자동 생성 비활성). 발행 자체는 cron이 매일 자동.**
 
 ---
@@ -71,7 +73,9 @@ blog/
 | `_posts/2026-06-19-trend-agent-building-blocks.md` | deep | building-with-ai | **published** | 2026-06-19 수동 발행. 에이전트 4부품(훅·스킬·MCP·워크플로) |
 | `_posts/2026-06-19-ax-01-manufacturing-vision-agent.md` | deep | ax | **published** | 2026-06-19 수동 발행. 비전 기반 제조공정 에이전트 4단계 모델 |
 | `_posts/2026-06-19-ax-04-ondevice-disaster-vision.md` | deep | ax | **published** | 2026-06-19 수동 발행. 온디바이스 비전 재난탐지 자료조사+엣지AI 트렌드 |
-| `_posts/2026-06-19-ax-05-ondevice-vision-dev-methodology.md` | deep | ax | **published** | 2026-06-19 수동 발행. 온디바이스 비전 개발 방법론(양자화·증류·NPU) |
+| `_posts/2026-06-19-ax-05-ondevice-vision-dev-methodology.md` | deep | ax | **published** | 2026-06-19 수동 발행. 양자화·증류·가지치기. NPU는 ax-06으로 분리(본문은 포인터) |
+| `_posts/2026-06-19-ax-06-npu-edge-inference.md` | deep | ax | **published** | 2026-06-19 수동 발행. NPU 전용(B5에서 분리). mermaid 도식 |
+| `_drafts/deep/05-incremental-watermark.md` | deep | building-with-ai | **ready** | 2026-06-19 작성. 시리즈 5편 증분수집 워터마크. mermaid 도식. cron 자동발행 대기 |
 
 ## 카테고리 (10개, 확정)
 

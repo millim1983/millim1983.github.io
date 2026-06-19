@@ -66,7 +66,10 @@
 |---|---|---|---|---|---|
 | A5 | `ax-01-manufacturing-vision-agent` | ax | 비전 기반 제조공정 에이전트 — 검사에서 판단까지 (A1 글감의 구체화) | **초안 작성됨 (ready, 2026-06-19)** `_drafts/deep/` | 높 |
 | B4 | `ax-04-ondevice-disaster-vision` | ax | 온디바이스 비전으로 재난을 탐지한다 — 자료조사 + 엣지 AI 트렌드 | **초안 작성됨 (ready, 2026-06-19)** `_drafts/deep/` | 높 |
-| B5 | `ax-05-ondevice-vision-dev-methodology` | ax | 온디바이스 비전 모델 개발 방법론 — 양자화·증류·NPU | **초안 작성됨 (ready, 2026-06-19)** `_drafts/deep/` | 높 |
+| B5 | `ax-05-ondevice-vision-dev-methodology` | ax | 온디바이스 비전 모델 개발 방법론 — 양자화·증류·NPU | **발행됨 (2026-06-19)**. NPU 부분은 B6으로 분리, 본문은 포인터만 남김 | 높 |
+| B6 | `ax-06-npu-edge-inference` | ax | NPU란 무엇인가 — 온디바이스 비전을 떠받치는 칩 (B5에서 분리, 사용자 지시 2026-06-19) | **발행됨 (2026-06-19 수동)** `_posts/`. mermaid 도식 포함 | 높 |
+
+> 2026-06-19 추가 지시: ① `trend-agent-building-blocks`에 **오케스트레이터** 섹션 추가(§5 신설, 네 부품→지휘층까지). ② NPU를 B5에서 B6으로 분리. ③ 발행된 4편에 mermaid 도식 보강. ④ PERSONA §10 이미지 표준 신설.
 
 ## 트랙 C — 기초 개념 학습 (천천히, 짬내서)
 
@@ -156,7 +159,7 @@
 | 2편 | `02-requests-session-cookie` | **draft** (검토 대기) |
 | 3편 | `03-ajax-endpoint-analysis` | pending |
 | 4편 | `04-cp949-zip-encoding` | pending |
-| 5편 | `05-incremental-watermark` | pending |
+| 5편 | `05-incremental-watermark` | **초안 작성됨 (ready, 2026-06-19)** `_drafts/deep/`. 워터마크·미래날짜 함정·보정모드. mermaid 도식 포함 |
 | 6편 | `06-data-lifetime-separation` | **draft** (2026-05-30 작성) |
 | 7편 | `07-ssot-decision` | **draft** (2026-05-29 작성) |
 | 8편 | `08-double-click-ux` | **draft** (2026-05-29 작성) |
