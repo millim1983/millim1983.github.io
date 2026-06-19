@@ -5,7 +5,8 @@ subtitle: "AI와 개발하기 시리즈 8편"
 categories: [building-with-ai]
 tags: [claude-code, automation, ux, batch, streamlit, settings-local, meta-automation]
 toc: true
-status: draft
+status: published
+date: 2026-06-20 05:48:38 +09:00
 ---
 
 ## 0. 도구의 사용성은 명령줄 너머에서 결정된다

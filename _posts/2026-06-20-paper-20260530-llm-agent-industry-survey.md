@@ -5,7 +5,8 @@ subtitle: "LLM-Powered AI Agent Systems and Their Applications in Industry (arXi
 categories: [paper-review]
 tags: [llm-agent, survey, industry-application, mcp, rag, paper-review]
 toc: true
-status: ready
+status: published
+date: 2026-06-20 05:48:39 +09:00
 ---
 
 > **TL;DR** — 2026년 5월 4일 arXiv에 올라온 산업 응용 중심 LLM 에이전트 서베이. 새 모델이나 학습 기법을 제안한 게 아니라, **현재까지 산업에 들어간 LLM 에이전트의 구조와 사례를 한 장에 모은 지도**다. 코딩이 본업이 아닌 실무자가 "이 동네 풍경이 어떻게 생겼나"를 30분 안에 파악하기 좋다.

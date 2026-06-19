@@ -5,7 +5,8 @@ subtitle: "A Survey on Evaluation of LLM-based Agents (arXiv:2503.16416v2)"
 categories: [paper-review]
 tags: [llm-agent, evaluation, benchmark, survey, swe-bench, webarena, gaia, paper-review]
 toc: true
-status: ready
+status: published
+date: 2026-06-20 05:48:39 +09:00
 ---
 
 > **TL;DR** — Hebrew University · IBM Research · Yale 공동 서베이. LLM 에이전트 평가를 **5개 축**으로 정리하고, 대표 벤치마크 7~10개의 분류표를 제시한다. 가장 중요한 메시지는 "**LLM 능력과 에이전트 하네스 능력을 분리해서 평가하라**"는 한 줄이다. 트랙 B의 [멀티 에이전트가 default가 됐다] 글과 짝을 이뤄 읽으면 좋다.

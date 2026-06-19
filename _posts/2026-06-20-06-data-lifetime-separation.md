@@ -5,7 +5,8 @@ subtitle: "AI와 개발하기 시리즈 6편"
 categories: [building-with-ai]
 tags: [claude-code, data-lifetime, architecture, paths, operations]
 toc: true
-status: draft
+status: published
+date: 2026-06-20 05:48:37 +09:00
 ---
 
 ## 0. 폴더 하나가 두 종류의 시간을 담을 때

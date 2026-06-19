@@ -5,7 +5,8 @@ subtitle: "도구가 도구를 다루기 시작한 시점"
 categories: [thoughts]
 tags: [claude-code, cursor, antigravity, copilot, multi-agent, trends]
 toc: false
-status: ready
+status: published
+date: 2026-06-20 05:48:38 +09:00
 ---
 
 ## 0. 1년 전과 지금의 차이

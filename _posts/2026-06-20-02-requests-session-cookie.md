@@ -5,7 +5,8 @@ subtitle: "AI와 개발하기 시리즈 2편"
 categories: [building-with-ai]
 tags: [claude-code, python, requests, http, session, cookie, crawling, debugging]
 toc: true
-status: draft
+status: published
+date: 2026-06-20 05:48:37 +09:00
 ---
 
 ## 0. 시작점 — 브라우저는 잘 되는데 코드는 빈 응답을 준다

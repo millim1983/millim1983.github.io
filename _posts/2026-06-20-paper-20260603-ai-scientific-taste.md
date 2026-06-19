@@ -5,7 +5,8 @@ subtitle: "AI Can Learn Scientific Taste (arXiv:2603.14473)"
 categories: [paper-review]
 tags: [scientific-taste, rlcf, reward-modeling, qwen3, paper-review]
 toc: true
-status: ready
+status: published
+date: 2026-06-20 05:48:39 +09:00
 ---
 
 > **TL;DR** — 2026년 3월 15일 arXiv에 올라온 논문. arXiv 696,758쌍의 고/저인용 논문을 reward 신호로 써서 Qwen3 계열 모델을 학습시켰더니, GPT-5.2·Gemini 3 Pro 같은 상용 모델보다 "연구 아이디어의 잠재력 판단"을 더 잘하게 됐다는 결과를 내놨다. 새 사실보다 새 학습 신호 — **RLHF가 아닌 RLCF(Reinforcement Learning from Community Feedback)** — 가 이 논문의 진짜 기여다.

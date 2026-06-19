@@ -6,7 +6,8 @@ categories: [building-with-ai]
 tags: [claude-code, crawling, incremental, watermark, idempotency, python]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-06-20 05:48:38 +09:00
 ---
 
 ## 0. 매일 도는 수집기는 어제 것을 다시 받지 않아야 한다

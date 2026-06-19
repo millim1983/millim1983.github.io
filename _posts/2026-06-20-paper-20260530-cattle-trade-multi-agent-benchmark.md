@@ -5,7 +5,8 @@ subtitle: "Cattle Trade: A Multi-Agent Benchmark for LLM Bluffing, Bidding, and 
 categories: [paper-review]
 tags: [llm-agent, benchmark, multi-agent, bargaining, evaluation, paper-review]
 toc: true
-status: ready
+status: published
+date: 2026-06-20 05:48:39 +09:00
 ---
 
 > **TL;DR** — 7개의 비용 효율적 LLM과 3개의 결정론적 코드 에이전트가 50~60턴짜리 경제 게임에서 경매·협상·블러핑을 동시에 한다. **휴리스틱 코드 에이전트가 대다수 LLM을 이겼다.** LLM의 주된 실패는 과다 입찰·자기 입찰·파산 위험 거래 개시. 모델 선택에 앞서 "에이전트가 진짜로 무엇을 못 하는가"를 정확히 본 논문.

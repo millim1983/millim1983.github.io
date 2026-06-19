@@ -5,7 +5,8 @@ subtitle: "자율주행·휴머노이드 로봇이 만들어내는 데이터 양
 categories: [ax]
 tags: [physical-ai, autonomous-driving, humanoid, data, nvidia, waymo, tesla]
 toc: true
-status: draft
+status: published
+date: 2026-06-20 05:48:37 +09:00
 ---
 
 ## 0. 단위가 한 칸 옮겨갔다

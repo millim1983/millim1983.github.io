@@ -5,7 +5,8 @@ subtitle: "AI와 개발하기 시리즈 7편"
 categories: [building-with-ai]
 tags: [claude-code, ssot, deduplication, crawling, scope, architecture]
 toc: true
-status: draft
+status: published
+date: 2026-06-20 05:48:38 +09:00
 ---
 
 ## 0. 자동화가 잘 굴러갈수록 같은 공고를 네 번 받는다
