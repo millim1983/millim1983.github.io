@@ -97,7 +97,11 @@
 
 > 진행: 깊이 보강 백로그(NOTES) 먼저 끝낸 뒤, 위 신규 글감을 OD1→OD4, KR1→KR3 순으로. 각 글 웹검색으로 제품·수치·코드 확보 후 작성.
 
-> **2026-06-20 발행 완료(병렬 서브에이전트 작성→검수→발행)**: OD0 `ax-hw0-formfactor-glossary`, OD1 `ax-07-ota-edge`, KR1 `kr-01-ontology-knowledge-graph`, KR3 `kr-03-neurosymbolic-ai` 4편. **남은 신규**: OD2 포팅(`ax-08`), OD3 프레임워크·경량화 코드(`ax-09`), OD4 하드웨어 시리즈(`ax-10` HW1 서버 H200/B200~), KR2 GraphRAG(`kr-02`). 두 클러스터 병렬 계속.
+> **2026-06-20 발행 완료(병렬 서브에이전트 작성→검수→발행)**:
+> - 1차: OD0 `ax-hw0-formfactor-glossary`, OD1 `ax-07-ota-edge`, KR1 `kr-01-ontology-knowledge-graph`, KR3 `kr-03-neurosymbolic-ai`
+> - 2차: OD2 `ax-08-ondevice-porting`, OD3 `ax-09-ondevice-frameworks-code`, OD4-HW1 `ax-10-hw1-server`(서버 H200·B200/GB200·MI300·TPU), KR2 `kr-02-graphrag`
+> - **지식·추론 클러스터(KR1~KR3) 완료.** 온디바이스 핵심(OD0~OD3) 완료.
+> - **남은 신규**: 하드웨어 시리즈 HW2 워크스테이션(`ax-11`), HW3 엣지박스(`ax-12`)(HW4 온디바이스=ax-06로 갈음). 그 외 IDEAS 트랙 B/C/D 평시 큐.
 
 ## 트랙 C — 기초 개념 학습 (천천히, 짬내서)
 
