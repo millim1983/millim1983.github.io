@@ -101,7 +101,8 @@
 > - 1차: OD0 `ax-hw0-formfactor-glossary`, OD1 `ax-07-ota-edge`, KR1 `kr-01-ontology-knowledge-graph`, KR3 `kr-03-neurosymbolic-ai`
 > - 2차: OD2 `ax-08-ondevice-porting`, OD3 `ax-09-ondevice-frameworks-code`, OD4-HW1 `ax-10-hw1-server`(서버 H200·B200/GB200·MI300·TPU), KR2 `kr-02-graphrag`
 > - **지식·추론 클러스터(KR1~KR3) 완료.** 온디바이스 핵심(OD0~OD3) 완료.
-> - **남은 신규**: 하드웨어 시리즈 HW2 워크스테이션(`ax-11`), HW3 엣지박스(`ax-12`)(HW4 온디바이스=ax-06로 갈음). 그 외 IDEAS 트랙 B/C/D 평시 큐.
+> - 3차(2026-06-21): HW2 워크스테이션 `ax-11-hw2-workstation`, HW3 엣지박스 `ax-12-hw3-edge-box` 발행. **하드웨어 시리즈(HW0~HW3 + 온디바이스 ax-06) 완료.**
+> - **온디바이스 클러스터·지식추론 클러스터·하드웨어 시리즈 3개 다 소진.** 다음은 IDEAS 평시 큐: 시리즈 미작성분(0편 서문·3편 AJAX분석·4편 CP949·9편 종결), 트랙 B 트렌드, 트랙 D 논문(D5~), 트랙 C 기초(basics-nodejs 등). 아이 교육글은 `/edu-post` 세션.
 
 ## 트랙 C — 기초 개념 학습 (천천히, 짬내서)
 
