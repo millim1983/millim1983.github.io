@@ -187,16 +187,16 @@
 
 | 회차 | 슬러그 | 상태 |
 |---|---|---|
-| 0편 (서문) | `series-intro-ai-pair-development` | draft (미발행) |
+| 0편 (서문) | `series-intro-ai-pair-development` | **발행 (2026-06-21)** |
 | 1편 | `01-three-layers-of-data-source` | **published** (2026-05-27) |
 | 2편 | `02-requests-session-cookie` | **draft** (검토 대기) |
-| 3편 | `03-ajax-endpoint-analysis` | pending |
-| 4편 | `04-cp949-zip-encoding` | pending |
+| 3편 | `03-ajax-endpoint-analysis` | **발행 (2026-06-21)** |
+| 4편 | `04-cp949-zip-encoding` | **발행 (2026-06-21)** |
 | 5편 | `05-incremental-watermark` | **초안 작성됨 (ready, 2026-06-19)** `_drafts/deep/`. 워터마크·미래날짜 함정·보정모드. mermaid 도식 포함 |
 | 6편 | `06-data-lifetime-separation` | **draft** (2026-05-30 작성) |
 | 7편 | `07-ssot-decision` | **draft** (2026-05-29 작성) |
 | 8편 | `08-double-click-ux` | **draft** (2026-05-29 작성) |
-| 9편 (종결) | `09-what-remains-for-humans` | pending — 1~8편 마친 뒤 |
+| 9편 (종결) | `09-what-remains-for-humans` | **발행 (2026-06-21)** |
 
 다음 시리즈 회차 우선순위는 `SERIES_OUTLINE.md` 하단 표 참고.
 
