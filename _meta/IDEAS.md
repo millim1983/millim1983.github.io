@@ -175,7 +175,8 @@
 | D2 | `paper-20260530-cattle-trade-multi-agent-benchmark` | **초안 작성됨 (ready, 2026-05-30)** | D1 다음 12:00 |
 | D3 | `paper-20260530-llm-agent-evaluation-survey` | **초안 작성됨 (ready, 2026-05-30)** | D2 다음 12:00 |
 | D4 | `paper-20260603-ai-scientific-taste` | **초안 작성됨 (ready, 2026-06-03)** `_drafts/paper/` | D3 다음 12:00 |
-| D5 | (다음 작성 차례 — 매일 1편 페이스) | pending | 미정 |
+| D5 | `paper-20260621-ttt-e2e-long-context` (TTT-E2E, arXiv 2512.23675) | **발행 (2026-06-21)** | 6축 리뷰, mermaid 도식(inner/outer loop). 자료 `_meta/references/papers/2512.23675/` |
+| D6 | (다음 차례 — 매일 1편 페이스) | pending | 후보: TTT-E2E 외 B(Why Reasoning Fails to Plan), C(KLong), D(WAMs) 등 |
 
 > **트랙 D 운영 규칙**: 매일 새 세션 시작 시 Claude가 먼저 arXiv·OpenReview·랩 블로그 트렌드를 1회 WebSearch로 훑고, 가장 적합한 1편을 선정해 사용자에게 후보 1~3개 보고 → 사용자가 1개 고르면 본문 작성 진입. 사용자가 *"오늘 논문 뭐 골랐어?"* 또는 *"논문 리뷰 써줘"* 라고 하면 트리거.
 
