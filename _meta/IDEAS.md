@@ -269,3 +269,4 @@ _drafts/
 ├── paper/      # 논문 리뷰 전용 (트랙 D)
 └── auto/       # (예비) 옵션 3 부활 시 자동 생성 글이 떨어질 자리. 지금은 비활성.
 ```
+> 2026-06-21~25 에이전트 클러스터 발행 완료: AG1 agent-01-architecture, AG2 agent-02-build-methodology, AG3 agent-03-design-patterns, AG4 agent-04-memory, AG5 agent-05-eval-observability, AG6 paper-20260621-why-reasoning-fails-to-plan(논문 D6, arXiv 2601.22311). 도식+예시코드 포함, 검수(AI기여도 메타·핫링크 제거) 후 발행.
