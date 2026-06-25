@@ -276,3 +276,9 @@ _drafts/
 - mcp-02-build-and-secure (서버 만들기·OAuth·tool poisoning·생태계)
 - mcp-03-deploy-infra-cases (연결 방식·개발vs인프라·클라우드/로컬/G-Cloud 사례) ← 사용자 실무 질문 답
 전부 발행. 도식+코드+출처. 향후 확장 후보: 멀티에이전트 A2A, MCP Apps.
+
+## 2026-06-25 에이전트·프로토콜 확장 3편
+- agent-06-a2a-protocol (A2A=에이전트↔에이전트, Agent Card·Task, v1.0, MCP와 보완)
+- agent-07-multiagent-collaboration (토폴로지·토큰15배·90.2%, Anthropic vs Cognition)
+- agent-08-security (lethal trifecta·OWASP·EchoLeak CVE-2025-32711·Rule of Two)
+전부 발행. 에이전트 클러스터 AG1~AG8 + MCP 3부작 완성.
