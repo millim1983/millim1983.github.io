@@ -71,6 +71,19 @@
 
 > 2026-06-19 추가 지시: ① `trend-agent-building-blocks`에 **오케스트레이터** 섹션 추가(§5 신설, 네 부품→지휘층까지). ② NPU를 B5에서 B6으로 분리. ③ 발행된 4편에 mermaid 도식 보강. ④ PERSONA §10 이미지 표준 신설.
 
+## 2026-06-21 에이전트 클러스터 (사용자 지시)
+
+> 기본 아키텍처→구축방법론→설계패턴→메모리→평가·관측 + 논문/학술 이슈. 도식은 출처표기 mermaid 재구성 또는 예시코드 포함. 카테고리 building-with-ai(트렌드 글과 동일 계열), 논문은 paper-review.
+
+| # | 슬러그 | 한 줄 | 상태 |
+|---|---|---|---|
+| AG1 | `agent-01-architecture` | 에이전트 기본 아키텍처(LLM코어·도구·메모리·루프, ReAct/plan-execute) | pending |
+| AG2 | `agent-02-build-methodology` | 구축 방법론(프롬프트→도구→오케스트레이션, eval 주도, 반복) | pending |
+| AG3 | `agent-03-design-patterns` | 설계 패턴(ReAct·Reflexion·Plan-Execute·Router·Orchestrator-Worker·Evaluator-Optimizer) | pending |
+| AG4 | `agent-04-memory` | 에이전트 메모리(단기/장기·벡터·지식그래프, MemGPT 등) | pending |
+| AG5 | `agent-05-eval-observability` | 평가·관측(τ-bench·SWE-bench·GAIA, LangSmith·Langfuse·OTel) | pending |
+| AG6 | `paper-20260621-why-reasoning-fails-to-plan` | 논문 D6: Why Reasoning Fails to Plan (arXiv 2601.22311) | pending |
+
 ## 2026-06-20 사용자 글감 6종 (그루핑 확정)
 
 > 사용자 제안 6개를 두 클러스터 + 단독으로 묶음. 모두 ax 또는 building-with-ai, 깊이 기준 = ax-06(제품·수치·코드). #3 그루핑은 Claude가 정함(아래).
