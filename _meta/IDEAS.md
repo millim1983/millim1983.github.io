@@ -283,3 +283,23 @@ _drafts/
 - agent-07-multiagent-collaboration (토폴로지·토큰15배·90.2%, Anthropic vs Cognition)
 - agent-08-security (lethal trifecta·OWASP·EchoLeak CVE-2025-32711·Rule of Two)
 전부 발행. 에이전트 클러스터 AG1~AG8 + MCP 3부작 완성.
+
+## 2026-06-26 성능평가 카테고리 (사용자 지시) — 1차 자료조사 단계
+> 새 카테고리 `performance-eval`(CATEGORIES §11). **한 번에 글 쓰지 않음.** 도메인별 1차 자료조사(서브에이전트) → 조사 결과 보고 → 글 구성 방향(1글=1주제 다지표 vs 1지표=여러 모델 비교) 결정 → 작성.
+> 조사 도메인 5종 → `_meta/references/performance-eval/`: vision-models, multimodal-llm, ondevice-npu, agent-systems(+제조 멀티에이전트), classic-platform-db.
+> 각 도메인: 지표명·정의·측정방식·평가환경·대표벤치마크·세계최고/국내최고 수준(수치+출처)·개발기간별(1/2/3년) 목표 제안.
+
+## 설계·디자인 패턴 글감 (design-architecture, 카테고리 #3 — 아직 0편. 2026-06-26 메모)
+> 사용자: "디자인패턴 설계패턴 같은거 쓰기로 했었다". CATEGORIES §3 design-architecture. 에이전트 설계패턴(agent-03)과 별개의 "소프트웨어 설계·아키텍처 패턴".
+| # | 슬러그(잠정) | 한 줄 |
+|---|---|---|
+| DA1 | `design-solid` | SOLID 원칙 — AI가 짠 코드를 리뷰어 눈으로 읽기 |
+| DA2 | `design-gof-patterns` | GoF 디자인 패턴 카탈로그(Strategy·Factory·Adapter·Observer 등) + 실코드 매핑 |
+| DA3 | `design-plugin-adapter-arch` | 플러그인/어댑터 아키텍처(sites/<name>/ 격리 구조) |
+| DA4 | `design-dependency-inversion` | 의존성 역전(DIP)·헥사고날·레이어드 |
+| DA5 | `design-event-driven` | 이벤트 주도·트랜잭션 경계 |
+
+## 트랙 C 추가 글감 (기초)
+| # | 슬러그 | 한 줄 | 상태 |
+|---|---|---|---|
+| C6 | `basics-json` | JSON이란 무엇인가 — 데이터 교환 포맷, 쉬운 정의→스키마·직렬화·함정까지 | 작성 중(2026-06-26) |
