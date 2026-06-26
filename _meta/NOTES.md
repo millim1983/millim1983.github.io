@@ -203,3 +203,9 @@ _meta/references/
 ## 작성 규칙 변경 이력
 
 - **2026-06-01**: `_meta/PERSONA.md` §9 "AI 글쓰기 흔적 제거" 추가. Wikipedia humanizer 가이드 중 한국어 유효 항목(의미 부풀리기·~며 연쇄·광고성 어휘·부정 평행구조·세 개 묶기 강박·동의어 순환·신호어·챗봇 잔재·em dash 남발 등 16개 항목)을 흡수. 새 글은 §9까지 적용해서 작성, 기존 ready 초안은 톤 일관성 차원에서 그대로 유지.
+
+## 2026-06-26 빌드 실패 원인·해결 (중요)
+- 증상: push는 되는데 사이트가 안 바뀜. "Build and Deploy" 워크플로의 **Build site(jekyll build) 단계가 2026-06-20부터 매번 실패**.
+- 원인: `_posts/2026-06-20-paper-20260530-llm-agent-industry-survey.md`의 `{% post_url 2026-05-28-ax-03-physical-ai-petabyte %}` Liquid 태그가 실제 발행 파일명(2026-06-20-ax-03-...)과 안 맞아 Jekyll이 해석 실패 → 빌드 전체 중단. 그동안 쌓인 글이 라이브에 반영 안 됨.
+- 해결: 일반 경로 링크 `/ax/ax-03-physical-ai-petabyte/`로 교체(commit a50b920) → 빌드 success, 밀린 글 전부 한 번에 반영.
+- **교훈/규칙: 글 사이 링크에 `{% post_url %}` 쓰지 말 것. 발행 파일명(날짜)이 어긋나면 빌드가 통째로 깨진다. 항상 permalink 경로 `/<category>/<slug>/`로 직접 링크.** 코드/본문에 `{{`·`{%`가 들어가면 빌드 깨지므로 주의(서브에이전트 글 검수 시 grep 점검 추가).
