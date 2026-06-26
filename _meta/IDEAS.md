@@ -125,7 +125,7 @@
 |---|---|---|---|---|---|
 | C1 | `basics-ajax` | questions | AJAX란 무엇인가 — 화면 새로고침 없이 서버와 대화하는 방식 | **초안 작성됨 (ready, 2026-05-30)** `_drafts/light/basics-ajax.md` | 800~1500자 |
 | C2 | `basics-rest-api` | questions | REST API란 무엇인가 — 자원에 HTTP 메서드를 매핑하는 약속 | **초안 작성됨 (ready, 2026-06-01)** `_drafts/light/basics-rest-api.md` | 1500~1800자 |
-| C3 | `basics-nodejs` | questions 또는 신설 | Node.js란 무엇인가 — 브라우저 밖으로 나간 자바스크립트 | pending | 1000~1800자 |
+| C3 | `basics-nodejs` | questions | Node.js — 이벤트루프·논블로킹·CJS/ESM·공급망까지 | **발행 (2026-06-26)** | 1000~1800자 |
 | C4 | `basics-http-status-codes` | questions | HTTP 상태 코드 정리 — 200·301·401·403·404·429·500의 의미와 만났을 때의 대응 | **초안 작성됨 (ready, 2026-05-30)** `_drafts/light/basics-http-status-codes.md` | 1000~2000자 |
 | C5 | (사용자 추가 자리) | — | (예: "JSON이 뭔지", "쿠키와 세션", "DNS와 도메인", "환경변수", "포트와 호스트") | — | — |
 
@@ -189,7 +189,8 @@
 | D3 | `paper-20260530-llm-agent-evaluation-survey` | **초안 작성됨 (ready, 2026-05-30)** | D2 다음 12:00 |
 | D4 | `paper-20260603-ai-scientific-taste` | **초안 작성됨 (ready, 2026-06-03)** `_drafts/paper/` | D3 다음 12:00 |
 | D5 | `paper-20260621-ttt-e2e-long-context` (TTT-E2E, arXiv 2512.23675) | **발행 (2026-06-21)** | 6축 리뷰, mermaid 도식(inner/outer loop). 자료 `_meta/references/papers/2512.23675/` |
-| D6 | (다음 차례 — 매일 1편 페이스) | pending | 후보: TTT-E2E 외 B(Why Reasoning Fails to Plan), C(KLong), D(WAMs) 등 |
+| D6 | `paper-20260621-why-reasoning-fails-to-plan` | **발행 (2026-06-25)** | FLARE, 6축, 도식 |
+| D7 | `paper-20260626-reasoning-agentic-rag` (arXiv 2506.10408) | **발행 (2026-06-26)** | System1/2 분류 서베이, taxonomy 도식 |
 
 > **트랙 D 운영 규칙**: 매일 새 세션 시작 시 Claude가 먼저 arXiv·OpenReview·랩 블로그 트렌드를 1회 WebSearch로 훑고, 가장 적합한 1편을 선정해 사용자에게 후보 1~3개 보고 → 사용자가 1개 고르면 본문 작성 진입. 사용자가 *"오늘 논문 뭐 골랐어?"* 또는 *"논문 리뷰 써줘"* 라고 하면 트리거.
 
