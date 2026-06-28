@@ -313,3 +313,7 @@ _drafts/
   | `mcp-use-blender-series` | Blender MCP 연결·활용 | 자료 준비 시 착수 |
   | `mcp-use-unity-series` | Unity MCP 연결·활용 | 자료 준비 시 착수 |
 - **라즈베리파이 피지컬 AI 시리즈** `rpi-physical-ai-series`: 재료 구매부터 → 피지컬 AI 개발. ★재료 구매·준비 중. 정기 체크인 대상.
+
+## 2026-06-28~29 발행
+- 논문 D9 `paper-20260628-verification-horizon` (The Verification Horizon, arXiv 2606.26300 Qwen팀) — 검증>생성, 보상해킹 수치. 블로그 명제와 정합.
+- `skills-review-2026` (building-with-ai) — Agent Skills 리뷰: 공식(docx/pdf/pptx/xlsx·skill-creator·mcp-builder)+커뮤니티(superpowers 등)+보안 비판(출처불명 스킬 위험).
