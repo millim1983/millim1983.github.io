@@ -317,3 +317,39 @@ _drafts/
 ## 2026-06-28~29 발행
 - 논문 D9 `paper-20260628-verification-horizon` (The Verification Horizon, arXiv 2606.26300 Qwen팀) — 검증>생성, 보상해킹 수치. 블로그 명제와 정합.
 - `skills-review-2026` (building-with-ai) — Agent Skills 리뷰: 공식(docx/pdf/pptx/xlsx·skill-creator·mcp-builder)+커뮤니티(superpowers 등)+보안 비판(출처불명 스킬 위험).
+
+## 2026-09-08 큐 재충전 (약 2개월 공백 후 세션 재개)
+
+> 사용자 지시: ① 최근 제안서 작업 주제인 **핵심 기술 설계** 위주 ② 논문 리뷰 ③ 교육 시리즈(블록코딩·AI비전·아두이노)를 **교재처럼**.
+> 보류: 라즈베리파이 피지컬AI(진행 못 함), 영어·한자 학습툴 스토리(진행 안 함), MCP 활용 시리즈(자료 대기).
+> 페르소나 §2 준수: 발주처·사업명·소속을 드러내지 않고 일반화한 설계 스터디 노트로 작성.
+
+**기술설계 클러스터 (deep, ARCH1~5) - 전부 초안 작성됨(ready)**
+
+| # | 슬러그 | 카테고리 | 한 줄 | 상태 |
+|---|---|---|---|---|
+| ARCH1 | `arch-01-legacy-integration` | design-architecture | 이종 레거시 수십 개 연계 설계. 접근성 등급 A~D · CDC · 망분리 · 표준화 · 재처리 | 초안(ready) 2026-09-08 |
+| ARCH2 | `arch-02-edge-fleet-control` | ax | 엣지 장비 수백 대 관제. 제어/데이터 평면 분리 · X.509 · MQTT · 섀도우 · 오프라인 내성 | 초안(ready) 2026-09-08 |
+| ARCH3 | `arch-03-ground-truth-design` | ax | 정답 없는 판정에 GT 만들기. 기준시험(VBN) · 라벨 지침 · kappa · 불균형 · 누수 | 초안(ready) 2026-09-08 |
+| ARCH4 | `arch-04-risk-scoring-design` | ax | 위험도 점수·조기경보 설계. NEWS2 · 캘리브레이션 · 비용행렬 · 경보예산 · 드리프트 | 초안(ready) 2026-09-08 |
+| ARCH5 | `arch-05-space-people-analytics` | ax | 영상 행동분석 설계. DORI · 호모그래피 · ByteTrack · Fruin LOS · 개인정보 | 초안(ready) 2026-09-08 |
+
+> ARCH 클러스터 후속 후보: 데이터 레이크/저장 계층 설계, 대시보드·지표 설계, 시스템 운영(SLA·이관) 설계, 요구사항을 구현 항목으로 전개하는 방법.
+
+**교육 시리즈 (deep, coding-education, EDU0~3) - 전부 초안 작성됨(ready)**
+
+| # | 슬러그 | 한 줄 | 상태 |
+|---|---|---|---|
+| EDU0 | `edu-00-curriculum-roadmap` | 3단계 커리큘럼 설계(블록→AI비전→아두이노) · 평가 관점 3종 | 초안(ready) 2026-09-08 |
+| EDU1 | `edu-01-block-coding` | 블록코딩 교재편 6회차 · 어른의 질문 목록 · 디버깅 훈련 | 초안(ready) 2026-09-08 |
+| EDU2 | `edu-02-ai-vision` | AI비전 교재편 5회차 · Teachable Machine · 일부러 속이기 · 기준 정하기 | 초안(ready) 2026-09-08 |
+| EDU3 | `edu-03-arduino` | 아두이노 교재편 6회차 · 4층 디버깅 · Web Serial로 EDU2와 연결 | 초안(ready) 2026-09-08 |
+
+> A3(분리수거 도우미)와 겹치지 않는다. A3는 단일 프로젝트형 튜토리얼, EDU 시리즈는 단계별 교재형. A3는 EDU2 이후의 심화 프로젝트로 배치 가능.
+
+**논문 리뷰 (paper)**
+
+| # | 슬러그 | 상태 |
+|---|---|---|
+| D10 | `paper-20260817-freetoken-edge-moe` (FreeToken, arXiv 2608.16157) | 초안(ready) 2026-09-08. 엣지 MoE 서빙. 자료 `_meta/references/papers/2608.16157/` |
+| D11 | `paper-20260824-prime-agent-rlm-harness` (Prime Agent, arXiv 2608.23552) | 초안(ready) 2026-09-08. 자기개선 하네스. 자료 `_meta/references/papers/2608.23552/` |
