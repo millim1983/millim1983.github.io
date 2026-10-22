@@ -6,7 +6,8 @@ categories: [paper-review]
 tags: [paper-review, agent, harness, claude-code, subagent, memory, skills, arc-agi, reward-hacking]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-10-22 10:20:40 +09:00
 ---
 
 ## TL;DR

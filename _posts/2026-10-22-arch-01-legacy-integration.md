@@ -6,7 +6,8 @@ categories: [design-architecture]
 tags: [system-integration, legacy, cdc, kafka, etl, network-separation, data-standardization, architecture]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-10-22 10:20:37 +09:00
 ---
 
 ## "통합"이라는 단어가 감추는 것

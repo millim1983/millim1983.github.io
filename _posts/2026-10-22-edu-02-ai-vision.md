@@ -6,7 +6,8 @@ categories: [coding-education]
 tags: [coding-education, ai-vision, teachable-machine, tensorflow-js, dataset, labeling, teaching]
 toc: true
 mermaid: false
-status: ready
+status: published
+date: 2026-10-22 10:20:39 +09:00
 ---
 
 ## 이 단계가 다른 이유

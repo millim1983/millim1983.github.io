@@ -6,7 +6,8 @@ categories: [coding-education]
 tags: [coding-education, block-coding, entry, scratch, curriculum, debugging, teaching]
 toc: true
 mermaid: false
-status: ready
+status: published
+date: 2026-10-22 10:20:39 +09:00
 ---
 
 ## 무엇을 고를 것인가 - 엔트리와 스크래치

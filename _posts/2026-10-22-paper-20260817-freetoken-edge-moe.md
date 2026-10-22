@@ -6,7 +6,8 @@ categories: [paper-review]
 tags: [paper-review, moe, on-device, edge-ai, inference, serving, llama-cpp, ktransformers, quantization]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-10-22 10:20:39 +09:00
 ---
 
 ## TL;DR

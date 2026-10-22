@@ -353,3 +353,21 @@ _drafts/
 |---|---|---|
 | D10 | `paper-20260817-freetoken-edge-moe` (FreeToken, arXiv 2608.16157) | 초안(ready) 2026-09-08. 엣지 MoE 서빙. 자료 `_meta/references/papers/2608.16157/` |
 | D11 | `paper-20260824-prime-agent-rlm-harness` (Prime Agent, arXiv 2608.23552) | 초안(ready) 2026-09-08. 자기개선 하네스. 자료 `_meta/references/papers/2608.23552/` |
+
+## 2026-10-21 이차전지 분야 클러스터 (BAT1~7, 사용자 지시)
+
+> 사용자 지시: 최근 업무 자료(멀티에이전트 조사, 자동차부품 공정 조사, 공개 R&D 공고)를 글감으로 쓰되, 이차전지 분야와 연관된 주제에 집중. 특정 기업명은 쓰지 않고 분야에 집중.
+> 원천이 다른 업종 라인 설계인 글(BAT3·6·7)은 본문에 유추임을 밝혔다.
+
+| # | 슬러그 | 카테고리 | 한 줄 | 상태 |
+|---|---|---|---|---|
+| BAT1 | `bat-01-battery-parts-by-process` | ax | 배터리 부품 15개를 공정군 5갈래로, AI 입력 스키마는 공정군이 정한다 | 초안(ready) |
+| BAT2 | `bat-02-pack-assembly-line-data` | ax | 모듈·팩 조립 데이터 지도: 토크-각도, 누설, 절연, EOL, DMC 계보, 배터리 여권 | 초안(ready) |
+| BAT3 | `bat-03-bms-smt-aoi-false-call` | ax | BMS 보드 SMT AOI 가성불량 AI 재판정, 슬립을 늘리지 않는 운영 | 초안(ready) |
+| BAT4 | `bat-04-used-battery-nondestructive-diagnosis` | ax | 사용후 배터리 15분 비파괴 진단 목표치 해석: SOH·RUL, EIS·ICA·DCIR, 순환경로 | 초안(ready) |
+| BAT5 | `bat-05-sodium-ion-ess-grid-forming` | ax | 나트륨이온 ESS와 그리드포밍, VPP·VPL, UL 9540A | 초안(ready) |
+| BAT6 | `bat-06-cell-vision-inspection-recall-first` | ax | 전극·셀 외관검사는 Recall부터, 연속 웹 공정에서 바뀌는 것 | 초안(ready) |
+| BAT7 | `bat-07-ai-judges-rules-execute` | design-architecture | 화성·에이징 라인 멀티에이전트: AI는 판단, 실행은 룰·인터락, L0~L4 | 초안(ready) |
+
+> 후속 후보: 전극 공정(코팅·캘린더링) 공정변수와 AI, 화성·에이징 데이터로 불량 셀 조기 선별, 열폭주 조기 감지(가스·온도 센서), 전고체 전지 공정 차이. 원천에 직접 자료가 없어 별도 조사 필요.
+> 보류(이번에 안 씀): Docker·YAML 기초글(노션 7/9 메모), 운영일지(OneDrive 동기화, PS5.1 BOM, PC간 환경 동기화, 세션 보관소).

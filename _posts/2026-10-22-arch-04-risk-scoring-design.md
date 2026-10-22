@@ -6,7 +6,8 @@ categories: [ax]
 tags: [risk-scoring, early-warning, calibration, threshold, alarm-fatigue, predictive-maintenance, evaluation]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-10-22 10:20:38 +09:00
 ---
 
 ## "위험을 조기에 탐지한다"를 시스템으로 옮기면

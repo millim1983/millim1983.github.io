@@ -6,7 +6,8 @@ categories: [coding-education]
 tags: [coding-education, curriculum, block-coding, entry, scratch, ai-vision, arduino, teaching]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-10-22 10:20:38 +09:00
 ---
 
 ## 왜 순서를 먼저 정하는가

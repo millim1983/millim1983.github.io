@@ -6,7 +6,8 @@ categories: [ax]
 tags: [computer-vision, object-detection, tracking, reid, crowd-density, dori, privacy, edge-ai]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-10-22 10:20:38 +09:00
 ---
 
 ## "영상으로 이용자 행동을 분석한다"가 요구하는 것

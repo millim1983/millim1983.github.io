@@ -6,7 +6,8 @@ categories: [ax]
 tags: [edge-ai, iot, mqtt, device-shadow, ota, fleet-management, provisioning, on-device]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-10-22 10:20:37 +09:00
 ---
 
 ## 1대에서 되는 것과 300대에서 되는 것

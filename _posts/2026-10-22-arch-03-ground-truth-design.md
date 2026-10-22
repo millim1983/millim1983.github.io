@@ -6,7 +6,8 @@ categories: [ax]
 tags: [ground-truth, labeling, dataset, cohen-kappa, class-imbalance, data-leakage, vision, evaluation]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-10-22 10:20:37 +09:00
 ---
 
 ## "AI로 신선도를 판정한다"가 요구하는 것
@@ -100,7 +101,7 @@ kappa가 낮게 나왔을 때 하는 일은 라벨러를 바꾸는 게 아니라
 
 현장 데이터는 거의 항상 한쪽으로 쏠려 있다. 불량률 1%, 고장률 0.1%, 위험 상황 0.01%.
 
-이 상태에서 "정확도 99%"는 아무것도 안 하고 전부 정상이라고 답해도 나오는 숫자다. 그런데 제안서와 보고서에는 이 숫자가 자주 등장한다.
+이 상태에서 "정확도 99%"는 아무것도 안 하고 전부 정상이라고 답해도 나오는 숫자다. 그런데 기획 문서와 보고서에는 이 숫자가 자주 등장한다.
 
 불균형 데이터에서 봐야 할 지표는 이렇다.
 
