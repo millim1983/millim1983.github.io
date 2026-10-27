@@ -16,7 +16,7 @@ date: 2026-10-22 10:20:39 +09:00
 
 - arXiv: 2608.16157, 2026-08-17 제출, cs.DC, 16쪽
 - 저자: Shuo Yang, Xiaoze Fan, Melissa Pan, Haocheng Xi, Zhe Wang, Shanlin Sun, Kurt Keutzer, Song Han, Matei Zaharia, Chenfeng Xu, Ion Stoica
-- 코드: <http://flashml.ai>
+- 코드: <https://flashml.ai>
 
 ## 이 논문이 푸는 문제
 
@@ -151,6 +151,6 @@ TTFT는 평균보다 꼬리에서 갈린다.
 ## 출처
 
 - Yang, S., Fan, X., Pan, M., Xi, H., Wang, Z., Sun, S., Keutzer, K., Han, S., Zaharia, M., Xu, C., Stoica, I., "FreeToken: Efficient Edge-Native MoE Serving with Bandwidth-Adaptive Execution", arXiv:2608.16157, 2026-08-17, <https://arxiv.org/abs/2608.16157>
-- 코드 공개: <http://flashml.ai>
+- 코드 공개: <https://flashml.ai>
 
 *※ 본문의 모든 수치(하드웨어 실측 대역폭 표, 디코드 77~83·22~25 tok/s와 1.8~2.3배·1.5~1.9배, 미스율 16/39 대 41/59 대 62/89%, 프리필 1.19~1.22초·6.7k tok/s·더블버퍼 해제 시 19/25/26% 손실, TTFT 44초 대 179·232·946초, 기계별 1.3~2.1배, 4060 랩톱 39.3 tok/s, GLM-5.2 14.9 대 7.3 tok/s, q star 비율 1:4)는 arXiv 본문 기준이다. 실무 함의 네 가지는 내가 해석한 것이다.*

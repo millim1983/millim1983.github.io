@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   publish:
@@ -29,6 +30,7 @@ jobs:
         continue-on-error: true
 
       - name: Commit & push if changed
+        id: push
         if: steps.pub.outcome == 'success'
         run: |
           set -e
@@ -38,6 +40,15 @@ jobs:
             git add _posts _drafts
             git commit -m "auto-publish: light"
             git push
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
           else
             echo "no changes to commit"
           fi
+
+      # GITHUB_TOKEN 으로 만든 push 는 다른 워크플로를 실행하지 않는다.
+      # 발행 커밋이 생겼으면 배포 워크플로를 직접 실행해 사이트에 반영한다.
+      - name: Trigger site deploy
+        if: steps.push.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages-deploy.yml --ref main
