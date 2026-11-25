@@ -247,3 +247,11 @@ _meta/references/
 - ✅ 「AI와 개발하기」 9편(0~9) 완결 — 단, 제목이 정의서 톤이라 다음부터 개선.
 - ✅ 「정의하는 사람」 0~7편 완결(2026-06-26). 훅 제목+척추+정의력 수렴 구조. 다음 시리즈는 MCP/라즈베리파이(자료 대기).
 - ⏳ MCP 활용(Figma/Blender/Unity)·라즈베리파이 피지컬AI 시리즈 — 자료 대기(위 정기 체크인).
+
+## 2026-11-25 발행 중단 재발 원인 · 조치
+- 증상: 10-22 이후 한 달간 발행 0건. 발행 워크플로는 매일 "성공"이었지만 로그는 "발행할 글 없음, 스킵"
+- 원인 1: 10-22 에 쓴 deep 초안 10편이 로컬에만 있고 push 되지 않음 (9/8 분에 이어 두 번째)
+- 원인 2: 새 초안의 내부 링크가 `/posts/<slug>/` 형식. 사이트 permalink 는 `/:categories/:title/` 라 htmlproofer 에서 배포 실패
+- 조치: push(`dde35a8`), 링크 36개 수정(`edb2623`), 배포 성공과 fd-01 공개(200) 확인. 원문 PDF 는 .gitignore 로 제외
+- 규칙: 초안을 쓰면 같은 작업에서 push 한다. 내부 링크는 `/<category>/<slug>/`. push 전 `C:\Users\kbj\projects\content-ops\tools\fix_post_links.py` 로 점검
+- 통합 관리 폴더: `C:\Users\kbj\projects\content-ops\` (블로그 + 유튜브, 현황 보드 status.py)
