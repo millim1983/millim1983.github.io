@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "에이전트 설계 패턴 카탈로그 - ReAct부터 Evaluator-Optimizer까지"
+title: "AI 에이전트 설계 패턴 (ReAct, Evaluator-Optimizer)"
 subtitle: "고정된 흐름과 자율적 판단 사이, 어느 패턴에 일을 맡길지 고르는 자리"
 categories: [building-with-ai]
 tags: [agent, design-patterns, react, reflexion, plan-execute, orchestrator-worker, evaluator-optimizer, anthropic]

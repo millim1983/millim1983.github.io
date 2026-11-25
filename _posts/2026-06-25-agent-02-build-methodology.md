@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "에이전트는 단순하게 시작해 평가로 키운다"
+title: "AI 에이전트 개발 방법론 (워크플로, 평가)"
 subtitle: "워크플로로 되는 일에 자율 루프를 쓰지 않는다 - 복잡도는 평가가 요구할 때만 올린다"
 categories: [building-with-ai]
 tags: [agent, eval-driven, workflow, guardrails, human-in-the-loop, prompt-chaining, anthropic]

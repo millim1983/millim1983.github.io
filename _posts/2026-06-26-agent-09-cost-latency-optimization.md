@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "에이전트 비용·지연 최적화 - 토큰과 시간을 줄이는 실전"
+title: "AI 에이전트 비용과 지연 시간 최적화"
 subtitle: "정확도만큼이나 비용과 지연이 에이전트를 운영할 수 있는지 없는지를 가른다"
 categories: [building-with-ai]
 tags: [agent, cost-optimization, latency, prompt-caching, model-routing, semantic-cache, batch-api, speculative-decoding, ttft]

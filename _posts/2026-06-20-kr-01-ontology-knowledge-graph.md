@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "온톨로지·지식그래프·그래프DB - 지식을 데이터로 표현하는 세 층위"
+title: "온톨로지, 지식그래프, 그래프 DB 개념 비교"
 subtitle: "무엇이 스키마이고, 무엇이 데이터이고, 무엇이 저장소인가"
 categories: [ax]
 tags: [knowledge-graph, ontology, graph-database, rdf, sparql, cypher, neo4j, llm]

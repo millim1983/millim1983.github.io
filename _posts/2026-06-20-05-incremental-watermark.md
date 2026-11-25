@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "증분 수집 - 워터마크와 상태 기반 스킵, 그리고 미래 날짜의 함정"
+title: "증분 수집 설계 (워터마크, 중복 방지)"
 subtitle: "AI와 개발하기 시리즈 5편"
 categories: [building-with-ai]
 tags: [claude-code, crawling, incremental, watermark, idempotency, python]

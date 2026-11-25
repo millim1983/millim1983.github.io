@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AJAX 엔드포인트를 분석한다는 것 - 그리고 어디까지가 적절한가"
+title: "AJAX 엔드포인트 분석과 비공식 API 호출 한도 설정"
 subtitle: "AI와 개발하기 시리즈 3편"
 categories: [building-with-ai]
 tags: [claude-code, ajax, crawling, ethics, rate-limit, python]

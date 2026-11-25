@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문 리뷰] LLM은 협상을 못 한다 - Cattle Trade 벤치마크가 보여준 것"
+title: "[논문 리뷰] Cattle Trade 벤치마크와 LLM 협상 능력"
 subtitle: "Cattle Trade: A Multi-Agent Benchmark for LLM Bluffing, Bidding, and Bargaining (arXiv:2605.14537)"
 categories: [paper-review]
 tags: [llm-agent, benchmark, multi-agent, bargaining, evaluation, paper-review]

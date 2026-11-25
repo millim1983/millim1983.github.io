@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "임시 데이터와 영구 데이터는 같은 폴더에 두면 안 된다 - 수명 분리 설계"
+title: "데이터 수명주기별 저장소 분리 설계"
 subtitle: "AI와 개발하기 시리즈 6편"
 categories: [building-with-ai]
 tags: [claude-code, data-lifetime, architecture, paths, operations]

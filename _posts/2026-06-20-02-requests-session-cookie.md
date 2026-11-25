@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "같은 HTTP인데 왜 빈 배열을 받는가 - requests.Session과 세션 쿠키"
+title: "Python requests 세션 쿠키 처리 (requests.Session)"
 subtitle: "AI와 개발하기 시리즈 2편"
 categories: [building-with-ai]
 tags: [claude-code, python, requests, http, session, cookie, crawling, debugging]

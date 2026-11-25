@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "현장 이미지를 학습 데이터셋으로 만드는 방법"
+title: "제조 비전 이미지 데이터셋 구축 (라벨 품질, 어노테이션)"
 subtitle: "촬영 설계에서 라벨 품질 관리, 결함 희소성, 중복 제거, 문서화까지 정리한 스터디 노트"
 categories: [ax]
 tags: [image-dataset, annotation, label-noise, confident-learning, active-learning, anomaly-detection, data-augmentation, datasheets]

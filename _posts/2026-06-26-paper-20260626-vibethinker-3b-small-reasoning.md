@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문리뷰] VibeThinker-3B - 3B 모델이 '검증 가능한 추론'에서 거대 모델을 따라잡는다"
+title: "[논문 리뷰] VibeThinker-3B 소형 추론 모델"
 subtitle: "VibeThinker-3B: Exploring the Frontier of Verifiable Reasoning in Small Language Models (arXiv 2606.16140)"
 categories: [paper-review]
 tags: [paper-review, small-language-model, reasoning, post-training, reinforcement-learning, on-device]

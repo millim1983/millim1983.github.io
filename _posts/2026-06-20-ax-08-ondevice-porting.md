@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "온디바이스 포팅 - 모델을 장치로 옮기는 변환 파이프라인"
+title: "온디바이스 AI 모델 포팅 파이프라인"
 subtitle: "학습이 끝난 모델과 장치에서 도는 모델 사이에는 변환 파이프라인이 하나 더 있다"
 categories: [ax]
 tags: [on-device, edge-ai, onnx, tensorrt, tflite, model-porting, deployment, npu]

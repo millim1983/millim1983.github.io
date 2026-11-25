@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "코딩 에이전트 시대, 사람에게 남는 일은 무엇인가 - 시리즈 서문"
+title: "코딩 에이전트 시대 사람의 역할"
 subtitle: "AI와 개발하기 시리즈 0편"
 categories: [building-with-ai]
 tags: [claude-code, ai-pair, series, intro]

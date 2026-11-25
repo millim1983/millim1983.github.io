@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A2A - 에이전트끼리 말하는 프로토콜 (MCP의 나머지 반쪽)"
+title: "A2A 프로토콜과 MCP 비교"
 subtitle: "MCP가 에이전트를 도구에 잇는다면, A2A는 에이전트를 다른 에이전트에 잇는다"
 categories: [building-with-ai]
 tags: [a2a, agent2agent, mcp, agent, protocol, interoperability, json-rpc, agent-card]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JSON이란 무엇인가 - 데이터를 주고받는 가장 흔한 포맷"
+title: "JSON 개념과 형식"
 subtitle: "키-값 텍스트라는 쉬운 정의에서 시작해 숫자 정밀도·인코딩·스키마 검증까지"
 categories: [questions]
 tags: [json, serialization, api, json-schema, ndjson, data-format, basics]

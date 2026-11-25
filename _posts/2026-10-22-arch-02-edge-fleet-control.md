@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "장비 1대는 되는데 300대는 안 되는 이유 - 엣지 플릿 관제 설계"
+title: "엣지 디바이스 플릿 관리 설계 (인증서, 섀도우, OTA)"
 subtitle: "데모와 운영을 가르는 건 인식 정확도가 아니라 프로비저닝·오프라인 내성·롤백이다"
 categories: [ax]
 tags: [edge-ai, iot, mqtt, device-shadow, ota, fleet-management, provisioning, on-device]

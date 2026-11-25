@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "온디바이스 비전을 떠받치는 칩 - NPU란 무엇인가"
+title: "NPU 구조와 엣지 AI 추론 칩 비교"
 subtitle: "모델을 아무리 줄여도, 그 모델을 빠르게 굴릴 칩이 없으면 소용없다"
 categories: [ax]
 tags: [npu, edge-ai, on-device, inference, hardware, quantization, accelerator]

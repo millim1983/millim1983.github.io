@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Node.js란 무엇인가 - 브라우저 밖으로 나간 자바스크립트"
+title: "Node.js 개념과 구조"
 subtitle: "V8 위의 런타임에서 시작해 이벤트 루프·논블로킹 I/O·단일 스레드의 함정까지"
 categories: [questions]
 tags: [nodejs, javascript, event-loop, libuv, npm, esm, runtime, basics]

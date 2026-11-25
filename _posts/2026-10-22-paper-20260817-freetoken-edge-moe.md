@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문리뷰] 753B 모델을 워크스테이션 한 대로 - FreeToken이 다시 짠 엣지 MoE 서빙"
+title: "[논문 리뷰] FreeToken, 엣지 MoE 모델 서빙"
 subtitle: "FreeToken: Efficient Edge-Native MoE Serving with Bandwidth-Adaptive Execution (arXiv 2608.16157)"
 categories: [paper-review]
 tags: [paper-review, moe, on-device, edge-ai, inference, serving, llama-cpp, ktransformers, quantization]

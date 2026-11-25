@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문 리뷰] AI에게 '연구 안목'을 가르치다 - 700K 인용 쌍으로 학습한 Scientific Judge"
+title: "[논문 리뷰] Scientific Judge, AI 연구 평가 모델"
 subtitle: "AI Can Learn Scientific Taste (arXiv:2603.14473)"
 categories: [paper-review]
 tags: [scientific-taste, rlcf, reward-modeling, qwen3, paper-review]

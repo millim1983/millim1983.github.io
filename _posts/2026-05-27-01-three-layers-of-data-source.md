@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "데이터 출처의 세 층위 - HTML·AJAX·공식 OpenAPI의 진짜 차이"
+title: "웹 데이터 수집 방식 비교 (HTML 스크래핑, AJAX, OpenAPI)"
 subtitle: "AI와 개발하기 시리즈 1편"
 categories: [building-with-ai]
 tags: [claude-code, crawling, openapi, ajax, html-scraping, python]

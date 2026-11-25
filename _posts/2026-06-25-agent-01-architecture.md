@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "에이전트의 내부 구조 - LLM 코어·도구·메모리·루프"
+title: "AI 에이전트 아키텍처 (LLM, 도구, 메모리, 루프)"
 subtitle: "챗봇은 한 번 답하고 끝나고, 에이전트는 관찰하고 다시 움직인다"
 categories: [building-with-ai]
 tags: [agent, react, plan-and-execute, tool-calling, function-calling, agent-loop, llm]

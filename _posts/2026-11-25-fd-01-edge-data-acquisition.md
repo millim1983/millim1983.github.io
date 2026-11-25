@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "공장 엣지에서 데이터를 읽는 방법론"
+title: "산업 IoT 엣지 데이터 수집 설계 (OPC UA, MQTT, Modbus)"
 subtitle: "프로토콜을 고르기 전에 샘플링 주기, 시각 기준, 품질 플래그를 먼저 정한다"
 categories: [ax]
 tags: [industrial-iot, opc-ua, mqtt, sparkplug, modbus, sampling, time-sync, data-quality]

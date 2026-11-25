@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "비전 기반 제조공정 에이전트 - 검사에서 판단까지"
+title: "제조 머신비전 AI 에이전트 (불량 검사, 이상 탐지)"
 subtitle: "머신비전이 '불량을 거르는 눈'에서 '공정을 읽는 에이전트'로 넘어가는 자리"
 categories: [ax]
 tags: [vision, manufacturing, machine-vision, agent, defect-detection, smart-factory, anomaly-detection]

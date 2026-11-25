@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "에이전트 보안 - 자율 시스템에 권한을 줄 때 생기는 일"
+title: "AI 에이전트 보안 위협과 권한 설계"
 subtitle: "도구를 쥔 에이전트의 잘못된 한 번은 글이 아니라 실제 행동이다"
 categories: [building-with-ai]
 tags: [agent, security, prompt-injection, lethal-trifecta, owasp, tool-poisoning, human-in-the-loop, sandbox]

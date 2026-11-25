@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "2단계 AI 비전 교재편 - 정답을 아이가 정하게 하는 다섯 회차"
+title: "초등 AI 비전 교재 (Teachable Machine)"
 subtitle: "분류기를 만드는 일은 모델을 학습시키는 일이 아니라 예시를 고르는 일이다"
 categories: [coding-education]
 tags: [coding-education, ai-vision, teachable-machine, tensorflow-js, dataset, labeling, teaching]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "내 PC에서만 도는 업무 도구들을 솔루션으로 바꾸려면"
+title: "개인 업무 자동화 도구의 솔루션화"
 subtitle: "업무 도구를 솔루션으로 시리즈 1편. 지금 가진 자산의 지도와 앞으로 기록할 과제 목록"
 categories: [building-with-ai]
 tags: [claude-code, solutionizing, workflow-automation, project-management, configuration, multi-tenancy, twelve-factor]

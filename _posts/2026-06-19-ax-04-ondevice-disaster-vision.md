@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "온디바이스 비전으로 재난을 탐지한다 - 자료조사와 엣지 AI 트렌드"
+title: "온디바이스 비전 AI 재난 탐지 기술 동향"
 subtitle: "산불·홍수를 '클라우드로 보내 판정'하지 않고 '현장에서 즉시 판정'하는 흐름"
 categories: [ax]
 tags: [on-device, edge-ai, computer-vision, disaster-detection, wildfire, flood, uav, satellite]

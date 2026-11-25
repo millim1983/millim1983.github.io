@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "정제된 데이터를 학습 데이터셋으로 만드는 방법"
+title: "학습 데이터셋 준비 파이프라인 (데이터 분할, 클래스 불균형, 데이터 검증)"
 subtitle: "분할 규칙, 누수, 불균형, 검증, 버전, 문서화를 한 줄의 파이프라인으로 묶는다"
 categories: [ax]
 tags: [data-centric-ai, data-leakage, train-test-split, class-imbalance, smote, data-validation, dvc, datasheets]

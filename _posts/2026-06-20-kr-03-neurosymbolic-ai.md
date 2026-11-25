@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "뉴로심볼릭 AI - 신경망의 직관과 기호의 논리를 잇기"
+title: "뉴로심볼릭 AI 개념과 구조"
 subtitle: "패턴은 신경망이 잡고, 옳고 그름은 기호 엔진이 검산한다"
 categories: [ax]
 tags: [neurosymbolic, llm, reasoning, theorem-proving, knowledge-graph, alphaproof, hallucination]

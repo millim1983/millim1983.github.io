@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "사람에게 남는 일 - 시리즈를 닫으며, 그리고 여러 프로젝트를 끌고 가는 법"
+title: "코딩 에이전트 시대 다중 프로젝트 운영"
 subtitle: "AI와 개발하기 시리즈 9편 (종결)"
 categories: [building-with-ai]
 tags: [claude-code, ai-pair, series, meta-automation, project-management]

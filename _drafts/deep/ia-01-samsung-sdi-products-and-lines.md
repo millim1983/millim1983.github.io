@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "삼성SDI는 무엇을 어디서 만드는가"
+title: "삼성SDI 사업 구조와 배터리 생산 거점"
 subtitle: "사업보고서와 회사 발표 원문으로 정리한 부문 구조, 제품군, 생산거점, 셀 공정"
 categories: [industry-analysis]
 tags: [battery, samsung-sdi, lithium-ion, cell-manufacturing, ess, solid-state-battery, industry-analysis]

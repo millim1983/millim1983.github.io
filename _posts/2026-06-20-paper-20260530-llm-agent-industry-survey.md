@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문 리뷰] LLM 에이전트가 산업으로 들어간 지도 - 구조 한 장으로 본 2026년 5월"
+title: "[논문 리뷰] LLM 에이전트 산업 적용 서베이"
 subtitle: "LLM-Powered AI Agent Systems and Their Applications in Industry (arXiv:2505.16120v2)"
 categories: [paper-review]
 tags: [llm-agent, survey, industry-application, mcp, rag, paper-review]

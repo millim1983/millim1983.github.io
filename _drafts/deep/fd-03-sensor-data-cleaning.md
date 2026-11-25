@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "센서 시계열을 학습 데이터로 바꾸는 정제의 순서"
+title: "센서 시계열 데이터 전처리 (결측, 이상치, 보간)"
 subtitle: "시간축을 맞추고, 비어 있는 곳과 튀는 곳을 구분하고, 지울 것과 남길 것을 나누는 일"
 categories: [ax]
 tags: [time-series, sensor-data, data-cleaning, missing-data, anomaly-detection, signal-filtering, data-leakage]

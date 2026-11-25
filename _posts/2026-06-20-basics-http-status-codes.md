@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HTTP 상태 코드 - 200·301·401·403·404·429·500을 만났을 때"
+title: "HTTP 상태 코드 정리 (200, 301, 401, 403, 404, 429, 500)"
 subtitle: "자주 만나는 7개에서 시작해 캐싱(304)·조건부 요청까지"
 categories: [questions]
 tags: [http, status-code, caching, etag, basics, debugging]

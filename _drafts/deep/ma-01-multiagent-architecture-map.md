@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "멀티에이전트 구조 지도와 빠져 있던 운영 설계"
+title: "멀티에이전트 아키텍처 운영 설계 (체크포인트, 핸드오프, Human-in-the-loop)"
 subtitle: "체크포인트, 핸드오프, 실패 분류, 승인 지점, 대체 경로를 한 장의 참조 아키텍처에 넣는다"
 categories: [building-with-ai]
 tags: [multi-agent, orchestration, checkpoint, handoff, human-in-the-loop, failure-taxonomy, fail-safe, langgraph]

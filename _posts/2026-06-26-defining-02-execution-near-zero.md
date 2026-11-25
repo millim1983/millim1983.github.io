@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "안 쓰면 이상한 시대 - 도구를 직접 붙여보고"
+title: "안 쓰면 이상한 시대, 도구를 직접 붙여 보고"
 subtitle: "정의하는 사람 - 2편"
 categories: [thoughts]
 tags: [정의하는사람, mcp, figma, blender, 실행비용]

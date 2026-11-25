@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문리뷰] Reasoning Agentic RAG - 검색이 추론을 운전하는가, 추론이 검색을 운전하는가"
+title: "[논문 리뷰] Reasoning Agentic RAG 서베이"
 subtitle: "Reasoning RAG via System 1 or System 2: A Survey on Reasoning Agentic RAG for Industry Challenges (arXiv 2506.10408)"
 categories: [paper-review]
 tags: [paper-review, rag, agentic-rag, reasoning, llm, retrieval-augmented-generation, survey]

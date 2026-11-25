@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "배터리 공장은 AI를 어디에 넣었다고 말하는가"
+title: "배터리 제조 AI 적용 사례 (삼성SDI, CATL, LG에너지솔루션, 파나소닉)"
 subtitle: "삼성SDI, CATL, LG에너지솔루션, 파나소닉의 공개 원문과 논문으로 본 이차전지 제조 AX"
 categories: [industry-analysis]
 tags: [battery, manufacturing-ai, smart-factory, lighthouse-network, battery-passport, formation, industry-analysis]

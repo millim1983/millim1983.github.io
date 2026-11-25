@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MCP 완전정복 1부 - 프로토콜과 아키텍처"
+title: "MCP(Model Context Protocol) 프로토콜과 아키텍처"
 subtitle: "M×N개의 접착 코드를 하나의 약속으로 줄인다 - 그 약속의 안쪽 구조"
 categories: [building-with-ai]
 tags: [mcp, model-context-protocol, json-rpc, agent, protocol, architecture, anthropic]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "멀티 에이전트가 기본값이 됐다 - 2026년 5월의 코딩 도구 풍경"
+title: "AI 코딩 도구의 멀티에이전트 전환 (2026년 5월)"
 subtitle: "도구가 도구를 다루기 시작한 시점"
 categories: [thoughts]
 tags: [claude-code, cursor, antigravity, copilot, multi-agent, trends]

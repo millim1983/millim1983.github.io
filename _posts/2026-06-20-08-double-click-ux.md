@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "더블클릭 한 번을 위한 설계 - 그리고 사람의 수고를 또 줄이는 시도"
+title: "업무 자동화 원클릭 실행 환경 구성"
 subtitle: "AI와 개발하기 시리즈 8편"
 categories: [building-with-ai]
 tags: [claude-code, automation, ux, batch, streamlit, settings-local, meta-automation]

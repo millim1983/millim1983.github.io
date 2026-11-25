@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "에이전트를 이루는 네 부품 - 훅·스킬·MCP·워크플로"
+title: "AI 에이전트 구성 요소 (훅, 스킬, MCP, 워크플로)"
 subtitle: "코딩 에이전트가 '대화 상자'에서 '운영 시스템'으로 넘어가는 자리"
 categories: [building-with-ai]
 tags: [claude-code, mcp, agent-skills, hooks, workflows, subagents, agentic]

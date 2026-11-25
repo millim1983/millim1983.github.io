@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MCP 완전정복 3부 - 어디에 두고 무엇을 연결하나 (배포·인프라·사례)"
+title: "MCP 배포와 인프라 구성 (클라우드 LLM, 로컬 LLM)"
 subtitle: "\"이 서비스에 MCP가 있다\"는 말부터 로컬 LLM에 도구를 물리는 다리까지, 인프라 관점으로 푼다"
 categories: [building-with-ai]
 tags: [mcp, model-context-protocol, infrastructure, deployment, ollama, local-llm, oauth, on-premise, g-cloud, gateway]

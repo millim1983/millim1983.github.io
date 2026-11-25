@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "1단계 블록 코딩 교재편 - 여섯 회차로 순서·반복·조건 익히기"
+title: "초등 블록 코딩 교재 (순서, 반복, 조건)"
 subtitle: "블록을 쌓는 법이 아니라 시킨 대로만 움직인다는 감각을 가르친다"
 categories: [coding-education]
 tags: [coding-education, block-coding, entry, scratch, curriculum, debugging, teaching]

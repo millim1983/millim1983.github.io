@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "공간 안의 사람을 센다는 것 - 영상 기반 행동 분석 설계"
+title: "영상 기반 인원 분석 설계 (객체 검출, 추적, ReID)"
 subtitle: "모델을 고르기 전에 정해야 하는 건 카메라 높이와 미터당 픽셀 수다"
 categories: [ax]
 tags: [computer-vision, object-detection, tracking, reid, crowd-density, dori, privacy, edge-ai]

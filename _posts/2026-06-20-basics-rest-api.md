@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "REST API란 무엇인가 - 자원에 HTTP 메서드를 매핑하는 약속"
+title: "REST API 개념과 설계 원칙"
 subtitle: "쉬운 정의에서 시작해 무상태·멱등성·성숙도(Richardson)까지"
 categories: [questions]
 tags: [rest, api, http, idempotency, hateoas, basics, web]

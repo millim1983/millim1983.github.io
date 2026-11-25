@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문리뷰] 하네스가 모델의 실력을 가린다 - Prime Agent와 자기개선 실행층"
+title: "[논문 리뷰] Prime Agent와 에이전트 하네스"
 subtitle: "Prime Agent: A Self-Improving RLM Harness (arXiv 2608.23552)"
 categories: [paper-review]
 tags: [paper-review, agent, harness, claude-code, subagent, memory, skills, arc-agi, reward-hacking]

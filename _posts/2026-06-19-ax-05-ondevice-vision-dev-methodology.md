@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "온디바이스 비전 모델 개발 방법론 - 경량 모델·양자화·증류"
+title: "온디바이스 비전 모델 경량화 (양자화, 지식 증류)"
 subtitle: "큰 모델을 작은 장비에 욱여넣는 게 아니라, 작은 장비에 맞춰 다시 설계하는 일"
 categories: [ax]
 tags: [on-device, edge-ai, quantization, knowledge-distillation, pruning, npu, tinyml, model-optimization]

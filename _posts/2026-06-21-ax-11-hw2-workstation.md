@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AI 워크스테이션 2026 - 로컬에서 모델을 돌리는 책상 위 하드웨어"
+title: "로컬 AI 워크스테이션 구성 2026"
 subtitle: "데이터센터는 비싸 빌려 쓰고 엣지는 너무 작다. 그 사이, 책상 위에서 모델을 돌리는 중간 티어"
 categories: [ax]
 tags: [workstation, local-llm, rtx-pro-6000, dgx-spark, mac-studio, unified-memory, vram, hardware]

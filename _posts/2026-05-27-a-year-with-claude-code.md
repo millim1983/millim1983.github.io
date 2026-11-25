@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "1년 동안 Claude Code를 쓴 사람으로서"
+title: "Claude Code 1년 사용기"
 subtitle: "AI와 개발하기 시리즈 0편"
 categories: [building-with-ai]
 tags: [claude-code, ai-agent, coding-agent, chatgpt, automation, ai]

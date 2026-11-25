@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "현장 서버의 데이터는 어떤 길로 나가서 어디에 쌓이는가"
+title: "OT 데이터 반출과 저장 아키텍처 (Purdue 모델, 데이터 다이오드, Lakehouse)"
 subtitle: "Purdue 계층과 conduit로 경계를 읽고, 저장 후 전송과 메달리온 구조로 받는 쪽을 설계한다"
 categories: [ax]
 tags: [purdue-model, iec-62443, data-diode, store-and-forward, idempotency, lakehouse, parquet, time-series-db]

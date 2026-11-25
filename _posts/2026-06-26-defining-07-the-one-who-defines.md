@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "정의하는 사람 - AI 시대에 남는 마지막 일"
+title: "정의하는 사람, AI 시대에 남는 일"
 subtitle: "정의하는 사람 - 7편 (종결)"
 categories: [thoughts]
 tags: [정의하는사람, 정의, 결론, 시리즈종결]

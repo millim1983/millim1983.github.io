@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "피지컬 AI 시대의 데이터 단위는 페타바이트다"
+title: "피지컬 AI 학습 데이터 규모 (자율주행, 휴머노이드)"
 subtitle: "자율주행·휴머노이드 로봇이 만들어내는 데이터 양적 단절"
 categories: [ax]
 tags: [physical-ai, autonomous-driving, humanoid, data, nvidia, waymo, tesla]

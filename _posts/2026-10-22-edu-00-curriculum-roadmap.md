@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "블록코딩에서 아두이노까지 - 아이와 할 교육 과정 설계"
+title: "초등 코딩 교육 커리큘럼 (블록 코딩, AI 비전, 아두이노)"
 subtitle: "무엇을 가르칠지보다 어떤 순서로 놓을지가 더 어렵다"
 categories: [coding-education]
 tags: [coding-education, curriculum, block-coding, entry, scratch, ai-vision, arduino, teaching]

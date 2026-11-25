@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문리뷰] 검증의 지평선 - 코딩 에이전트에게 보상을 주는 정답 함수는 없다"
+title: "[논문 리뷰] Verification Horizon, 코딩 에이전트 보상 설계의 한계"
 subtitle: "The Verification Horizon: No Silver Bullet for Coding Agent Rewards (arXiv 2606.26300)"
 categories: [paper-review]
 tags: [paper-review, coding-agent, reward-hacking, verification, reinforcement-learning, llm, swe-bench]

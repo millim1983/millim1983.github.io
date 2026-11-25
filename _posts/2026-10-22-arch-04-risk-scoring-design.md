@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "위험도 점수를 만든다는 것 - 조기경보 시스템 설계"
+title: "조기경보 위험도 스코어링 설계 (캘리브레이션, 임계값)"
 subtitle: "AUC를 올리는 일보다 어려운 건 하루에 몇 건까지 경보할지 정하는 일이다"
 categories: [ax]
 tags: [risk-scoring, early-warning, calibration, threshold, alarm-fatigue, predictive-maintenance, evaluation]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "온디바이스 추론 프레임워크와 경량화 - 실제 코드로"
+title: "온디바이스 추론 프레임워크 비교와 변환 코드 예제"
 subtitle: "어느 런타임에 어떻게 올리는지, 양자화 변환 코드를 직접 들고 비교한다"
 categories: [ax]
 tags: [on-device, edge-ai, tflite, onnxruntime, executorch, ncnn, mnn, openvino, llama-cpp, quantization, inference-runtime]

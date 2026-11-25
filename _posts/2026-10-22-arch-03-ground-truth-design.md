@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "정답이 없는 판정에 정답을 만드는 일 - 그라운드 트루스 설계"
+title: "그라운드 트루스 설계와 라벨 품질 관리"
 subtitle: "모델 성능의 상한은 아키텍처가 아니라 라벨의 품질이 정한다"
 categories: [ax]
 tags: [ground-truth, labeling, dataset, cohen-kappa, class-imbalance, data-leakage, vision, evaluation]

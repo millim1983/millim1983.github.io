@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "멀티에이전트 연구는 지금 어디를 파고 있나"
+title: "멀티에이전트 연구 동향 2026"
 subtitle: "논문 11편으로 본 여섯 갈래: 실패 분석, 스케일링, 구조 자동 설계, 협업 학습, 통신과 메모리, 평가"
 categories: [building-with-ai]
 tags: [multi-agent, llm-agents, paper-review, failure-analysis, reinforcement-learning, agent-workflow, benchmark]

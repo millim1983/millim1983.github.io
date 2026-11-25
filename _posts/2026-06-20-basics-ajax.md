@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AJAX란 무엇인가 - 화면 새로고침 없이 서버와 대화하는 방식"
+title: "AJAX 개념과 동작 원리"
 subtitle: "쉬운 정의에서 시작해 CORS·비동기·경쟁 상태까지"
 categories: [questions]
 tags: [ajax, http, cors, fetch, async, javascript, basics]

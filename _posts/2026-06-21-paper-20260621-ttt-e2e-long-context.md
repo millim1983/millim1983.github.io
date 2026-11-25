@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문리뷰] TTT-E2E - 긴 컨텍스트를 '아키텍처'가 아니라 '학습'으로 푼다"
+title: "[논문 리뷰] TTT-E2E, 테스트 시점 학습 기반 긴 컨텍스트 처리"
 subtitle: "End-to-End Test-Time Training for Long Context (arXiv 2512.23675)"
 categories: [paper-review]
 tags: [paper-review, test-time-training, long-context, transformer, meta-learning, sliding-window-attention]

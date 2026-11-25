@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문 리뷰] 에이전트는 어떻게 평가해야 하는가 - 5축으로 정리한 평가 서베이"
+title: "[논문 리뷰] LLM 에이전트 평가 서베이"
 subtitle: "A Survey on Evaluation of LLM-based Agents (arXiv:2503.16416v2)"
 categories: [paper-review]
 tags: [llm-agent, evaluation, benchmark, survey, swe-bench, webarena, gaia, paper-review]

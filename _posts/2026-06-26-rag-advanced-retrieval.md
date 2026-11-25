@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "RAG 심화 - 검색 품질을 끌어올리는 실전 기법"
+title: "RAG 검색 품질 개선 기법 (하이브리드 검색, 청킹, 리랭킹)"
 subtitle: "청킹·하이브리드·리랭킹·쿼리변환·평가. top-k 벡터검색 한 줄로 끝낼 수 없는 이유"
 categories: [building-with-ai]
 tags: [rag, retrieval, chunking, hybrid-search, reranker, hyde, ragas, vector-database, embedding]

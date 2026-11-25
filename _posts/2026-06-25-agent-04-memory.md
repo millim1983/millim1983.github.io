@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "에이전트 메모리 - 무엇을 기억하고 무엇을 잊는가"
+title: "AI 에이전트 메모리 설계"
 subtitle: "맥락 창은 한정돼 있다. 무엇을 남기고 무엇을 버릴지가 긴 작업에서 에이전트의 성능을 가른다"
 categories: [building-with-ai]
 tags: [agent, memory, context-window, rag, knowledge-graph, mem0, letta, zep, langmem]

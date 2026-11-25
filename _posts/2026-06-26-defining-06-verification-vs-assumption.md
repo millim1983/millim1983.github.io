@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "맞다는 걸 어떻게 아는가 - 추측은 검증이 아니다"
+title: "맞다는 걸 어떻게 아는가, 추측과 검증"
 subtitle: "정의하는 사람 - 6편"
 categories: [thoughts]
 tags: [정의하는사람, 검증, 추측, 디버깅]

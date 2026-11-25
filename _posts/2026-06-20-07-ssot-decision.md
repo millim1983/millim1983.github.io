@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "같은 정보가 네 곳에 동시에 올라온다 - 진실원(SSOT) 결정"
+title: "중복 데이터 원천의 SSOT(Single Source of Truth) 결정"
 subtitle: "AI와 개발하기 시리즈 7편"
 categories: [building-with-ai]
 tags: [claude-code, ssot, deduplication, crawling, scope, architecture]

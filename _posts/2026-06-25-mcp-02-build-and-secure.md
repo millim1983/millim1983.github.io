@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MCP 완전정복 2부 - 서버 만들기, 보안, 생태계"
+title: "MCP 서버 개발과 보안"
 subtitle: "도구 하나 노출은 함수 하나만큼 짧다. 어려운 건 그 도구를 누가, 어떤 권한으로 쓰게 둘지 정하는 일이다"
 categories: [building-with-ai]
 tags: [mcp, model-context-protocol, security, oauth, tool-poisoning, fastmcp, a2a, agent]

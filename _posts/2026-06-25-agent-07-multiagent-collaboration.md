@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "멀티에이전트 협업 - 토폴로지, 조정 비용, 그리고 언제 독이 되나"
+title: "멀티에이전트 협업 토폴로지와 조정 비용"
 subtitle: "여러 에이전트로 쪼개면 빨라질 것 같지만, 토큰은 15배로 늘고 상태는 어긋난다"
 categories: [building-with-ai]
 tags: [multi-agent, agent, topology, supervisor, langgraph, crewai, autogen, coordination, orchestration]

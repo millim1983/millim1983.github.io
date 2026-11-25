@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "칩·SoC·SoM·보드, 그리고 TOPS가 뭔데 - 임베디드 하드웨어 폼팩터와 스펙 용어"
+title: "임베디드 AI 하드웨어 용어 정리 (SoC, SoM, TOPS)"
 subtitle: "데이터시트의 단어 다섯 개와 숫자 몇 개를 못 읽으면, 어떤 보드를 살지 정할 수 없다"
 categories: [ax]
 tags: [hardware, embedded, soc, som, sbc, tops, edge-ai, jetson, raspberry-pi, npu]

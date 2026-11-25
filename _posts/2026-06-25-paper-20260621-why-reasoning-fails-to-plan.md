@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문리뷰] 추론을 잘해도 계획에서 무너지는 이유 - '한 수씩 잘 두는 정책'의 함정"
+title: "[논문 리뷰] LLM 추론 모델의 계획 실패 원인"
 subtitle: "Why Reasoning Fails to Plan: A Planning-Centric Analysis of Long-Horizon Decision Making in LLM Agents (arXiv 2601.22311)"
 categories: [paper-review]
 tags: [paper-review, llm-agent, planning, reasoning, long-horizon, mcts, flare, agentic]

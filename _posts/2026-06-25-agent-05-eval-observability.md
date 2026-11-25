@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "에이전트를 어떻게 믿나 - 평가 벤치마크와 관측의 카탈로그"
+title: "AI 에이전트 평가와 관측성 (벤치마크, 트레이싱)"
 subtitle: "같은 입력에 다르게 답하는 시스템에서, 무엇을 합격으로 볼지는 결국 사람이 정한다"
 categories: [building-with-ai]
 tags: [agent, evaluation, observability, benchmark, tracing, llm-as-judge, opentelemetry, swe-bench, tau-bench, gaia]
