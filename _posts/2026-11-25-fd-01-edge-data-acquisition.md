@@ -6,7 +6,8 @@ categories: [ax]
 tags: [industrial-iot, opc-ua, mqtt, sparkplug, modbus, sampling, time-sync, data-quality]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-11-25 11:43:27 +09:00
 ---
 
 ## 시리즈 안내와 이 글의 범위
