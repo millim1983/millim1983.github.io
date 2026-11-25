@@ -26,3 +26,7 @@ desktop.ini
 # 환경변수
 .env
 .env.local
+
+# 원문 사본 (저작권, 로컬 보관만)
+_meta/references/*/src/
+assets/*.pdf
