@@ -193,4 +193,4 @@ async function loop() {
 - TensorFlow.js, <https://www.tensorflow.org/js>
 - Teachable Machine 이미지 라이브러리, <https://github.com/googlecreativelab/teachablemachine-community>
 
-*※ 다섯 회차 구성과 회차별 실험 목록은 내가 정리한 진행안이다. 코드 조각은 Teachable Machine이 내보내기에서 제공하는 예제를 줄여서 옮긴 것이며, 실제 주소와 화면 요소 이름은 각자 프로젝트에 맞게 바꿔야 한다.*
+*※ 다섯 회차 구성과 회차별 실험 목록은 이 글에서 정리한 진행안이다. 코드 조각은 Teachable Machine이 내보내기에서 제공하는 예제를 줄여서 옮긴 것이며, 실제 주소와 화면 요소 이름은 각자 프로젝트에 맞게 바꿔야 한다.*
