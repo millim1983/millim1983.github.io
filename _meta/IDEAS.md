@@ -504,3 +504,31 @@ _drafts/
 - 스터디 노트(논문 리뷰 · 기초): 주 2편
 - 요소기술 스터디: 주 1편
 - 에이전트 활용 사례: 격주 1편
+
+### PM 추가 (아키텍처 직무 · 조직)
+
+| # | 제목안 | 다룰 핵심 |
+|---|---|---|
+| PM7 | 아키텍트 역할 구분 (EA, BA, AA, DA, TA, SA) | TOGAF 4개 아키텍처 영역(비즈니스 · 데이터 · 애플리케이션 · 기술)에서 나온 직무 구분, 국내 SI의 Software Architect 와 벤더 업계 Solution Architect 의 차이 |
+| PM8 | SI 프로젝트 조직과 역할 (PMO, PM, PL, QA, 아키텍트) | 대형 SI 사업의 역할 분담과 산출물 책임 |
+| PM9 | 범정부 EA와 정보화 계획 (EA 메타모델, ISP와의 관계) | 공공 부문 EA 구성과 활용 |
+
+### PR. 제품 비교 리뷰 (요소기술 스터디의 「제품편」)
+
+> 원칙: 같은 급 제품 3개 이상을 같은 기준으로 비교한다. 제품명 · 버전 · 가격 · 사양은 발행 시점 공식 문서로 확인하고 확인 날짜를 적는다. 원리편이 있으면 링크한다.
+
+| # | 분야 | 비교 대상(후보) | 비교 기준 |
+|---|---|---|---|
+| PR1 | 관계형 DB | PostgreSQL, MySQL, Oracle Database, Tibero | 라이선스, 기능, 고가용성 구성, 공공 도입 사례 |
+| PR2 | 시계열 DB | InfluxDB, TimescaleDB, TDengine, QuestDB | 적재 성능, 압축, 쿼리 언어, 보존 정책 |
+| PR3 | 벡터 DB | Milvus, Qdrant, pgvector, Elasticsearch 벡터 검색 | 인덱스 방식, 필터링, 운영 형태 |
+| PR4 | 버전 관리 · 코드 호스팅 | GitHub, GitLab, Bitbucket, SVN | 설치형 지원, CI/CD 내장, 권한 관리 |
+| PR5 | 협업 · 이슈 관리 | Jira, Confluence, Notion, Redmine, Dooray | 이슈 추적, 문서, 설치형 여부, 공공 환경 사용성 |
+| PR6 | 메신저 · 협업 플랫폼 | Slack, Microsoft Teams, 잔디, 네이버웍스 | 연동, 보안 인증, 국내 데이터 보관 |
+| PR7 | 퍼블릭 클라우드 | AWS, Microsoft Azure, Google Cloud | 대표 서비스 대응표, 국내 리전, 요금 구조 |
+| PR8 | 국내 클라우드 | 네이버클라우드, KT클라우드, NHN클라우드 | CSAP 인증 상품, 공공 전용 존, GPU 상품 |
+| PR9 | 산업용 센서 | 진동, 온습도, 가스, 전류 센서 | 측정 원리, 통신 방식, 설치 조건, 정밀도 |
+| PR10 | 산업용 카메라 · 3D 센서 | 머신비전 카메라, ToF, LiDAR, 스테레오 카메라 | 해상도, 프레임레이트, 인터페이스(GigE Vision 등) |
+| PR11 | 제조 솔루션 | MES, ERP, PLM, SCADA | 역할 경계, 데이터 연계, 도입 순서 |
+| PR12 | IT 운영 솔루션 | ITSM, APM, 로그 관리(ELK, Splunk 등) | 운영 단계별 쓰임 |
+| PR13 | MLOps 플랫폼 | MLflow, Kubeflow, 클라우드 관리형 ML 서비스 | 실험 추적, 파이프라인, 서빙 |
