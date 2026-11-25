@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "온디바이스 포팅 — 모델을 장치로 옮기는 변환 파이프라인"
+title: "온디바이스 포팅 - 모델을 장치로 옮기는 변환 파이프라인"
 subtitle: "학습이 끝난 모델과 장치에서 도는 모델 사이에는 변환 파이프라인이 하나 더 있다"
 categories: [ax]
 tags: [on-device, edge-ai, onnx, tensorrt, tflite, model-porting, deployment, npu]
@@ -57,7 +57,7 @@ onnx.save(m_simplified, "model_sim.onnx")
 
 `onnx-simplifier`(onnxsim)는 그래프 전체를 추론해 불필요한 연산자를 상수 출력으로 대체하는 상수 폴딩(constant folding)을 한다. tracing이 남긴 잡다한 Shape·Gather·Unsqueeze 연산 무더기가 정리되는데, 다음 단계 컴파일러가 못 받는 연산의 상당수가 이 단순화로 사라진다. 컴파일 성공률을 크게 좌우하는 단계다.
 
-## 2. opset — 같은 ONNX인데 버전이 안 맞는다
+## 2. opset - 같은 ONNX인데 버전이 안 맞는다
 
 ONNX 파일이라고 다 같은 게 아니다. ONNX는 연산자 집합을 opset이라는 번호로 버전 관리한다. opset 11과 opset 19는 같은 연산이라도 명세가 다르고, 새 opset에서만 생긴 연산자도 있다. 문제는 모델을 내보내는 쪽(PyTorch)과 받는 쪽(타깃 컴파일러)이 지원하는 opset 범위가 다르다는 점이다.
 
@@ -65,7 +65,7 @@ ONNX 파일이라고 다 같은 게 아니다. ONNX는 연산자 집합을 opset
 
 그래서 opset은 "최신으로 올리면 좋은 것"이 아니라 "타깃 컴파일러가 받는 범위 안에서 고르는 것"이다. 내보내는 사람이 타깃 컴파일러의 지원 표를 먼저 보고 opset을 거꾸로 정해야 한다. 이 결정은 도구가 대신 해주지 않는다.
 
-## 3. 타깃별 컴파일러 — 무엇을 받고 무엇을 못 받나
+## 3. 타깃별 컴파일러 - 무엇을 받고 무엇을 못 받나
 
 ONNX까지 왔으면 이제 타깃 장치의 컴파일러로 넘긴다. 컴파일러마다 입력 형식과 지원 범위가 다르다.
 
@@ -121,17 +121,17 @@ flowchart TD
 
 파이프라인이 깨지는 자리는 대체로 정해져 있다.
 
-**미지원 연산자와 CPU 폴백.** 가장 흔하다. 타깃 컴파일러의 지원 목록에 없는 연산이 그래프에 하나라도 있으면 그 연산은 NPU/GPU에서 못 돌고 CPU로 떨어진다. 한 연산만 폴백돼도 그 지점에서 데이터가 NPU 메모리와 CPU 메모리를 왕복해 실시간이 깨진다. Coral Edge TPU처럼 미지원 연산자부터 끝까지를 통째로 CPU로 넘기는 칩도 있다. 대응은 그 연산을 지원되는 연산들의 조합으로 모델 단계에서 다시 짜거나, 컴파일러가 받을 때까지 opset을 조정하는 것이다.
+미지원 연산자와 CPU 폴백. 가장 흔하다. 타깃 컴파일러의 지원 목록에 없는 연산이 그래프에 하나라도 있으면 그 연산은 NPU/GPU에서 못 돌고 CPU로 떨어진다. 한 연산만 폴백돼도 그 지점에서 데이터가 NPU 메모리와 CPU 메모리를 왕복해 실시간이 깨진다. Coral Edge TPU처럼 미지원 연산자부터 끝까지를 통째로 CPU로 넘기는 칩도 있다. 대응은 그 연산을 지원되는 연산들의 조합으로 모델 단계에서 다시 짜거나, 컴파일러가 받을 때까지 opset을 조정하는 것이다.
 
-**동적 shape vs 고정 shape.** 학습 때는 배치·해상도를 자유롭게 바꾸지만 엣지 컴파일러는 대개 고정 shape를 요구한다. 입력 크기가 정해져야 메모리 배치와 커널을 미리 최적화하기 때문이다. `dynamic_axes`로 배치 축을 열어두면 TensorRT는 최소·최적·최대 shape를 받는 별도 설정(optimization profile)을 요구하고, Hailo·RKNN 같은 NPU 컴파일러는 동적 shape 자체에 민감하다. 그래서 엣지로 갈 때는 배치 1, 해상도 고정으로 못 박고 내보내는 게 안전하다.
+동적 shape vs 고정 shape. 학습 때는 배치·해상도를 자유롭게 바꾸지만 엣지 컴파일러는 대개 고정 shape를 요구한다. 입력 크기가 정해져야 메모리 배치와 커널을 미리 최적화하기 때문이다. `dynamic_axes`로 배치 축을 열어두면 TensorRT는 최소·최적·최대 shape를 받는 별도 설정(optimization profile)을 요구하고, Hailo·RKNN 같은 NPU 컴파일러는 동적 shape 자체에 민감하다. 그래서 엣지로 갈 때는 배치 1, 해상도 고정으로 못 박고 내보내는 게 안전하다.
 
-**레이아웃 NCHW↔NHWC.** PyTorch와 ONNX는 텐서 축을 [배치, 채널, 높이, 너비] 순(NCHW)으로 두고, TFLite/TensorFlow는 [배치, 높이, 너비, 채널] 순(NHWC)을 쓴다. ONNX를 TFLite로 보낼 때 축을 통째로 재배치해야 하는데, 단순 변환기는 모든 연산 앞뒤에 Transpose(축 바꾸기) 연산을 끼워 넣어 그래프가 비대해지고 느려진다. onnx-tensorflow의 "Transpose 폭증" 문제다. `onnx2tf` 같은 전용 도구는 불필요한 Transpose를 소거해 NHWC 모델을 깔끔하게 뽑는다. TFLite행 포팅에서 onnx2tf를 거치는 이유다.
+레이아웃 NCHW↔NHWC. PyTorch와 ONNX는 텐서 축을 [배치, 채널, 높이, 너비] 순(NCHW)으로 두고, TFLite/TensorFlow는 [배치, 높이, 너비, 채널] 순(NHWC)을 쓴다. ONNX를 TFLite로 보낼 때 축을 통째로 재배치해야 하는데, 단순 변환기는 모든 연산 앞뒤에 Transpose(축 바꾸기) 연산을 끼워 넣어 그래프가 비대해지고 느려진다. onnx-tensorflow의 "Transpose 폭증" 문제다. `onnx2tf` 같은 전용 도구는 불필요한 Transpose를 소거해 NHWC 모델을 깔끔하게 뽑는다. TFLite행 포팅에서 onnx2tf를 거치는 이유다.
 
-**커스텀 레이어.** 표준 ONNX 연산자로 표현 안 되는 직접 짠 연산이 있으면 ONNX 내보내기 자체가 막히거나 알 수 없는 노드로 기록된다. 해당 연산을 표준 연산 조합으로 다시 쓰거나, 타깃 런타임에 커스텀 연산자 플러그인을 따로 등록해야 풀린다. 자동 변환의 한계가 가장 분명하게 드러나는 자리다.
+커스텀 레이어. 표준 ONNX 연산자로 표현 안 되는 직접 짠 연산이 있으면 ONNX 내보내기 자체가 막히거나 알 수 없는 노드로 기록된다. 해당 연산을 표준 연산 조합으로 다시 쓰거나, 타깃 런타임에 커스텀 연산자 플러그인을 따로 등록해야 풀린다. 자동 변환의 한계가 가장 분명하게 드러나는 자리다.
 
 > **"ONNX로는 되는데 TensorRT에서 죽는다"의 정체는 거의 항상 셋 중 하나다. opset이 안 맞거나, 동적 shape를 못 받거나, 커스텀·미지원 연산자가 끼어 있는 것이다.**
 
-## 6. 그래프 최적화 — 변환의 부산물이자 핵심
+## 6. 그래프 최적화 - 변환의 부산물이자 핵심
 
 컴파일은 단순 번역이 아니다. 변환기는 그래프를 받아 동작이 같은 더 빠른 그래프로 다시 짠다. 두 가지가 핵심이다.
 
@@ -151,7 +151,7 @@ flowchart TD
 
 ## 출처
 
-- PyTorch, "torch.onnx — PyTorch 2.12 documentation", https://docs.pytorch.org/docs/2.12/onnx.html
+- PyTorch, "torch.onnx - PyTorch 2.12 documentation", https://docs.pytorch.org/docs/2.12/onnx.html
 - PyTorch GitHub, "[ONNX] Flip `dynamo` default to True in torch.onnx.export (Issue #151693)", https://github.com/pytorch/pytorch/issues/151693
 - onnxsim, "onnx-simplifier: Simplify your ONNX model", https://github.com/daquexian/onnx-simplifier
 - Ultralytics GitHub, "TensorRT 8.2 Fails to Parse YOLO26 ONNX Model: Mod Operator Not Supported due to Opset 11 (Issue #24607)", https://github.com/ultralytics/ultralytics/issues/24607

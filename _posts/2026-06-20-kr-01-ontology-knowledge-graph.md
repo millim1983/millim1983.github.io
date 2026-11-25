@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "온톨로지·지식그래프·그래프DB — 지식을 데이터로 표현하는 세 층위"
+title: "온톨로지·지식그래프·그래프DB - 지식을 데이터로 표현하는 세 층위"
 subtitle: "무엇이 스키마이고, 무엇이 데이터이고, 무엇이 저장소인가"
 categories: [ax]
 tags: [knowledge-graph, ontology, graph-database, rdf, sparql, cypher, neo4j, llm]
@@ -18,13 +18,13 @@ date: 2026-06-20 07:10:53 +09:00
 
 > **온톨로지는 규칙, 지식그래프는 그 규칙으로 채운 데이터, 그래프DB는 그 데이터를 담아 질의하는 엔진이다. 세 층은 겹치지 않는다.**
 
-## 1. 세 층위 — 스키마·데이터·저장소
+## 1. 세 층위 - 스키마·데이터·저장소
 
 먼저 한 문장씩 못 박는다.
 
-- **온톨로지(ontology)**: 어떤 개념들이 있고 그것들이 어떤 관계를 맺을 수 있는지를 형식으로 정의한 스키마다. "사람은 회사에 '재직한다', 회사는 '위치한다' 도시에"처럼 개념(클래스)과 관계(속성)의 종류, 그리고 그 관계가 지켜야 하는 제약을 적는다. 개별 데이터는 들어 있지 않다. 데이터베이스로 치면 테이블 정의(DDL)에 가깝다.
-- **지식그래프(knowledge graph)**: 그 스키마로 채운 실제 개체와 관계의 그래프다. "홍길동 — 재직한다 → ○○회사", "○○회사 — 위치한다 → 서울"처럼 구체적 노드와 엣지가 들어간다. 온톨로지가 '사람'이라는 클래스를 정의했다면, 지식그래프에는 '홍길동'이라는 실제 개체가 들어간다.
-- **그래프DB(graph database)**: 그 지식그래프를 물리적으로 저장하고 질의·갱신하는 DB 엔진이다. Neo4j, Amazon Neptune 같은 제품이 여기 해당한다. 데이터를 노드·엣지 구조로 저장하고, 그래프 질의어로 탐색하는 데 최적화돼 있다.
+- 온톨로지(ontology): 어떤 개념들이 있고 그것들이 어떤 관계를 맺을 수 있는지를 형식으로 정의한 스키마다. "사람은 회사에 '재직한다', 회사는 '위치한다' 도시에"처럼 개념(클래스)과 관계(속성)의 종류, 그리고 그 관계가 지켜야 하는 제약을 적는다. 개별 데이터는 들어 있지 않다. 데이터베이스로 치면 테이블 정의(DDL)에 가깝다.
+- 지식그래프(knowledge graph): 그 스키마로 채운 실제 개체와 관계의 그래프다. "홍길동 - 재직한다 → ○○회사", "○○회사 - 위치한다 → 서울"처럼 구체적 노드와 엣지가 들어간다. 온톨로지가 '사람'이라는 클래스를 정의했다면, 지식그래프에는 '홍길동'이라는 실제 개체가 들어간다.
+- 그래프DB(graph database): 그 지식그래프를 물리적으로 저장하고 질의·갱신하는 DB 엔진이다. Neo4j, Amazon Neptune 같은 제품이 여기 해당한다. 데이터를 노드·엣지 구조로 저장하고, 그래프 질의어로 탐색하는 데 최적화돼 있다.
 
 이 셋의 관계는 위로 갈수록 추상, 아래로 갈수록 물리다.
 
@@ -41,13 +41,13 @@ flowchart TB
 
 중요한 건 이 셋이 항상 한 세트가 아니라는 점이다. 온톨로지 없이 지식그래프를 만들 수 있고(스키마를 느슨하게 두는 경우), 지식그래프를 그래프DB가 아니라 관계형 DB나 파일에 담을 수도 있다. 셋은 자주 같이 가지만 묶여 있지는 않다.
 
-## 2. 두 표준 계열 — RDF 트리플 vs 속성 그래프
+## 2. 두 표준 계열 - RDF 트리플 vs 속성 그래프
 
 지식을 그래프로 표현하는 방식에는 크게 두 계열이 있다. 데이터 모델이 다르고, 질의어가 다르고, 출신 진영이 다르다.
 
-**RDF 계열(W3C 시맨틱 웹).** RDF(Resource Description Framework)는 모든 사실을 트리플(triple), 즉 `주어-술어-목적어(subject-predicate-object)` 세 토막으로 표현한다. "홍길동이 ○○회사에 재직한다"는 `<홍길동> <재직한다> <○○회사>` 하나의 트리플이다. 각 자원은 URI(전역 고유 식별자)로 가리켜 서로 다른 데이터셋끼리 같은 개체를 같은 URI로 합칠 수 있다. 스키마·제약은 OWL(Web Ontology Language)로 정의하고, 질의는 SPARQL로 한다. OWL은 기술 논리(description logic) 기반이라 "재직 관계가 있으면 그 사람은 직원이다" 같은 추론을 형식적으로 끌어낼 수 있다.
+RDF 계열(W3C 시맨틱 웹). RDF(Resource Description Framework)는 모든 사실을 트리플(triple), 즉 `주어-술어-목적어(subject-predicate-object)` 세 토막으로 표현한다. "홍길동이 ○○회사에 재직한다"는 `<홍길동> <재직한다> <○○회사>` 하나의 트리플이다. 각 자원은 URI(전역 고유 식별자)로 가리켜 서로 다른 데이터셋끼리 같은 개체를 같은 URI로 합칠 수 있다. 스키마·제약은 OWL(Web Ontology Language)로 정의하고, 질의는 SPARQL로 한다. OWL은 기술 논리(description logic) 기반이라 "재직 관계가 있으면 그 사람은 직원이다" 같은 추론을 형식적으로 끌어낼 수 있다.
 
-**속성 그래프 계열(Neo4j).** 속성 그래프(property graph, 정확히는 Labeled Property Graph)는 노드와 관계 둘 다에 키-값 속성을 붙일 수 있다. "홍길동" 노드에 `{name:'홍길동', age:40}`, "재직한다" 관계 자체에 `{since:2019}` 같은 속성을 직접 단다. RDF 표준 트리플은 엣지에 속성을 못 달아 별도 노드로 우회해야 하는데, 속성 그래프는 그게 자연스럽다. 질의어는 Cypher다. 이 계열은 형식 추론보다 "그래프가 곧 애플리케이션 동작을 끌고 가는" 운영 용도에 맞춰 설계됐다. 표준 측면에서는 2024년 ISO가 그래프 질의 표준 GQL을 제정해 Cypher 계열 질의의 이식성이 생기기 시작했다.
+속성 그래프 계열(Neo4j). 속성 그래프(property graph, 정확히는 Labeled Property Graph)는 노드와 관계 둘 다에 키-값 속성을 붙일 수 있다. "홍길동" 노드에 `{name:'홍길동', age:40}`, "재직한다" 관계 자체에 `{since:2019}` 같은 속성을 직접 단다. RDF 표준 트리플은 엣지에 속성을 못 달아 별도 노드로 우회해야 하는데, 속성 그래프는 그게 자연스럽다. 질의어는 Cypher다. 이 계열은 형식 추론보다 "그래프가 곧 애플리케이션 동작을 끌고 가는" 운영 용도에 맞춰 설계됐다. 표준 측면에서는 2024년 ISO가 그래프 질의 표준 GQL을 제정해 Cypher 계열 질의의 이식성이 생기기 시작했다.
 
 같은 사실을 두 방식으로 적으면 차이가 보인다. 목적은 같은 데이터가 모델에 따라 어떻게 달라지는지 한눈에 비교하는 것이다.
 
@@ -96,15 +96,15 @@ RDF 쪽은 "회사_A의 위치"를 별도 트리플로 또 적는 반면, Cypher
 
 공개 지식그래프의 실제 규모도 짚을 만하다. 추상적으로 "방대한"이라 적지 않고 수치를 박는다.
 
-- **Wikidata**: 위키미디어가 운영하는 공개 지식그래프로, RDF로도 내보내고 SPARQL 엔드포인트를 제공한다. 2026년 기준 항목(item) 수가 약 1억 2,200만 개(122,072,697)에 이른다.
-- **DBpedia**: 위키백과에서 구조화 데이터를 추출한 지식그래프다. 영어판 기준 약 458만 개 개체를 다루고, 한 릴리스가 수십억 개의 RDF 트리플 규모다.
-- **Google Knowledge Graph**: 검색 결과 옆 정보 패널을 떠받치는 비공개 지식그래프다. Google 발표로 2024년 5월 기준 약 540억 개 개체에 대해 1조 6,000억 개가 넘는 사실을 담고 있다. 2020년의 50억 개체·5,000억 사실에서 크게 늘었다.
+- Wikidata: 위키미디어가 운영하는 공개 지식그래프로, RDF로도 내보내고 SPARQL 엔드포인트를 제공한다. 2026년 기준 항목(item) 수가 약 1억 2,200만 개(122,072,697)에 이른다.
+- DBpedia: 위키백과에서 구조화 데이터를 추출한 지식그래프다. 영어판 기준 약 458만 개 개체를 다루고, 한 릴리스가 수십억 개의 RDF 트리플 규모다.
+- Google Knowledge Graph: 검색 결과 옆 정보 패널을 떠받치는 비공개 지식그래프다. Google 발표로 2024년 5월 기준 약 540억 개 개체에 대해 1조 6,000억 개가 넘는 사실을 담고 있다. 2020년의 50억 개체·5,000억 사실에서 크게 늘었다.
 
 규모 차이가 곧 용도 차이다. Wikidata·DBpedia는 누구나 SPARQL로 질의하는 공개 자산이고, Google의 것은 검색 제품 안에서만 동작하는 사내 자산이다.
 
 > **공개 지식그래프 Wikidata는 2026년 기준 약 1억 2,200만 항목, Google Knowledge Graph는 2024년 기준 540억 개체에 1.6조 사실 규모다. "지식그래프"라는 한 단어가 가리키는 규모는 이만큼 벌어진다.**
 
-## 4. 왜 지금 다시 중요해졌나 — LLM 환각과 지식그래프
+## 4. 왜 지금 다시 중요해졌나 - LLM 환각과 지식그래프
 
 지식그래프는 오래된 기술인데 2026년 다시 주목받는 이유는 LLM이다. LLM은 다음 토큰을 확률로 예측하는 구조라, 학습에 없던 사실이나 최신 사실을 그럴듯한 거짓으로 만들어내는 환각(hallucination)을 일으킨다. 여기에 검증된 사실 그래프를 붙여 답을 그 그래프에 묶는 방식이 GraphRAG다.
 
@@ -127,8 +127,8 @@ GraphRAG가 환각을 줄이는 것도 결국 "그 그래프에 들어간 사실
 - Wikidata:Statistics, https://www.wikidata.org/wiki/Wikidata:Statistics
 - Amazon Neptune Features (AWS), https://aws.amazon.com/neptune/features/
 - Neptune Graph Data Model (AWS Docs), https://docs.aws.amazon.com/neptune/latest/userguide/feature-overview-data-model.html
-- Knowledge Graph (Google) — Wikipedia, https://en.wikipedia.org/wiki/Knowledge_Graph_(Google)
-- About — DBpedia, https://www.dbpedia.org/about/
+- Knowledge Graph (Google) - Wikipedia, https://en.wikipedia.org/wiki/Knowledge_Graph_(Google)
+- About - DBpedia, https://www.dbpedia.org/about/
 - Michael DeBellis, "Semantic Web vs. Property Graphs", https://www.michaeldebellis.com/post/owlvspropgraphs
 - DZone, "SPARQL and Cypher Cheat Sheet", https://dzone.com/articles/sparql-and-cypher
 - "Can Knowledge Graphs Reduce Hallucinations in LLMs?: A Survey" (arXiv 2311.07914), https://arxiv.org/abs/2311.07914

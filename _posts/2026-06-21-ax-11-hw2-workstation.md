@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AI 워크스테이션 2026 — 로컬에서 모델을 돌리는 책상 위 하드웨어"
+title: "AI 워크스테이션 2026 - 로컬에서 모델을 돌리는 책상 위 하드웨어"
 subtitle: "데이터센터는 비싸 빌려 쓰고 엣지는 너무 작다. 그 사이, 책상 위에서 모델을 돌리는 중간 티어"
 categories: [ax]
 tags: [workstation, local-llm, rtx-pro-6000, dgx-spark, mac-studio, unified-memory, vram, hardware]
@@ -59,13 +59,13 @@ flowchart TD
 
 이 규칙이 워크스테이션 하드웨어 선택을 거꾸로 규정한다. "몇 TFLOPS인가"보다 "몇 GB인가"가 먼저다. 그래서 아래 비교표에서도 메모리 용량과 대역폭을 맨 앞 열에 둔다.
 
-## 2. 두 갈래의 메모리 구조 — 전용 VRAM과 통합 메모리
+## 2. 두 갈래의 메모리 구조 - 전용 VRAM과 통합 메모리
 
 워크스테이션 하드웨어는 메모리를 다루는 방식에서 두 갈래로 갈린다. 이 구조 차이가 "큰 모델이 들어가느냐"와 "얼마나 빠르냐"를 동시에 가른다.
 
-**전용 VRAM(discrete GPU)**: GPU가 자기 전용 메모리(GDDR7·GDDR6X)를 따로 갖는다. 대역폭이 압도적으로 높다. RTX 5090은 GDDR7 32GB에 1.79 TB/s, RTX PRO 6000은 GDDR7 96GB에 1.6~1.8 TB/s에 이른다. 연산기가 데이터를 굶지 않고 받으니 토큰 생성 속도가 빠르다. 한계는 용량이다. 컨슈머 카드는 32GB(5090), 워크스테이션 카드라야 96GB(PRO 6000)에서 막힌다. 96GB를 넘는 모델은 카드를 여러 장 꽂아 쪼개 올려야 하고, 그러면 카드 간 통신이 새 병목이 된다.
+전용 VRAM(discrete GPU): GPU가 자기 전용 메모리(GDDR7·GDDR6X)를 따로 갖는다. 대역폭이 압도적으로 높다. RTX 5090은 GDDR7 32GB에 1.79 TB/s, RTX PRO 6000은 GDDR7 96GB에 1.6~1.8 TB/s에 이른다. 연산기가 데이터를 굶지 않고 받으니 토큰 생성 속도가 빠르다. 한계는 용량이다. 컨슈머 카드는 32GB(5090), 워크스테이션 카드라야 96GB(PRO 6000)에서 막힌다. 96GB를 넘는 모델은 카드를 여러 장 꽂아 쪼개 올려야 하고, 그러면 카드 간 통신이 새 병목이 된다.
 
-**통합 메모리(unified memory)**: CPU·GPU·NPU가 하나의 큰 메모리 풀을 공유한다. Apple Mac Studio M3 Ultra는 최대 512GB, AMD Ryzen AI Max+ 395는 최대 128GB, NVIDIA DGX Spark는 128GB, DGX Station은 784GB를 이 방식으로 단다. 장점은 용량이다. Mac Studio 한 대에 512GB가 들어가니, GPU 카드로는 여러 장을 꽂아야 할 대형 모델을 단일 머신에 통째로 올린다. 한계는 대역폭이다. LPDDR5X 기반 통합메모리는 GDDR7 전용 VRAM보다 대역폭이 한참 낮다. DGX Spark·Ryzen AI Max는 256~273 GB/s 수준으로, 5090의 1.79 TB/s에 비하면 7분의 1이다. Mac M3 Ultra만 819 GB/s로 통합메모리 중 예외적으로 높다.
+통합 메모리(unified memory): CPU·GPU·NPU가 하나의 큰 메모리 풀을 공유한다. Apple Mac Studio M3 Ultra는 최대 512GB, AMD Ryzen AI Max+ 395는 최대 128GB, NVIDIA DGX Spark는 128GB, DGX Station은 784GB를 이 방식으로 단다. 장점은 용량이다. Mac Studio 한 대에 512GB가 들어가니, GPU 카드로는 여러 장을 꽂아야 할 대형 모델을 단일 머신에 통째로 올린다. 한계는 대역폭이다. LPDDR5X 기반 통합메모리는 GDDR7 전용 VRAM보다 대역폭이 한참 낮다. DGX Spark·Ryzen AI Max는 256~273 GB/s 수준으로, 5090의 1.79 TB/s에 비하면 7분의 1이다. Mac M3 Ultra만 819 GB/s로 통합메모리 중 예외적으로 높다.
 
 여기서 로컬 LLM의 핵심 통찰이 나온다. 큰 모델을 "돌릴 수 있느냐"는 용량(통합메모리가 유리)이 정하고, 돌아가는 모델이 "얼마나 빠르냐"는 대역폭(전용 VRAM이 유리)이 정한다. Mac Studio가 로컬 대형 모델 추론에서 의외로 강한 이유가 여기 있다. 512GB 통합메모리에 600억~6,000억 파라미터 모델을 통째로 올릴 수 있어서, raw 연산이 GPU보다 낮아도 "애초에 올라가느냐"의 싸움에서 이긴다. 대신 819 GB/s 대역폭이 토큰 생성 속도의 상한이 되어, M3 Ultra가 초대형 모델에서 초당 17~18 토큰 수준에 머무는 것도 이 구조로 설명된다.
 
@@ -86,14 +86,14 @@ flowchart TD
 
 각 제품을 자리별로 짚는다.
 
-- **RTX 5090**: 컨슈머 플래그십이다. GDDR7 32GB에 1.79 TB/s로 대역폭은 최상급이지만 용량 32GB가 천장이다. 직전 세대 RTX 4090(24GB GDDR6X, 1008 GB/s, 450W) 대비 메모리 대역폭이 약 78% 늘었다. 7B~13B 모델을 빠르게 돌리거나, 30B를 INT4로 욱여넣는 자리다. 70B는 양자화해도 단독으로는 안 들어간다.
-- **RTX PRO 6000 Blackwell Workstation Edition**: 같은 Blackwell 세대인데 GDDR7을 96GB로 단 워크스테이션 카드다. 1장으로 70B를 INT8에 올리는 게 5090과 갈리는 지점이다. 4,000 AI TOPS, 24,064 CUDA 코어, 600W. 출시가 약 8,565달러였으나 GDDR7 공급난으로 2026년 6월 기준 NVIDIA 정가가 13,250달러까지 올랐다. 용량과 대역폭을 둘 다 챙기는 대신 가격이 데이터센터 입구에 닿는다.
-- **DGX Spark**: GB10 Grace Blackwell 슈퍼칩을 얹은 손바닥만 한 데스크톱이다. 128GB 통합메모리로 큰 모델을 올리는 데는 유리하지만, 대역폭이 약 273 GB/s에 그쳐 토큰 생성이 빠르지 않다. FP4 정점 1 PFLOP(희소 기준)은 추론 처리량용 수치다. 2025년 10월 출시, 가격은 3,999달러에서 4,699달러로 인상됐다. "데이터센터 소프트웨어 스택을 책상에서 그대로 익히는 머신"에 가깝다.
-- **AMD Ryzen AI Max+ 395 (Strix Halo)**: Zen5 16코어 + RDNA 3.5 40CU iGPU + XDNA 2 NPU(50 TOPS, 플랫폼 합계 126 TOPS)를 한 칩에 묶은 APU다. 최대 128GB LPDDR5X를 통합메모리로 공유해 Llama 70B를 iGPU에서 BF16으로 돌렸다는 시연이 있다. 대역폭 256 GB/s는 DGX Spark와 비슷한 급이다. GMKtec·Beelink 등의 미니PC로 2,000달러대부터, AMD 공식 개발 플랫폼은 3,999달러다. DGX Spark와 같은 자리를 Windows·x86으로 노린다.
-- **Mac Studio M3 Ultra**: 통합메모리 용량의 극단이다. 최대 512GB, 대역폭 819 GB/s, 80코어 GPU. 6,000억 파라미터 넘는 모델을 메모리에 올린다고 Apple이 명시했다. 단일 머신에 대형 모델을 통째로 담는 게 목적이라면 가장 현실적인 선택지다. 96GB 1TB 구성이 3,999달러, 풀옵션이 14,099달러까지 간다. 대역폭이 GDDR7 카드보다 낮아 raw 토큰 속도는 5090·PRO 6000에 밀리지만, 그 카드들에 안 들어가는 크기를 올린다.
-- **DGX Station**: 워크스테이션 티어의 천장이다. GB300 Grace Blackwell Ultra에 784GB 코히어런트 메모리(HBM3e 252GB + LPDDR5X 496GB)를 달아 최대 1조 파라미터 모델을 데스크톱에서 다룬다. FP4 정점 20 PFLOP. 2026년 4분기 출시 예정이라 본문 스펙 중 전력·정가 일부는 미확정이다. 사실상 "랙에 넣던 것을 책상 옆에 두는" 경계 제품이다.
+- RTX 5090: 컨슈머 플래그십이다. GDDR7 32GB에 1.79 TB/s로 대역폭은 최상급이지만 용량 32GB가 천장이다. 직전 세대 RTX 4090(24GB GDDR6X, 1008 GB/s, 450W) 대비 메모리 대역폭이 약 78% 늘었다. 7B~13B 모델을 빠르게 돌리거나, 30B를 INT4로 욱여넣는 자리다. 70B는 양자화해도 단독으로는 안 들어간다.
+- RTX PRO 6000 Blackwell Workstation Edition: 같은 Blackwell 세대인데 GDDR7을 96GB로 단 워크스테이션 카드다. 1장으로 70B를 INT8에 올리는 게 5090과 갈리는 지점이다. 4,000 AI TOPS, 24,064 CUDA 코어, 600W. 출시가 약 8,565달러였으나 GDDR7 공급난으로 2026년 6월 기준 NVIDIA 정가가 13,250달러까지 올랐다. 용량과 대역폭을 둘 다 챙기는 대신 가격이 데이터센터 입구에 닿는다.
+- DGX Spark: GB10 Grace Blackwell 슈퍼칩을 얹은 손바닥만 한 데스크톱이다. 128GB 통합메모리로 큰 모델을 올리는 데는 유리하지만, 대역폭이 약 273 GB/s에 그쳐 토큰 생성이 빠르지 않다. FP4 정점 1 PFLOP(희소 기준)은 추론 처리량용 수치다. 2025년 10월 출시, 가격은 3,999달러에서 4,699달러로 인상됐다. "데이터센터 소프트웨어 스택을 책상에서 그대로 익히는 머신"에 가깝다.
+- AMD Ryzen AI Max+ 395 (Strix Halo): Zen5 16코어 + RDNA 3.5 40CU iGPU + XDNA 2 NPU(50 TOPS, 플랫폼 합계 126 TOPS)를 한 칩에 묶은 APU다. 최대 128GB LPDDR5X를 통합메모리로 공유해 Llama 70B를 iGPU에서 BF16으로 돌렸다는 시연이 있다. 대역폭 256 GB/s는 DGX Spark와 비슷한 급이다. GMKtec·Beelink 등의 미니PC로 2,000달러대부터, AMD 공식 개발 플랫폼은 3,999달러다. DGX Spark와 같은 자리를 Windows·x86으로 노린다.
+- Mac Studio M3 Ultra: 통합메모리 용량의 극단이다. 최대 512GB, 대역폭 819 GB/s, 80코어 GPU. 6,000억 파라미터 넘는 모델을 메모리에 올린다고 Apple이 명시했다. 단일 머신에 대형 모델을 통째로 담는 게 목적이라면 가장 현실적인 선택지다. 96GB 1TB 구성이 3,999달러, 풀옵션이 14,099달러까지 간다. 대역폭이 GDDR7 카드보다 낮아 raw 토큰 속도는 5090·PRO 6000에 밀리지만, 그 카드들에 안 들어가는 크기를 올린다.
+- DGX Station: 워크스테이션 티어의 천장이다. GB300 Grace Blackwell Ultra에 784GB 코히어런트 메모리(HBM3e 252GB + LPDDR5X 496GB)를 달아 최대 1조 파라미터 모델을 데스크톱에서 다룬다. FP4 정점 20 PFLOP. 2026년 4분기 출시 예정이라 본문 스펙 중 전력·정가 일부는 미확정이다. 사실상 "랙에 넣던 것을 책상 옆에 두는" 경계 제품이다.
 
-## 4. 세 티어를 한 번 더 — 서버·워크스테이션·엣지
+## 4. 세 티어를 한 번 더 - 서버·워크스테이션·엣지
 
 이 시리즈에서 다룬 세 하드웨어 티어를 메모리·전력·자리로 나란히 두면 워크스테이션이 어디에 끼는지가 분명해진다.
 
@@ -120,9 +120,9 @@ flowchart LR
 
 그래서 같은 작업에서도 우선순위가 갈린다.
 
-- **돌릴 수 있는가**(모델이 들어가는가): 메모리 용량이 정한다. 여기선 통합메모리(Mac 512GB, DGX Station 784GB)가 이긴다.
-- **얼마나 빠른가**(토큰 생성 속도): 메모리 대역폭이 정한다. 여기선 GDDR7 전용 VRAM(5090 1.79 TB/s, PRO 6000 1.6~1.8 TB/s)이 이긴다.
-- **연산 정점(TFLOPS/TOPS)**: 일괄 처리(batch) 추론이나 학습 처리량에서 의미가 커진다. 단건 대화형 추론에서는 위 둘에 가려지는 경우가 많다.
+- 돌릴 수 있는가(모델이 들어가는가): 메모리 용량이 정한다. 여기선 통합메모리(Mac 512GB, DGX Station 784GB)가 이긴다.
+- 얼마나 빠른가(토큰 생성 속도): 메모리 대역폭이 정한다. 여기선 GDDR7 전용 VRAM(5090 1.79 TB/s, PRO 6000 1.6~1.8 TB/s)이 이긴다.
+- 연산 정점(TFLOPS/TOPS): 일괄 처리(batch) 추론이나 학습 처리량에서 의미가 커진다. 단건 대화형 추론에서는 위 둘에 가려지는 경우가 많다.
 
 > **로컬 LLM에서 TFLOPS는 셋째 기준이다. 첫째는 모델이 들어가는 용량, 둘째는 토큰을 뽑는 대역폭이다. 큰 숫자부터 보면 순서가 거꾸로다.**
 
@@ -130,9 +130,9 @@ flowchart LR
 
 워크스테이션을 고르는 일은 결국 두 질문으로 좁혀진다.
 
-첫째, **빌릴까 살까**. 며칠 쓰고 말 작업이면 데이터센터 GPU를 시간 단위로 빌리는 게 싸다. 매일 켜고 데이터를 밖으로 못 내보내는 작업이면 로컬을 사는 게 길게 보면 싸고, 보안 요구도 푼다. 이 판단에 정답은 없고 사용 패턴·보안 제약·예산이 결정한다.
+첫째, 빌릴까 살까. 며칠 쓰고 말 작업이면 데이터센터 GPU를 시간 단위로 빌리는 게 싸다. 매일 켜고 데이터를 밖으로 못 내보내는 작업이면 로컬을 사는 게 길게 보면 싸고, 보안 요구도 푼다. 이 판단에 정답은 없고 사용 패턴·보안 제약·예산이 결정한다.
 
-둘째, **어느 메모리 급이 내 모델을 담나**. 7B~13B를 빠르게 돌릴 거면 RTX 5090 32GB로 충분하고 대역폭도 최상급이다. 70B를 단일 카드에 INT8로 올릴 거면 RTX PRO 6000 96GB가 갈림길이다. 100B를 넘는 모델을 단일 머신에 통째로 담을 거면 전용 VRAM으로는 안 되고 Mac Studio 512GB나 DGX Station 784GB 같은 대용량 통합메모리로 넘어가야 한다. 단, 통합메모리는 대역폭이 낮아 토큰 속도를 양보해야 한다.
+둘째, 어느 메모리 급이 내 모델을 담나. 7B~13B를 빠르게 돌릴 거면 RTX 5090 32GB로 충분하고 대역폭도 최상급이다. 70B를 단일 카드에 INT8로 올릴 거면 RTX PRO 6000 96GB가 갈림길이다. 100B를 넘는 모델을 단일 머신에 통째로 담을 거면 전용 VRAM으로는 안 되고 Mac Studio 512GB나 DGX Station 784GB 같은 대용량 통합메모리로 넘어가야 한다. 단, 통합메모리는 대역폭이 낮아 토큰 속도를 양보해야 한다.
 
 이 두 결정이 양자화 비트수, 다룰 수 있는 문맥 길이, 한 머신에 담기는 모델 크기 상한을 한꺼번에 정한다.
 
@@ -162,6 +162,6 @@ flowchart LR
 - AMD, "Ryzen AI Max+ 395", https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-max-plus-395.html
 - CNX Software, "$4,000 AMD Ryzen AI Halo Developer Platform features 126 TOPS Ryzen AI Max+ 395 processor", https://www.cnx-software.com/2026/06/16/4000-amd-ryzen-ai-halo-developer-platform-features-126-tops-ryzen-ai-max-395-processor/
 - SitePoint, "VRAM for 70B Models: Why 16GB GPU Is the Minimum in 2026", https://www.sitepoint.com/vram-requirements-70b-models-16gb-gpu-minimum-2026/
-- InsiderLLM, "Running 70B Models Locally — Exact VRAM by Quantization", https://insiderllm.com/guides/running-70b-models-locally-vram-guide/
+- InsiderLLM, "Running 70B Models Locally - Exact VRAM by Quantization", https://insiderllm.com/guides/running-70b-models-locally-vram-guide/
 
 *※ 수치는 위 출처가 제시한 제품 사양값이다. 가격은 2025~2026년 기준이며 GDDR7 공급 상황에 따라 변동이 크다. DGX Station(GB300)은 2026년 4분기 출시 예정 제품으로 전력·정가 등 일부 사양이 미확정이다. 통합메모리 제품의 "올라가는 모델 크기"는 정밀도·KV 캐시·문맥 길이에 따라 달라지는 근사값이다.*

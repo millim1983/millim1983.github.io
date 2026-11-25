@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "에이전트를 이루는 네 부품 — 훅·스킬·MCP·워크플로"
+title: "에이전트를 이루는 네 부품 - 훅·스킬·MCP·워크플로"
 subtitle: "코딩 에이전트가 '대화 상자'에서 '운영 시스템'으로 넘어가는 자리"
 categories: [building-with-ai]
 tags: [claude-code, mcp, agent-skills, hooks, workflows, subagents, agentic]
@@ -20,7 +20,7 @@ date: 2026-06-19 21:00:28 +09:00
 
 이 글은 그 네 부품이 각각 무엇을 푸는지, 그리고 부품을 고르고 끼우는 판단이 왜 사람의 일로 남는지를 정리한다.
 
-## 1. MCP — 에이전트가 바깥세상에 손을 뻗는 규격
+## 1. MCP - 에이전트가 바깥세상에 손을 뻗는 규격
 
 MCP(Model Context Protocol)는 Anthropic이 공개한 개방형 규격이다. 에이전트가 외부 도구·데이터에 접근하는 방식을 표준화한다. 이전에는 에이전트마다, 연동 대상마다 따로 접착 코드를 짰다. MCP는 그 접착면을 하나의 약속으로 통일한다. 데이터베이스·파일 시스템·사내 API·검색 엔진을 MCP 서버로 감싸 두면, 그 규격을 아는 어떤 에이전트든 같은 방식으로 호출한다.
 
@@ -30,7 +30,7 @@ MCP(Model Context Protocol)는 Anthropic이 공개한 개방형 규격이다. �
 
 실무에서 MCP의 의미는 분명하다. 에이전트가 내 작업 환경의 실제 데이터를 보고 움직이게 만드는 통로다. 사내 위키, 이슈 트래커, 사내 데이터 웨어하우스를 MCP로 붙이면 에이전트의 답이 일반론에서 내 맥락으로 내려온다.
 
-## 2. 스킬 — "이건 이렇게 하는 거야"를 묶어 둔 묶음
+## 2. 스킬 - "이건 이렇게 하는 거야"를 묶어 둔 묶음
 
 스킬(Agent Skill)은 특정 작업의 절차와 도메인 지식을 한 묶음으로 정의해 둔 것이다. MCP가 "어떤 도구가 있는가"를 알려준다면, 스킬은 "그 도구를 언제, 어떤 순서로, 어떤 규칙으로 쓰는가"를 알려준다. 도구의 존재와 사용법은 다른 문제다. 스킬은 그 사용법 쪽을 채운다.
 
@@ -38,7 +38,7 @@ MCP(Model Context Protocol)는 Anthropic이 공개한 개방형 규격이다. �
 
 내 경우, 반복되는 문서 작업이나 특정 형식의 산출물 작성처럼 "매번 같은 규칙으로 처리해야 하는 일"이 스킬의 자리였다. 한 번 절차를 글로 정리해 스킬로 등록하면, 다음부터는 그 작업을 지목하는 것만으로 같은 규칙이 적용된다. 같은 설명을 반복하지 않는다는 것이 스킬이 주는 실질적 이득이다.
 
-## 3. 훅 — 모델의 해석에 맡기지 않는 결정적 코드
+## 3. 훅 - 모델의 해석에 맡기지 않는 결정적 코드
 
 훅(hook)은 에이전트 동작의 특정 시점에 자동으로 실행되는 스크립트다. Claude Code의 경우 17개 이벤트(도구 호출 직전·직후, 세션 시작, 응답 완료 등)에 4가지 타입의 훅을 걸 수 있다. 도구를 호출하기 직전, 작업을 마친 직후 같은 이벤트에 코드를 건다. 프롬프트와의 결정적 차이가 여기 있다. 프롬프트는 모델의 해석에 의존하지만, 훅은 정해진 코드를 그대로 실행한다.
 
@@ -48,7 +48,7 @@ MCP(Model Context Protocol)는 Anthropic이 공개한 개방형 규격이다. �
 
 훅은 스킬 안에 넣을 수도 있다. 그 스킬이 호출될 때만 켜지는 훅이다. 평소에는 돌지 않다가 특정 작업 맥락에서만 작동하는 규율을 이렇게 건다.
 
-## 4. 워크플로와 서브에이전트 — 큰 작업을 쪼개는 두 방식
+## 4. 워크플로와 서브에이전트 - 큰 작업을 쪼개는 두 방식
 
 긴 작업을 한 대화 안에서 끌고 가면 맥락이 엉킨다. 앞에서 읽은 파일 더미가 뒤 작업의 판단을 흐리고, 한 번에 다 떠안은 일이 서로 간섭한다. 이걸 푸는 부품이 둘이다.
 
@@ -58,7 +58,7 @@ MCP(Model Context Protocol)는 Anthropic이 공개한 개방형 규격이다. �
 
 둘의 분담은 이렇게 갈린다. 서브에이전트는 "맥락을 나눈다", 워크플로는 "나뉜 작업의 순서와 합류 지점을 정한다".
 
-## 5. 오케스트레이터 — 부품을 지휘하는 층
+## 5. 오케스트레이터 - 부품을 지휘하는 층
 
 부품이 갖춰져도 누군가는 "지금 무엇을, 어느 부품으로, 어떤 순서로 할지"를 정해야 한다. 그 지휘를 맡는 것이 오케스트레이터(orchestrator)다. 워크플로가 제어 흐름을 코드로 굳힌 틀이라면, 오케스트레이터는 그 틀을 실제로 돌리며 작업을 알맞은 도구·스킬·서브에이전트에 배분하는 조정자다.
 
@@ -144,7 +144,7 @@ flowchart TB
 ## 출처
 
 - DEV Community, "2026 MCP Trends: The Shift to Enterprise-Ready Agentic Workflows", https://dev.to/chunxiaoxx/2026-mcp-trends-the-shift-to-enterprise-ready-agentic-workflows-48lp
-- a2a-mcp.org, "MCP Roadmap 2026 — Official Priorities for Model Context Protocol Scalability & AI Agents", https://a2a-mcp.org/blog/mcp-2026-roadmap
+- a2a-mcp.org, "MCP Roadmap 2026 - Official Priorities for Model Context Protocol Scalability & AI Agents", https://a2a-mcp.org/blog/mcp-2026-roadmap
 - Ted Tschopp, "MCP's 2026 Roadmap: From Agent Integration Standard to Production Connectivity Layer", https://tedt.org/MCPs-2026-Roadmap/
 - okhlopkov.com, "My Claude Code Setup: MCP Servers, Hooks, Skills and Agents (2026)", https://okhlopkov.com/claude-code-setup-mcp-hooks-skills-2026/
 - ofox.ai, "Claude Code: Hooks, Subagents & Skills Complete Guide (2026)", https://ofox.ai/blog/claude-code-hooks-subagents-skills-complete-guide-2026/

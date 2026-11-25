@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "에이전트를 어떻게 믿나 — 평가 벤치마크와 관측의 카탈로그"
+title: "에이전트를 어떻게 믿나 - 평가 벤치마크와 관측의 카탈로그"
 subtitle: "같은 입력에 다르게 답하는 시스템에서, 무엇을 합격으로 볼지는 결국 사람이 정한다"
 categories: [building-with-ai]
 tags: [agent, evaluation, observability, benchmark, tracing, llm-as-judge, opentelemetry, swe-bench, tau-bench, gaia]
@@ -55,7 +55,7 @@ flowchart TD
 
 *그림. 같은 입력이라도 매 실행이 다른 궤적을 그린다. 그래서 하나의 결과가 아니라 여러 축으로 나눠 평가해야 한다.*
 
-## 2. 벤치마크를 수치로 — 무엇을 재고, 어디까지 왔나
+## 2. 벤치마크를 수치로 - 무엇을 재고, 어디까지 왔나
 
 추상적인 "축" 얘기는 실제 벤치마크에 박아 넣어야 손에 잡힌다. 대표 벤치마크 다섯을 무엇을 재는지·대표 점수와 함께 본다. 점수는 모델·버전·하네스에 따라 출렁이므로, 여기서는 자주 인용되는 값과 그 한계를 같이 적는다.
 
@@ -69,11 +69,11 @@ flowchart TD
 
 읽는 법이 점수보다 중요하다. 세 가지를 짚는다.
 
-**도메인이 바뀌면 점수가 무너진다.** τ²-bench에서 같은 모델이 소매·항공에서는 50~70%대를 내다가 통신 도메인에서는 30%대로 급락한다. 통신은 사용자와 에이전트가 둘 다 도구를 부르는 이중 제어(dual-control) 시나리오라 협응이 어렵기 때문이다. "에이전트가 잘한다"는 말은 항상 "어느 도메인에서"가 빠져 있으면 공허하다.
+도메인이 바뀌면 점수가 무너진다. τ²-bench에서 같은 모델이 소매·항공에서는 50~70%대를 내다가 통신 도메인에서는 30%대로 급락한다. 통신은 사용자와 에이전트가 둘 다 도구를 부르는 이중 제어(dual-control) 시나리오라 협응이 어렵기 때문이다. "에이전트가 잘한다"는 말은 항상 "어느 도메인에서"가 빠져 있으면 공허하다.
 
-**높은 점수는 오염을 의심해야 한다.** SWE-bench Verified는 500개 태스크가 전부 공개된 파이썬 저장소에서 왔고, 그 저장소들은 모든 모델의 학습 컷오프보다 앞선다. 프런티어 모델이 정답 패치와 이슈 문구를 학습 데이터에서 재현할 수 있다는 우려가 제기됐고, OpenAI는 2026년 2월 오염을 이유로 이 벤치마크를 자사 평가에서 내렸다. 더 엄격한 SWE-bench Pro 같은 변종이 나온 배경이다. 90%대 점수를 자랑하는 리더보드 항목 중 일부는 모델 버전 자체가 확인되지 않거나 오염 논란이 있어, 나는 그런 수치를 이 표에 단정으로 싣지 않았다(미확인).
+높은 점수는 오염을 의심해야 한다. SWE-bench Verified는 500개 태스크가 전부 공개된 파이썬 저장소에서 왔고, 그 저장소들은 모든 모델의 학습 컷오프보다 앞선다. 프런티어 모델이 정답 패치와 이슈 문구를 학습 데이터에서 재현할 수 있다는 우려가 제기됐고, OpenAI는 2026년 2월 오염을 이유로 이 벤치마크를 자사 평가에서 내렸다. 더 엄격한 SWE-bench Pro 같은 변종이 나온 배경이다. 90%대 점수를 자랑하는 리더보드 항목 중 일부는 모델 버전 자체가 확인되지 않거나 오염 논란이 있어, 나는 그런 수치를 이 표에 단정으로 싣지 않았다(미확인).
 
-**종합 점수는 실패를 가린다.** AgentBench처럼 8개 환경을 합산하는 벤치마크에서 종합 70%는 "여섯 환경에서 탄탄하고 두 환경에서 0점"일 수 있다. 합산 한 숫자는 어디가 0점인지를 지운다. 그래서 환경별·도메인별로 풀어서 봐야 한다.
+종합 점수는 실패를 가린다. AgentBench처럼 8개 환경을 합산하는 벤치마크에서 종합 70%는 "여섯 환경에서 탄탄하고 두 환경에서 0점"일 수 있다. 합산 한 숫자는 어디가 0점인지를 지운다. 그래서 환경별·도메인별로 풀어서 봐야 한다.
 
 > **벤치마크 점수는 "어느 도메인에서, 어떤 하네스로, 오염 가능성은 어떤가"를 함께 읽지 않으면 숫자에 속는다. 표면 점수가 높을수록 의심을 키운다.**
 
@@ -83,18 +83,18 @@ flowchart TD
 
 대신 판정자 LLM은 일관된 방향으로 편향된다. 연구로 반복 확인된 함정이 넷이다.
 
-- **위치 편향(position bias)**: 두 답을 나란히 비교시키면 먼저 제시된 쪽을 선호한다. 완화하려면 순서를 바꿔 두 번 채점하고 평균을 낸다.
-- **장황함 편향(verbosity bias)**: 더 길면 더 좋다고 매긴다. 길이가 정보를 더 담지 않아도 그렇다. 이걸 방치하면 모델을 정확하게 만드는 대신 장황하게 만들어 점수를 올리는 우회로가 열린다.
-- **자기 선호 편향(self-preference bias)**: 판정 LLM이 자기 계열이 쓴 답에 더 높은 점수를 준다. 완화책은 채점 대상과 최대한 다른 계열의 판정자를 쓰거나, 여러 판정자의 교차 합의를 보는 것이다.
-- **기준 미정 시 과신**: 채점 기준(rubric)이 모호하면 판정자는 들쭉날쭉한 엄격함과 근거 없는 확신을 보인다.
+- 위치 편향(position bias): 두 답을 나란히 비교시키면 먼저 제시된 쪽을 선호한다. 완화하려면 순서를 바꿔 두 번 채점하고 평균을 낸다.
+- 장황함 편향(verbosity bias): 더 길면 더 좋다고 매긴다. 길이가 정보를 더 담지 않아도 그렇다. 이걸 방치하면 모델을 정확하게 만드는 대신 장황하게 만들어 점수를 올리는 우회로가 열린다.
+- 자기 선호 편향(self-preference bias): 판정 LLM이 자기 계열이 쓴 답에 더 높은 점수를 준다. 완화책은 채점 대상과 최대한 다른 계열의 판정자를 쓰거나, 여러 판정자의 교차 합의를 보는 것이다.
+- 기준 미정 시 과신: 채점 기준(rubric)이 모호하면 판정자는 들쭉날쭉한 엄격함과 근거 없는 확신을 보인다.
 
 이 함정들이 가리키는 결론은 하나다. 채점기 자신을 먼저 채점해야 한다. 사람이 직접 라벨링한 작은 정답 세트(gold set, 15~30개면 시작 가능)에 대해 판정 LLM의 일치율을 재고, 그 일치율이 충분할 때만 CI 게이트로 쓴다. 검증 안 된 채점기를 믿으면, 틀린 자로 잰 점수를 믿게 된다.
 
-## 4. 운영 중인 에이전트를 들여다보기 — 관측
+## 4. 운영 중인 에이전트를 들여다보기 - 관측
 
 벤치마크는 출시 전 점수다. 운영에 올린 뒤에는 매 요청이 어디서 시간을 쓰고, 어떤 도구를 부르고, 어디서 헛돈을 쓰는지를 봐야 한다. 이게 관측(observability)이고, 단위는 트레이스(trace)와 스팬(span)이다.
 
-용어부터 박는다. **트레이스**는 사용자 요청 하나가 완료될 때까지의 전체 기록이다. 그 안에 **스팬**이 중첩된다. 스팬은 LLM 호출 하나, 도구 호출 하나, 검색 하나 같은 개별 작업 단위다. 각 스팬에 입력·출력·토큰 수·소요 시간·오류가 붙는다. 에이전트가 다섯 스텝을 거쳤다면 트레이스 하나에 스팬이 여러 겹으로 쌓여, 세 번째 도구 호출에서 1.8초가 샜고 그 인자가 틀렸다는 걸 사후에 짚을 수 있다.
+용어부터 박는다. 트레이스는 사용자 요청 하나가 완료될 때까지의 전체 기록이다. 그 안에 스팬이 중첩된다. 스팬은 LLM 호출 하나, 도구 호출 하나, 검색 하나 같은 개별 작업 단위다. 각 스팬에 입력·출력·토큰 수·소요 시간·오류가 붙는다. 에이전트가 다섯 스텝을 거쳤다면 트레이스 하나에 스팬이 여러 겹으로 쌓여, 세 번째 도구 호출에서 1.8초가 샜고 그 인자가 틀렸다는 걸 사후에 짚을 수 있다.
 
 대표 도구 넷을 비교한다.
 
@@ -107,7 +107,7 @@ flowchart TD
 
 마지막 줄이 핵심이다. OpenTelemetry GenAI 시맨틱 컨벤션은 도구가 아니라 표준이다. CNCF가 뒷받침하는 공통 스키마로, LLM 호출 스팬에 어떤 속성을 어떤 이름으로 달지를 못 박는다. 예를 들어 `gen_ai.request.model`(요청한 모델명), `gen_ai.operation.name`(작업 종류), `gen_ai.usage.input_tokens`(입력 토큰 수) 같은 속성 이름이 규약으로 정해져 있다. 스팬 이름도 `{gen_ai.operation.name} {gen_ai.request.model}` 형식을 권고한다. 이 규약을 따라 계측해 두면, 관측 도구를 LangSmith에서 Langfuse로 바꿔도 계측 코드를 다시 쓰지 않는다. Datadog·Google Cloud·AWS·Azure가 이 컨벤션을 네이티브로 받는 것도 같은 이유다. 2026년 6월 기준 스키마는 v1.37대다.
 
-## 5. 코드 — 계측 한 줄과 채점기 골격
+## 5. 코드 - 계측 한 줄과 채점기 골격
 
 말로만 하면 멀게 느껴지니 두 가지를 짧게 인용한다. 하나는 트레이싱 계측, 하나는 채점기다. 둘 다 운영 가능한 최소 골격이다.
 
@@ -122,7 +122,7 @@ tracer = trace.get_tracer("agent")
 def call_tool(name, args, fn):
     # 도구 호출 하나를 스팬으로 감싼다. 트레이스 안에 중첩되어 쌓인다.
     with tracer.start_as_current_span(f"execute_tool {name}") as span:
-        # 속성 이름은 OpenTelemetry GenAI 규약을 따른다 — 도구를 갈아끼워도 호환된다.
+        # 속성 이름은 OpenTelemetry GenAI 규약을 따른다 - 도구를 갈아끼워도 호환된다.
         span.set_attribute("gen_ai.operation.name", "execute_tool")
         span.set_attribute("gen_ai.tool.name", name)
         span.set_attribute("gen_ai.tool.call.arguments", str(args))
@@ -149,7 +149,7 @@ def score(task, run):
     # ④ 비용·지연: 트레이스에서 합산해 둔 값
     s["tokens"] = run.total_tokens
     s["latency_ms"] = run.latency_ms
-    # 품질 항목은 정답이 하나가 아니므로 LLM-as-judge — 위치 편향 완화로 순서를 바꿔 두 번
+    # 품질 항목은 정답이 하나가 아니므로 LLM-as-judge - 위치 편향 완화로 순서를 바꿔 두 번
     a = judge(task.prompt, run.final_answer, task.reference)
     b = judge(task.prompt, task.reference, run.final_answer)  # 순서 뒤집기
     s["quality"] = (a + b) / 2                         # 평균으로 위치 편향 상쇄
@@ -181,10 +181,10 @@ def pass_k(scores, k=8):
 - "τ²-Bench: Evaluating Conversational Agents in a Dual-Control Environment" (arXiv:2506.07982), https://arxiv.org/pdf/2506.07982
 - Artificial Analysis, "τ²-Bench Telecom Benchmark Leaderboard", https://artificialanalysis.ai/evaluations/tau2-bench
 - LLM-Stats, "TAU-bench Retail Leaderboard", https://llm-stats.com/benchmarks/tau-bench-retail
-- DemandSphere, "SWE-bench Verified — AI Benchmark Explained", https://www.demandsphere.com/research/demandsphere-radar/ai-frontier-model-tracker/benchmarks/swe-bench/
+- DemandSphere, "SWE-bench Verified - AI Benchmark Explained", https://www.demandsphere.com/research/demandsphere-radar/ai-frontier-model-tracker/benchmarks/swe-bench/
 - LLM-Stats, "SWE-Bench Verified Leaderboard", https://llm-stats.com/benchmarks/swe-bench-verified
 - HAL (Princeton), "GAIA Leaderboard", https://hal.cs.princeton.edu/gaia
-- Steel.dev, "WebArena benchmark — web navigation agent evaluation", https://leaderboard.steel.dev/registry/benchmarks/webarena/
+- Steel.dev, "WebArena benchmark - web navigation agent evaluation", https://leaderboard.steel.dev/registry/benchmarks/webarena/
 - "Self-Preference Bias in LLM-as-a-Judge" (arXiv:2410.21819), https://arxiv.org/pdf/2410.21819
 - "Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge", https://llm-judge-bias.github.io/
 - OpenTelemetry, "Semantic conventions for generative AI spans", https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-spans/

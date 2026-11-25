@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "비전 기반 제조공정 에이전트 — 검사에서 판단까지"
+title: "비전 기반 제조공정 에이전트 - 검사에서 판단까지"
 subtitle: "머신비전이 '불량을 거르는 눈'에서 '공정을 읽는 에이전트'로 넘어가는 자리"
 categories: [ax]
 tags: [vision, manufacturing, machine-vision, agent, defect-detection, smart-factory, anomaly-detection]
@@ -48,7 +48,7 @@ flowchart LR
 
 핵심은 단계를 건너뛰지 않는 것이다. 4단계 에이전트는 1·2·3단계가 안정적으로 돌 때만 신뢰할 수 있다. 검사·측정이 흔들리면 그 위에 얹은 판단은 모래 위의 집이다.
 
-## 2. 이상 탐지 — 불량이 드물 때의 정석
+## 2. 이상 탐지 - 불량이 드물 때의 정석
 
 제조 비전 모델의 가장 큰 제약은 데이터의 비대칭이다. 잘 돌아가는 공정일수록 불량 샘플이 적다. 양품 사진은 수만 장인데 특정 불량은 몇 장뿐인 상황이 흔하다. 불량 샘플이 충분하면 분류 모델(양품 대 불량)이 정석이지만, 불량이 드물면 접근을 뒤집는다. 양품의 정상 분포만 학습하고 거기서 멀어지는 것을 불량 후보로 보는 비지도 이상 탐지로 간다.
 
@@ -60,7 +60,7 @@ flowchart LR
 | PaDiM | 패치 위치별 다변량 가우시안 + 마할라노비스 거리 | ~95% | 중간 | PaDiM-Lite |
 | EfficientAD | student-teacher + 오토인코더, 저지연 설계 | ~99% | 매우 빠름(밀리초급) | 우수 |
 
-이 모델들은 Intel이 공개한 오픈소스 라이브러리 **Anomalib**로 묶여 있다. PatchCore·PaDiM·EfficientAD·FastFlow·STFPM을 같은 인터페이스로 학습·평가하고, OpenVINO로 내보내 엣지에 올린다. 라인 속도가 중요하면 EfficientAD처럼 밀리초급 모델을, 국소 위치 정확도가 중요하면 PatchCore를 고르는 식으로 갈린다.
+이 모델들은 Intel이 공개한 오픈소스 라이브러리 Anomalib로 묶여 있다. PatchCore·PaDiM·EfficientAD·FastFlow·STFPM을 같은 인터페이스로 학습·평가하고, OpenVINO로 내보내 엣지에 올린다. 라인 속도가 중요하면 EfficientAD처럼 밀리초급 모델을, 국소 위치 정확도가 중요하면 PatchCore를 고르는 식으로 갈린다.
 
 여기서 사람이 정할 것이 분명하다. 정상의 경계를 어디에 그을지, 즉 이상 점수의 임계값(threshold)이다. 빡빡하게 잡으면 멀쩡한 부품을 버리고(과검출), 느슨하게 잡으면 불량을 흘려보낸다(미검출). 이 균형점은 공정의 비용 구조가 정한다. 불량 한 개가 후공정에서 일으키는 손해와 양품 한 개를 잘못 버리는 손해를 견줘서 사람이 정한다.
 
@@ -70,7 +70,7 @@ flowchart LR
 
 합성 데이터는 양을 빠르게 늘리지만 도메인 갭(domain gap)을 같이 가져온다. 합성한 결함이 실제 현장의 결함과 통계적으로 다르면, 모델은 합성 세계에서만 잘하고 현장에서 무너진다. 그래서 합성 데이터는 실제 데이터를 대체하는 게 아니라 보강하는 자리에 둔다. 적은 양의 실제 불량으로 도메인 갭을 점검하고 합성으로 변형을 늘리는 조합이 현실적이다. 무엇을 합성하고 어디까지 믿을지의 판단은 자동화되지 않는다.
 
-## 4. 에이전트로 가는 다리 — 이미지 너머의 맥락
+## 4. 에이전트로 가는 다리 - 이미지 너머의 맥락
 
 4단계 공정 에이전트가 검사기와 갈리는 지점은 입력의 폭이다. 검사기는 이미지 한 장으로 판정한다. 에이전트는 이미지에 더해 공정 조건(온도·압력·속도), 설비 이력, 직전 로트의 결과를 함께 본다. 같은 외관 불량이라도 그 앞뒤 맥락이 다르면 원인이 다르기 때문이다.
 
@@ -80,7 +80,7 @@ flowchart LR
 
 다만 이 통역에는 위험이 따른다. 에이전트가 만든 인과 가설은 상관에서 출발한 추정이지 검증된 인과가 아니다. "함께 나타난다"가 "원인이다"는 아니다. 그래서 에이전트의 제안은 조치 자동 실행이 아니라 사람의 확인을 거치는 의사결정 지원으로 두는 것이 안전하다.
 
-## 5. 현장 배치 — 카메라와 추론 하드웨어
+## 5. 현장 배치 - 카메라와 추론 하드웨어
 
 제조 비전은 라인 속도를 따라가야 한다. 컨베이어가 초당 수십 개를 흘려보내는 라인에서 클라우드로 이미지를 보내 판정을 기다릴 여유는 없다. 그래서 카메라와 추론 칩을 현장에 둔다.
 
@@ -105,7 +105,7 @@ flowchart LR
 ## 출처
 
 - Roth et al., "Towards Total Recall in Industrial Anomaly Detection (PatchCore)", arXiv 2106.08265, https://arxiv.org/pdf/2106.08265
-- MVTec, "MVTec AD — A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection", https://www.mvtec.com/company/research/datasets/mvtec-ad
+- MVTec, "MVTec AD - A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection", https://www.mvtec.com/company/research/datasets/mvtec-ad
 - Datature, "Visual Anomaly Detection with Anomalib: A Hands-On Guide (2026)", https://datature.io/blog/visual-anomaly-detection-with-anomalib-a-hands-on-guide-2026
 - arXiv, "Efficient Visual Anomaly Detection at the Edge: Real-Time Industrial Inspection on Resource-Constrained Devices" (2603.20288), https://arxiv.org/html/2603.20288
 - ABI Research, "Basler, Cognex, and FLIR Systems Take Top Spots in Industrial Machine Vision Camera Assessment", https://www.abiresearch.com/press/basler-cognex-and-flir-systems-take-top-spots-in-abi-researchs-industrial-machine-vision-camera-vendor-competitive-assessment

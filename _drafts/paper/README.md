@@ -1,4 +1,4 @@
-# `_drafts/paper/` — 논문 리뷰 큐
+# `_drafts/paper/` - 논문 리뷰 큐
 
 매일 12:00 KST에 `publish-paper.yml`이 이 폴더에서 `status: ready`인 글 1편을 선정해 `_posts/`로 옮긴다.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MCP 완전정복 2부 — 서버 만들기, 보안, 생태계"
+title: "MCP 완전정복 2부 - 서버 만들기, 보안, 생태계"
 subtitle: "도구 하나 노출은 함수 하나만큼 짧다. 어려운 건 그 도구를 누가, 어떤 권한으로 쓰게 둘지 정하는 일이다"
 categories: [building-with-ai]
 tags: [mcp, model-context-protocol, security, oauth, tool-poisoning, fastmcp, a2a, agent]
@@ -25,7 +25,7 @@ MCP 서버를 만든다는 말은 무겁게 들리지만, 도구 하나를 노�
 아래는 두 수를 더하는 도구 하나를 노출하는 서버 전체다.
 
 ```python
-# server.py — 더하기 도구 하나만 노출하는 최소 MCP 서버
+# server.py - 더하기 도구 하나만 노출하는 최소 MCP 서버
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("Demo")          # 서버 인스턴스 생성, 이름만 준다
@@ -41,12 +41,12 @@ if __name__ == "__main__":
 
 여기서 사람이 쓴 건 함수 본문 한 줄과 데코레이터뿐이다. 나머지는 SDK가 자동으로 한다. `@mcp.tool()`이 함수 이름(`add`)을 도구 이름으로, docstring("두 정수를 더한다")을 도구 설명으로, 타입 힌트(`a: int, b: int`)를 입력 JSON 스키마로 바꿔 클라이언트에 광고한다. 1부에서 본 `tools/list` 응답에 들어가는 그 디스크립터가 이 세 줄에서 자동 생성된다.
 
-이게 곧 보안 문제의 시작점이기도 하다. 모델은 `add`가 실제로 무엇을 하는지 모른다. **docstring이 무엇이라 말하는지만 안다.** 이 사실은 3절에서 다시 나온다.
+이게 곧 보안 문제의 시작점이기도 하다. 모델은 `add`가 실제로 무엇을 하는지 모른다. docstring이 무엇이라 말하는지만 안다. 이 사실은 3절에서 다시 나온다.
 
 클라이언트(여기서는 Claude Desktop)에 붙이려면 설정 파일에 서버 실행 명령을 적는다. macOS면 `~/Library/Application Support/Claude/claude_desktop_config.json`, 윈도우면 `%APPDATA%\Claude\claude_desktop_config.json`이다.
 
 ```json
-// claude_desktop_config.json — 위 server.py를 Claude Desktop에 등록
+// claude_desktop_config.json - 위 server.py를 Claude Desktop에 등록
 {
   "mcpServers": {
     "demo": {
@@ -69,7 +69,7 @@ TypeScript도 같은 모양이다. 공식 `@modelcontextprotocol/sdk`에서 `ser
 
 초기 MCP는 로컬에서 stdio로 도는 걸 전제했다. 내 PC에서 내가 띄운 서버를 내 클라이언트가 부르는 구조라 인증이 큰 문제가 아니었다. 원격 HTTP 서버(SaaS가 호스팅하는 MCP 서버)가 늘면서 "이 토큰을 누가 누구에게 줬는가"가 핵심이 됐다.
 
-2025년 6월 18일자 스펙 개정(`2025-06-18`)이 인가 모델을 OAuth 2.1 기반으로 다시 짰다. 핵심은 **MCP 서버를 OAuth 2.1 리소스 서버(Resource Server)로 규정**한 것이다. 바뀐 요점은 세 가지다.
+2025년 6월 18일자 스펙 개정(`2025-06-18`)이 인가 모델을 OAuth 2.1 기반으로 다시 짰다. 핵심은 MCP 서버를 OAuth 2.1 리소스 서버(Resource Server)로 규정한 것이다. 바뀐 요점은 세 가지다.
 
 첫째, 리소스 서버 분리. MCP 서버는 이제 토큰을 발급하지 않는다. 토큰은 별도의 인가 서버(Authorization Server)가 발급하고, MCP 서버는 받은 토큰을 검증만 한다. MCP 서버는 OAuth 2.0 Protected Resource Metadata(RFC 9728) 문서를 제공해 "내 인가 서버는 여기"라고 광고하고, 인가가 필요하면 HTTP 401과 함께 `WWW-Authenticate` 헤더에 그 메타데이터 URL을 담아 돌려준다.
 
@@ -81,9 +81,9 @@ TypeScript도 같은 모양이다. 공식 `@modelcontextprotocol/sdk`에서 `ser
 
 이 구조는 잘 알려진 OAuth 실수를 그대로 물려받는다. 한 보안 분석은 MCP-OAuth 연동에서 부정확한 리다이렉트 URI 검증과 토큰 대상 미검증이 결합되면 "원클릭 계정 탈취"로 이어질 수 있다고 지적했다. 스펙이 강제하는 검증을 구현이 빼먹으면 그대로 구멍이 된다.
 
-## 3. MCP 고유의 위협 — 도구 설명이 곧 공격면
+## 3. MCP 고유의 위협 - 도구 설명이 곧 공격면
 
-OAuth는 "인증된 사용자인가"를 푼다. MCP에는 OAuth가 손대지 않는 고유 위협이 따로 있다. 1절 끝에서 짚은 그 사실, **모델은 도구가 무엇을 하는지 모르고 도구 설명이 무엇이라 말하는지만 안다**는 데서 나온다.
+OAuth는 "인증된 사용자인가"를 푼다. MCP에는 OAuth가 손대지 않는 고유 위협이 따로 있다. 1절 끝에서 짚은 그 사실, 모델은 도구가 무엇을 하는지 모르고 도구 설명이 무엇이라 말하는지만 안다는 데서 나온다.
 
 ### 3-1. 도구 포이즈닝(tool poisoning)
 
@@ -121,7 +121,7 @@ flowchart LR
 ```
 *그림. MCP 동작 경로 위에 포개진 다섯 위협 지점. 도구 설명이 모델 컨텍스트로 들어가는 길목(①②)과 서버가 토큰·권한을 다루는 길목(③④⑤)이 공격면이다.*
 
-## 4. 완화 — 게이트웨이와 사람의 자리
+## 4. 완화 - 게이트웨이와 사람의 자리
 
 위협의 공통점은 "검증 없이 신뢰가 흐른다"는 것이다. 완화는 그 흐름마다 관문을 끼우는 일이다.
 
@@ -138,7 +138,7 @@ flowchart LR
 
 그래도 마지막 관문은 자동화로 닫히지 않는다. "이 도구가 파일을 쓰겠다는데 허용할까", "외부로 데이터를 보내겠다는데 보낼까"의 판단은 사람이 승인하도록 남긴다. 이게 6절로 이어진다.
 
-## 5. 생태계 — 수치로 본 2026년
+## 5. 생태계 - 수치로 본 2026년
 
 MCP는 2025년 한 해 동안 한 회사의 실험에서 업계 표준으로 옮겨갔다. 2025년 12월 Anthropic이 MCP를 Linux Foundation 산하 Agentic AI Foundation(AAIF)에 기부하면서 거버넌스도 중립화됐다. AAIF 구성은 Anthropic·OpenAI·Google·Microsoft·AWS·Block·Cloudflare·Bloomberg다. 채택사로 Salesforce(Agentforce)·Replit 등도 합류했다.
 
@@ -155,12 +155,12 @@ MCP는 2025년 한 해 동안 한 회사의 실험에서 업계 표준으로 옮
 
 프로덕션 배포 사례는 파일럿이 아니다. Pinterest(월 6.6만 호출, 사용자 844명), Duolingo(180개 이상 도구), Uber(주당 수만 건의 에이전트 실행), Bloomberg·Morgan Stanley·Cisco·Roblox 등이 실제 운영에 올렸다. 2026년 1월 26일 출시된 MCP Apps에는 Asana·Box·Canva·Figma·Slack·monday.com 등 9개 파트너가 첫날 합류했다.
 
-### 5-1. A2A와의 관계 — 손과 대화의 분리
+### 5-1. A2A와의 관계 - 손과 대화의 분리
 
 MCP를 이야기하면 A2A(Agent2Agent, Google이 2025년 4월 발표)가 따라온다. 둘은 경쟁이 아니라 층이 다르다.
 
-- **MCP**: 에이전트가 도구·데이터에 어떻게 연결하는가. AI의 "손"에 해당하는 표준 인터페이스.
-- **A2A**: 에이전트들이 서로 어떻게 발견·소통·협업하는가. 조직·플랫폼 경계를 넘는 에이전트 간 통신, "에이전트용 HTTP".
+- MCP: 에이전트가 도구·데이터에 어떻게 연결하는가. AI의 "손"에 해당하는 표준 인터페이스.
+- A2A: 에이전트들이 서로 어떻게 발견·소통·협업하는가. 조직·플랫폼 경계를 넘는 에이전트 간 통신, "에이전트용 HTTP".
 
 한 에이전트가 MCP로 자기 도구를 쓰고, A2A로 다른 에이전트와 작업을 주고받는 식으로 포개진다. A2A는 2025년 6월 Linux Foundation에 기부됐고, 2026년 기준 150개 이상 조직이 프로덕션에서 쓰며 버전 1.2(서명된 에이전트 카드로 도메인 검증)에 이르렀다. MCP·A2A·ACP가 모두 Linux Foundation 산하로 들어오면서 "승자독식 프로토콜 전쟁"이 아니라 층을 나눠 쌓는 구도로 정리됐다.
 
@@ -179,19 +179,19 @@ MCP는 도구를 붙이는 일을 함수 하나만큼 쉽게 만들었다. 쉬�
 ## 출처
 
 - MCP Python SDK (공식): https://github.com/modelcontextprotocol/python-sdk
-- FastMCP — Create an MCP Server: https://gofastmcp.com/tutorials/create-mcp-server
-- FastMCP — MCP JSON Configuration: https://gofastmcp.com/integrations/mcp-json-configuration
+- FastMCP - Create an MCP Server: https://gofastmcp.com/tutorials/create-mcp-server
+- FastMCP - MCP JSON Configuration: https://gofastmcp.com/integrations/mcp-json-configuration
 - MCP 인가 스펙(2025-06-18): https://modelcontextprotocol.io/specification/draft/basic/authorization
-- Auth0 — MCP Spec Updates from June 2025: https://auth0.com/blog/mcp-specs-update-all-about-auth/
-- Obsidian Security — When MCP Meets OAuth (one-click account takeover): https://www.obsidiansecurity.com/blog/when-mcp-meets-oauth-common-pitfalls-leading-to-one-click-account-takeover
-- Simon Willison — MCP prompt injection: https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/
+- Auth0 - MCP Spec Updates from June 2025: https://auth0.com/blog/mcp-specs-update-all-about-auth/
+- Obsidian Security - When MCP Meets OAuth (one-click account takeover): https://www.obsidiansecurity.com/blog/when-mcp-meets-oauth-common-pitfalls-leading-to-one-click-account-takeover
+- Simon Willison - MCP prompt injection: https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/
 - MCPTox 벤치마크(arXiv): https://arxiv.org/html/2508.14925v1
-- TrueFoundry — MCP Tool Poisoning (CVE-2025-54136): https://www.truefoundry.com/blog/blog-mcp-tool-poisoning-gateway-defense
-- Elastic Security Labs — MCP Tools attack/defense: https://www.elastic.co/security-labs/mcp-tools-attack-defense-recommendations
+- TrueFoundry - MCP Tool Poisoning (CVE-2025-54136): https://www.truefoundry.com/blog/blog-mcp-tool-poisoning-gateway-defense
+- Elastic Security Labs - MCP Tools attack/defense: https://www.elastic.co/security-labs/mcp-tools-attack-defense-recommendations
 - MCP 서버 수·다운로드 통계: https://www.digitalapplied.com/blog/mcp-adoption-statistics-2026-model-context-protocol
 - MCP 97M 다운로드: https://www.digitalapplied.com/blog/mcp-97-million-downloads-model-context-protocol-mainstream
-- Linux Foundation — A2A 150+ 조직: https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year
+- Linux Foundation - A2A 150+ 조직: https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year
 - MCP vs A2A 가이드(2026): https://dev.to/pockit_tools/mcp-vs-a2a-the-complete-guide-to-ai-agent-protocols-in-2026-30li
 - The 2026 MCP Roadmap (공식 블로그): https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/
 - MCP Dev Summit 2026 / 엔터프라이즈 인프라(AAIF): https://aaif.io/blog/mcp-is-now-enterprise-infrastructure-everything-that-happened-at-mcp-dev-summit-north-america-2026/
-- The New Stack — MCP 엔터프라이즈 보안 로드맵: https://thenewstack.io/mcp-maintainers-enterprise-roadmap/
+- The New Stack - MCP 엔터프라이즈 보안 로드맵: https://thenewstack.io/mcp-maintainers-enterprise-roadmap/
