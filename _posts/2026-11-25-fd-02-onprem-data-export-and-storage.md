@@ -6,7 +6,8 @@ categories: [ax]
 tags: [purdue-model, iec-62443, data-diode, store-and-forward, idempotency, lakehouse, parquet, time-series-db]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-11-25 18:19:43 +09:00
 ---
 
 ## 현장 서버에 쌓인 데이터의 두 가지 문제
