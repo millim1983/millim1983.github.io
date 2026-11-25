@@ -50,17 +50,17 @@ flowchart BT
 
 | 층 | 글 | 그 글에서 정리한 것 |
 |---|---|---|
-| 1 | [에이전트의 내부 구조](/posts/agent-01-architecture/) | 증강 LLM, 도구 호출, 루프, ReAct와 Plan-and-Execute |
-| 1 | [에이전트 메모리](/posts/agent-04-memory/) | 맥락 창의 한계, 메모리 구분, 요약 압축 루프 |
-| 2 | [에이전트 설계 패턴 카탈로그](/posts/agent-03-design-patterns/) | 워크플로 5패턴과 에이전트 패턴, 제어 흐름과 자율성의 두 축 |
-| 2 | [에이전트는 단순하게 시작해 평가로 키운다](/posts/agent-02-build-methodology/) | 복잡도 사다리, 최대 스텝, 승인 게이트와 고무도장 문제 |
-| 3 | [멀티에이전트 협업](/posts/agent-07-multiagent-collaboration/) | 다섯 토폴로지, 슈퍼바이저 코드, 쓰기 단일 스레드 원칙 |
-| 3 | [멀티 에이전트가 기본값이 됐다](/posts/trend-multi-agent-becomes-default/) | 코딩 도구들이 서브에이전트를 기본 기능으로 넣은 시점 |
-| 4 | [MCP 1부](/posts/mcp-01-protocol-architecture/) | 호스트·클라이언트·서버, 프리미티브, 전송, 핸드셰이크 |
-| 4 | [A2A](/posts/agent-06-a2a-protocol/) | Agent Card, Task 수명주기, 스트리밍과 푸시 |
-| 5 | [에이전트 보안](/posts/agent-08-security/) | lethal trifecta, OWASP LLM Top 10, 다층 방어 |
-| 5 | [비용·지연 최적화](/posts/agent-09-cost-latency-optimization/) | 캐싱, 모델 라우팅, 컨텍스트 압축 |
-| 5 | [평가 벤치마크와 관측](/posts/agent-05-eval-observability/) | 평가 축, LLM-as-judge, OpenTelemetry GenAI 규약 |
+| 1 | [에이전트의 내부 구조](/building-with-ai/agent-01-architecture/) | 증강 LLM, 도구 호출, 루프, ReAct와 Plan-and-Execute |
+| 1 | [에이전트 메모리](/building-with-ai/agent-04-memory/) | 맥락 창의 한계, 메모리 구분, 요약 압축 루프 |
+| 2 | [에이전트 설계 패턴 카탈로그](/building-with-ai/agent-03-design-patterns/) | 워크플로 5패턴과 에이전트 패턴, 제어 흐름과 자율성의 두 축 |
+| 2 | [에이전트는 단순하게 시작해 평가로 키운다](/building-with-ai/agent-02-build-methodology/) | 복잡도 사다리, 최대 스텝, 승인 게이트와 고무도장 문제 |
+| 3 | [멀티에이전트 협업](/building-with-ai/agent-07-multiagent-collaboration/) | 다섯 토폴로지, 슈퍼바이저 코드, 쓰기 단일 스레드 원칙 |
+| 3 | [멀티 에이전트가 기본값이 됐다](/thoughts/trend-multi-agent-becomes-default/) | 코딩 도구들이 서브에이전트를 기본 기능으로 넣은 시점 |
+| 4 | [MCP 1부](/building-with-ai/mcp-01-protocol-architecture/) | 호스트·클라이언트·서버, 프리미티브, 전송, 핸드셰이크 |
+| 4 | [A2A](/building-with-ai/agent-06-a2a-protocol/) | Agent Card, Task 수명주기, 스트리밍과 푸시 |
+| 5 | [에이전트 보안](/building-with-ai/agent-08-security/) | lethal trifecta, OWASP LLM Top 10, 다층 방어 |
+| 5 | [비용·지연 최적화](/building-with-ai/agent-09-cost-latency-optimization/) | 캐싱, 모델 라우팅, 컨텍스트 압축 |
+| 5 | [평가 벤치마크와 관측](/building-with-ai/agent-05-eval-observability/) | 평가 축, LLM-as-judge, OpenTelemetry GenAI 규약 |
 
 빈칸은 3층과 5층 사이에 있다. 토폴로지 글은 "누가 다음에 움직이나"를 다뤘고, 운영 품질 글들은 "잘 돌고 있나"를 다뤘다. 그 사이에서 오래 도는 작업이 중간에 죽으면 어떻게 이어 가는지, 에이전트가 다른 에이전트에게 일을 넘길 때 정확히 무엇을 들려 보내는지, 사람은 어느 지점에 서는지는 아직 정리하지 않았다.
 
@@ -145,7 +145,7 @@ Cemri 등의 「Why Do Multi-Agent LLM Systems Fail?」(2025)은 이 분류를 M
 
 ### 2-4. 사람 승인 지점과 자율성 단계
 
-무엇을 푸는가. 승인 게이트를 어디에 걸지는 [빌드 방법론 글](/posts/agent-02-build-methodology/)과 [보안 글](/posts/agent-08-security/)에서 외부 상태 변경·금전·대외 발신 기준으로 다뤘다. 여기서는 그 게이트를 기술적으로 어떻게 멈추고 재개하는지, 그리고 자율성을 몇 단계로 나눌지를 본다.
+무엇을 푸는가. 승인 게이트를 어디에 걸지는 [빌드 방법론 글](/building-with-ai/agent-02-build-methodology/)과 [보안 글](/building-with-ai/agent-08-security/)에서 외부 상태 변경·금전·대외 발신 기준으로 다뤘다. 여기서는 그 게이트를 기술적으로 어떻게 멈추고 재개하는지, 그리고 자율성을 몇 단계로 나눌지를 본다.
 
 멈추고 재개하는 원리는 체크포인트 위에 있다. LangGraph의 `interrupt()`는 그래프를 특정 지점에서 멈추고 외부 입력을 기다린다. 체크포인터와 `thread_id`가 필수이고, 재개는 `Command(resume=...)`로 하며 넘긴 값이 `interrupt()`의 반환값이 된다. 여기서 놓치기 쉬운 규칙이 있다. 재개할 때 런타임은 인터럽트가 있던 노드를 처음부터 다시 실행한다. 그래서 `interrupt()` 앞에 둔 부작용은 멱등이어야 하고, 문서는 부작용을 인터럽트 뒤로 옮기거나 별도 노드로 떼어 내라고 권한다.
 
@@ -224,7 +224,7 @@ flowchart LR
 | 근거 없는 출력은 산출물로 인정하지 않는다 | 변경안 레코드에 근거 위치 필수, 없으면 게이트에서 반려 | 2-3 FC3 검증 |
 | 금기는 코드로 막는다 | 게이트 앞단의 코드 검사기, 핸드오프 계약 검증 | 2-2 핸드오프 |
 
-관측은 [평가·관측 글](/posts/agent-05-eval-observability/)의 트레이스를 그대로 쓰되 한 가지를 더한다. 실패한 실행에 MAST 범주 라벨을 붙여 두면 어느 층을 고칠지가 데이터로 나온다. 단계 반복과 종료 인지 실패가 많으면 오케스트레이터의 종료 조건을, 추론과 행동 불일치가 많으면 핸드오프 계약을 먼저 본다.
+관측은 [평가·관측 글](/building-with-ai/agent-05-eval-observability/)의 트레이스를 그대로 쓰되 한 가지를 더한다. 실패한 실행에 MAST 범주 라벨을 붙여 두면 어느 층을 고칠지가 데이터로 나온다. 단계 반복과 종료 인지 실패가 많으면 오케스트레이터의 종료 조건을, 추론과 행동 불일치가 많으면 핸드오프 계약을 먼저 본다.
 
 ## 4. 도구에 맡길 것과 사람이 정할 것
 
