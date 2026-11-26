@@ -6,7 +6,8 @@ categories: [ax]
 tags: [time-series, sensor-data, data-cleaning, missing-data, anomaly-detection, signal-filtering, data-leakage]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-11-26 17:58:47 +09:00
 ---
 
 ## 센서 로그는 그대로 학습에 넣을 수 없다
