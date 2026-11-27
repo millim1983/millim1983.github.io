@@ -6,7 +6,8 @@ categories: [ax]
 tags: [image-dataset, annotation, label-noise, confident-learning, active-learning, anomaly-detection, data-augmentation, datasheets]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-11-27 18:11:55 +09:00
 ---
 
 ## 이 글의 범위
