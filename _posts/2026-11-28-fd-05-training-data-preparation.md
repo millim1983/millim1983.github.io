@@ -6,7 +6,8 @@ categories: [ax]
 tags: [data-centric-ai, data-leakage, train-test-split, class-imbalance, smote, data-validation, dvc, datasheets]
 toc: true
 mermaid: true
-status: ready
+status: published
+date: 2026-11-28 17:31:29 +09:00
 ---
 
 ## 정제가 끝났는데 아직 학습을 못 하는 이유
